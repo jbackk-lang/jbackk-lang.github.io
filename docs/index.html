@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Astro Map – Live</title>
+    <style>
+        body { font-family: Arial; background: #111; color: #eee; padding: 20px; }
+        img { max-width: 100%; border: 2px solid #444; margin-top: 20px; }
+        button { padding: 10px 20px; font-size: 16px; margin-top: 20px; }
+        .box { background: #222; padding: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<h1>Astro Map – Live</h1>
+
+<div class="box">
+    <p><b>Ostatni obraz z NASA:</b></p>
+    <img src="../data/raw/latest.jpg" alt="NASA Image">
+</div>
+
+<div class="box">
+    <p><b>Wynik twist-filter:</b></p>
+    <pre id="twist"></pre>
+</div>
+
+<button onclick="location.reload()">Odśwież dane</button>
+
+<script>
+fetch("../data/processed/twist.json")
+    .then(r => r.json())
+    .then(j => document.getElementById("twist").textContent = JSON.stringify(j, null, 2));
+</script>
+
+</body>
+</html>
