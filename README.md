@@ -3,36 +3,6 @@ lecz procesem. Λ tworzy ramę, τ nadaje kierunek, ρ ujawnia prawdę.
 Jeśli coś jest stabilne, to tylko dlatego, że rezonuje.
 ###
 
-<nav style="
-    background:#0d1117;
-    padding:10px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:2px solid #58a6ff;
-">
-
-    <!-- Logo -->
-    <div style="display:flex; align-items:center;">
-        <img src="logo.svg" alt="Logo" style="height:40px; margin-right:15px;">
-        <span style="color:#58a6ff; font-size:20px; font-weight:bold;">
-            Λ τ ρ — Topologia Informacji
-        </span>
-    </div>
-
-    <!-- Linki -->
-    <div>
-        <a href="index.html" style="color:#fff; margin:0 12px; text-decoration:none;">Strona główna</a>
-        <a href="trm.html" style="color:#fff; margin:0 12px; text-decoration:none;">TRM</a>
-        <a href="timdr.html" style="color:#fff; margin:0 12px; text-decoration:none;">TIMDR</a>
-        <a href="topologia.html" style="color:#fff; margin:0 12px; text-decoration:none;">Topologia</a>
-        <a href="zdjecia.html" style="color:#fff; margin:0 12px; text-decoration:none;">Zdjęcia</a>
-        <a href="modele.html" style="color:#fff; margin:0 12px; text-decoration:none;">Modele</a>
-    </div>
-
-</nav>
-
-
 
 # Topologia Informacji – Λ τ ρ
 
@@ -91,6 +61,38 @@ Repozytorium generuje stronę:
 **https://jbackk-lang.github.io**
 
 ---
+
+<nav style="
+    background:#0d1117;
+    padding:10px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:2px solid #58a6ff;
+">
+
+    <!-- Logo -->
+    <div style="display:flex; align-items:center;">
+        <img src="logo.svg" alt="Logo" style="height:40px; margin-right:15px;">
+        <span style="color:#58a6ff; font-size:20px; font-weight:bold;">
+            Λ τ ρ — Topologia Informacji
+        </span>
+    </div>
+
+    <!-- Linki -->
+    <div>
+        <a href="index.html" style="color:#fff; margin:0 12px; text-decoration:none;">Strona główna</a>
+        <a href="trm.html" style="color:#fff; margin:0 12px; text-decoration:none;">TRM</a>
+        <a href="timdr.html" style="color:#fff; margin:0 12px; text-decoration:none;">TIMDR</a>
+        <a href="topologia.html" style="color:#fff; margin:0 12px; text-decoration:none;">Topologia</a>
+        <a href="zdjecia.html" style="color:#fff; margin:0 12px; text-decoration:none;">Zdjęcia</a>
+        <a href="modele.html" style="color:#fff; margin:0 12px; text-decoration:none;">Modele</a>
+    </div>
+
+</nav>
+
+
+
 
 ## Autor
 **Jacek Stanisław Kielich**  
