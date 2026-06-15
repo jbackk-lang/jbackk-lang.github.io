@@ -1,28 +1,94 @@
-<nav style="
-    background:#0d1117;
-    padding:10px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:2px solid #58a6ff;
-">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Topologia Informacji – Jacek Kielich</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-    <!-- Logo -->
-    <div style="display:flex; align-items:center;">
-        <img src="logo.svg" alt="Logo" style="height:40px; margin-right:15px;">
-        <span style="color:#58a6ff; font-size:20px; font-weight:bold;">
-            Λ τ ρ — Topologia Informacji
-        </span>
+        /* MENU */
+        nav {
+            background: #0d1117;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #58a6ff;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #58a6ff;
+        }
+
+        /* LOGO */
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo-title img {
+            height: 40px;
+            margin-right: 15px;
+        }
+        .logo-title span {
+            color: #58a6ff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        header {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+        }
+
+        h1, h2, h3 {
+            color: #222;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<!-- MENU Z LOGO -->
+<nav>
+    <div class="logo-title">
+        <img src="logo.svg" alt="Logo">
+        <span>Λ τ ρ — Topologia Informacji</span>
     </div>
 
-    <!-- Linki -->
     <div>
-        <a href="index.html" style="color:#fff; margin:0 12px; text-decoration:none;">Strona główna</a>
-        <a href="trm.html" style="color:#fff; margin:0 12px; text-decoration:none;">TRM</a>
-        <a href="timdr.html" style="color:#fff; margin:0 12px; text-decoration:none;">TIMDR</a>
-        <a href="topologia.html" style="color:#fff; margin:0 12px; text-decoration:none;">Topologia</a>
-        <a href="zdjecia.html" style="color:#fff; margin:0 12px; text-decoration:none;">Zdjęcia</a>
-        <a href="modele.html" style="color:#fff; margin:0 12px; text-decoration:none;">Modele</a>
-    </div>
-
-</nav>
+        <a href="index.html">Strona główna</a>
+        <a href="trm.html">TRM</a>
+        <a href="timdr.html">TIMDR</a>
+        <a href="topologia.html">Topologia</a>
+        <a href="zdjecia.html">Zdjęcia</a>
+        <a href="modele.html">
