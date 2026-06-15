@@ -4,7 +4,8 @@ Jeśli coś jest stabilne, to tylko dlatego, że rezonuje.
 ###
 
 
-# Topologia Informacji – Λ τ ρ
+### Topologia Informacji – Operator Λ–τ–ρ
+
 
 Model rozwijany przez Jacka Stanisława Kielicha, opisujący informację jako proces
 oparty na trzech operatorach fundamentalnych:
@@ -17,6 +18,9 @@ Całość tworzy spójny system:
 **pęd → proces → skręt → relacja → informacja → czas**
 
 ---
+### Λ — struktura  
+### τ — skręt  
+### ρ — defekt
 
 ## 🔷 TRM – Topological Resonance Model
 Rezonans skrętu jako warunek stabilnej informacji.  
