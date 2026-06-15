@@ -1,72 +1,73 @@
-Topologia Informacji to mapa skrętu — model, w którym informacja nie jest zbiorem danych,
-lecz procesem. Λ tworzy ramę, τ nadaje kierunek, ρ ujawnia prawdę. 
-Jeśli coś jest stabilne, to tylko dlatego, że rezonuje.
-###
+# 🔷 Topologia Informacji – Mapa Skrętu
 
-
-### Topologia Informacji – Operator Λ–τ–ρ
-
-
-Model rozwijany przez Jacka Stanisława Kielicha, opisujący informację jako proces
-oparty na trzech operatorach fundamentalnych:
-
-- **Λ – struktura** (rama możliwych stanów)
-- **τ – skręt / transformacja** (kierunek i asymetria procesu)
-- **ρ – defekt / niestabilność** (miara błędu modelu)
-
-Całość tworzy spójny system:
-**pęd → proces → skręt → relacja → informacja → czas**
-
----
-### Λ — struktura  
-### τ — skręt  
-### ρ — defekt
-
-## 🔷 TRM – Topological Resonance Model
-Rezonans skrętu jako warunek stabilnej informacji.  
-Stabilność = okresowość τ + kontrolowany ρ + spójna Λ.
-
-Plik: `trm.html`
+Strona prezentuje modele, wizualizacje i koncepcje związane z topologią informacji, skrętem Λ–τ–ρ oraz strukturą czasu i rezonansu.
 
 ---
 
 ## 🔷 TIMDR – Metryka Czasu i Skrętu
-Czas jako ślad stabilnej informacji.  
-Metryka mierzy intensywność skrętu, częstotliwość cykli i dynamikę defektu.
 
-Plik: `timdr.html`
+Czas jako ślad stabilnej informacji.  
+Metryka TIMDR mierzy intensywność skrętu, częstotliwość cykli i dynamikę defektu.
+
+**Plik:** [`timdr.html`](timdr.html)
+
+---
+
+## 🔷 TRM – Topological Resonance Model
+
+Model rezonansu topologicznego opisujący synchronizację skrętów i stabilność struktur.
+
+**Plik:** [`trm.html`](trm.html)
 
 ---
 
 ## 🔷 Topologia Informacji
-Główna rama teoretyczna łącząca Λ–τ–ρ w jeden proces.
 
-Plik: `topologia.html`
+Główna rama teoretyczna łącząca Λ–τ–ρ w jeden proces.  
+Opisuje strukturę informacji, jej deformacje, defekty i przejścia fazowe.
+
+**Plik:** [`topologia.html`](topologia.html)
 
 ---
 
-## 🔷 Zdjęcia i wizualizacje
+## 🔷 Galeria (w przygotowaniu)
+
+Integracja z projektem **astro-map**.  
 Miejsce na obrazy astronomiczne, struktury skrętu i wizualizacje modeli.
 
-Plik: `zdjecia.html`
+**Plik:** [`zdjecia.html`](zdjecia.html)
 
 ---
 
 ## 🔷 Modele i repozytoria
-Lista projektów, kodów i implementacji.
 
-Plik: `modele.html`
+Lista projektów, kodów i implementacji:
 
----
+- [FUNDAMENTAL-AI-MODEL-WERSJA-PRO](https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO)
+- [astro-map](https://github.com/jbackk-lang/astro-map)
+- [We-Are-Building-Particles](https://github.com/jbackk-lang/We-Are-Building-Particles)
 
-## 🔷 Strona
-Repozytorium generuje stronę:
-
-**https://jbackk-lang.github.io**
+**Plik:** [`modele.html`](modele.html)
 
 ---
 
+## 🔷 Strona projektu
+
+➡️ **https://jbackk-lang.github.io**
+
+---
+
+## Struktura repozytorium
+
+- `index.html` — strona główna  
+- `trm.html` — model rezonansu skrętu  
+- `timdr.html` — metryka czasu i skrętu  
+- `topologia.html` — główna rama teoretyczna  
+- `zdjecia.html` — galeria  
+- `modele.html` — lista projektów  
+
+---
 
 ## Autor
-**Jacek Stanisław Kielich**  
-Repozytorium: https://github.com/jbackk-lang
+
+**Jacek Stanisław Kielich**
