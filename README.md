@@ -1,73 +1,80 @@
-# 🔷 Topologia Informacji – Mapa Skrętu
+# 🔷 Topologia Informacji — Mapa Skrętu  
+Strona prezentuje **koncepcyjne modele, wizualizacje i struktury**  
+związane z topologią informacji, skrętem Λ–τ–ρ oraz symboliczną dynamiką czasu i rezonansu.
 
-Strona prezentuje modele, wizualizacje i koncepcje związane z topologią informacji, skrętem Λ–τ–ρ oraz strukturą czasu i rezonansu.
-
----
-
-## 🔷 TIMDR – Metryka Czasu i Skrętu
-
-Czas jako ślad stabilnej informacji.  
-Metryka TIMDR mierzy intensywność skrętu, częstotliwość cykli i dynamikę defektu.
-
-**Plik:** [`timdr.html`](timdr.html)
+To **nie jest teoria naukowa**,  
+ale **framework pojęciowy**, który pozwala patrzeć na informację  
+jak na proces strukturalny, cykliczny i topologiczny.
 
 ---
 
-## 🔷 TRM – Topological Resonance Model
+## 🔷 TIMDR — Metryka Czasu i Skrętu  
+**TIMDR (Topological Information Modal Dynamic Resonance)**  
+to model orientacyjny opisujący:
 
-Model rezonansu topologicznego opisujący synchronizację skrętów i stabilność struktur.
+- intensywność skrętu,  
+- cykliczność procesów,  
+- dynamikę defektu,  
+- stabilność informacji w czasie.
 
-**Plik:** [`trm.html`](trm.html)
+TIMDR jest **narzędziem koncepcyjnym**,  
+nie metryką fizyczną.
 
----
-
-## 🔷 Topologia Informacji
-
-Główna rama teoretyczna łącząca Λ–τ–ρ w jeden proces.  
-Opisuje strukturę informacji, jej deformacje, defekty i przejścia fazowe.
-
-**Plik:** [`topologia.html`](topologia.html)
-
----
-
-## 🔷 Galeria (w przygotowaniu)
-
-Integracja z projektem **astro-map**.  
-Miejsce na obrazy astronomiczne, struktury skrętu i wizualizacje modeli.
-
-**Plik:** [`zdjecia.html`](zdjecia.html)
+**Plik:** `timdr.html`
 
 ---
 
-## 🔷 Modele i repozytoria
+## 🔷 TRM — Topological Resonance Model  
+**TRM** opisuje rezonans topologiczny jako metaforę:
 
-Lista projektów, kodów i implementacji:
+- synchronizacji skrętów,  
+- przejść strukturalnych,  
+- redukcji złożoności,  
+- reorganizacji systemów.
 
-- [FUNDAMENTAL-AI-MODEL-WERSJA-PRO](https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO)
-- [astro-map](https://github.com/jbackk-lang/astro-map)
-- [We-Are-Building-Particles](https://github.com/jbackk-lang/We-Are-Building-Particles)
+To **język metafor topologicznych**,  
+a nie model empiryczny.
 
-**Plik:** [`modele.html`](modele.html)
-
----
-
-## 🔷 Strona projektu
-
-➡️ **https://jbackk-lang.github.io**
+**Plik:** `trm.html`
 
 ---
 
-## Struktura repozytorium
+## 🔷 Topologia Informacji  
+Główna rama pojęciowa łącząca **Λ–τ–ρ** w jeden proces:
 
-- `index.html` — strona główna  
-- `trm.html` — model rezonansu skrętu  
-- `timdr.html` — metryka czasu i skrętu  
-- `topologia.html` — główna rama teoretyczna  
-- `zdjecia.html` — galeria  
-- `modele.html` — lista projektów  
+- Λ — struktura,  
+- τ — transformacja,  
+- ρ — defekt.
+
+Model opisuje:
+
+- deformacje informacji,  
+- przejścia fazowe,  
+- stabilność i rezonans,  
+- ciągłość skrętu.
+
+To **mapa orientacyjna**,  
+nie teoria fizyczna.
+
+**Plik:** `topologia.html`
 
 ---
 
-## Autor
+## 🔷 Galeria (w przygotowaniu)  
+Integracja z projektem **astro-map**.
 
-**Jacek Stanisław Kielich**
+Miejsce na:
+
+- obrazy astronomiczne,  
+- struktury skrętu,  
+- wizualizacje modeli,  
+- interpretacje symboliczne.
+
+**Plik:** `zdjecia.html`
+
+---
+
+## 🔷 Modele i repozytoria  
+Lista projektów, kodów i implementacji opartych na frameworku Λ–τ–ρ:
+
+- **FUNDAMENTAL-AI-MODEL-WERS
