@@ -1,3 +1,5 @@
+https://jbackk-lang.github.io/
+---
 # 🔷 Topologia Informacji — Mapa Skrętu  
 Strona prezentuje **koncepcyjne modele, wizualizacje i struktury**  
 związane z topologią informacji, skrętem Λ–τ–ρ oraz symboliczną dynamiką czasu i rezonansu.
