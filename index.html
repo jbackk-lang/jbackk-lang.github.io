@@ -14,11 +14,11 @@
         --text-muted: #a0aec0;
     }
 
-    body { 
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
-        background: var(--bg-color); 
-        color: var(--text-color); 
-        padding: 20px; 
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        padding: 20px;
         margin: 0;
         box-sizing: border-box;
     }
@@ -152,11 +152,11 @@
         overflow-y: auto;
     }
 
-    .repo { 
-        margin-bottom: 12px; 
-        padding: 12px; 
-        background: rgba(255, 255, 255, 0.03); 
-        border-radius: 6px; 
+    .repo {
+        margin-bottom: 12px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 6px;
         border-left: 3px solid var(--accent-purple);
         transition: transform 0.2s, background 0.2s;
     }
@@ -195,18 +195,18 @@
 <h1>Zintegrowany Panel Badawczy: jbackk-lang</h1>
 
 <div class="dashboard-container">
-    
+
     <!-- LEWA KOLUMNA: SYMULATOR MATRYCY HELISY (NGC 7075) -->
     <div class="simulation-panel">
         <h2>Matryca Potrójnej Helisy: Sektor NGC 7075</h2>
         <p style="font-size: 14px; color: var(--text-muted); margin-top: -5px; margin-bottom: 15px;">
             Wizualizacja sprzężenia skalarnego geometrii pola. Sygnał helu określa punkt zwrotny rezonansu układu.
         </p>
-        
+
         <div id="canvas-container">
             <canvas id="fieldCanvas" width="700" height="400"></canvas>
         </div>
-        
+
         <div class="controls">
             <div class="control-group">
                 <label for="scaleSlider">Skala Przejścia (Makro-Kwant)</label>
@@ -221,7 +221,7 @@
                 <input type="range" id="freqSlider" min="0.5" max="3.0" step="0.01" value="1.5">
             </div>
         </div>
-        
+
         <div class="telemetry-board">
             <div class="telemetry-item">
                 <span class="telemetry-label">Zbieżność Pól</span>
@@ -237,10 +237,15 @@
             </div>
         </div>
     </div>
-    
+
     <!-- PRAWA KOLUMNA: REPOZYTORIA GIT -->
     <div class="repos-panel">
         <h2>Repozytoria Git</h2>
+        <p style="margin: 0 0 15px; font-size: 14px;">
+            <a href="https://github.com/jbackk-lang/jbackk-lang.github.io/blob/main/KATEGORIE.md" target="_blank">
+                📂 Podział repozytoriów: narzędzia inżynierskie vs. modele koncepcyjne
+            </a>
+        </p>
         <div id="repos">Ładowanie repozytoriów z serwerów GitHub...</div>
     </div>
 
@@ -276,12 +281,12 @@
     // --- CZĘŚĆ 2: INTERAKTYWNY SILNIK SYMULACJI GEOMETRII POLA ---
     const canvas = document.getElementById('fieldCanvas');
     const ctx = canvas.getContext('2d');
-    
+
     // Pobranie kontrolek
     const scaleSlider = document.getElementById('scaleSlider');
     const phaseSlider = document.getElementById('phaseSlider');
     const freqSlider = document.getElementById('freqSlider');
-    
+
     // Pola telemetryczne
     const valMatch = document.getElementById('valMatch');
     const valMomentum = document.getElementById('valMomentum');
@@ -293,30 +298,30 @@
     // Funkcja rysująca i obliczająca stan pola
     function renderSimulation() {
         baseTime += 0.02;
-        
+
         // Czyszczenie ekranu z lekkim efektem smugi (trail effect)
         ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
+
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
-        
+
         // Odczyt aktualnych parametrów z suwaków
         const scale = parseFloat(scaleSlider.value);
         const inputPhase = parseFloat(phaseSlider.value) * (Math.PI / 180);
         const heliumFreq = parseFloat(freqSlider.value);
-        
+
         // --- OBLICZENIA TELEMETRII (Matematyczny model sprzężenia z Twoich założeń) ---
         // Idealny punkt rezonansu dla helu przypada na częstotliwość 1.88 i odpowiednie zsynchronizowanie fazy
         const targetFreq = 1.88;
         const freqDiff = Math.abs(heliumFreq - targetFreq);
-        
+
         // Dopasowanie matrycy (Zbieżność pól)
         const matchPercentage = Math.max(0, 100 - (freqDiff * 45) - (Math.abs(Math.sin(inputPhase - 0.5)) * 10));
-        
+
         // Wektor asymetrycznego pędu (zależny od przesunięcia fazowego, skali oraz częstotliwości)
         const asymmetricMomentum = Math.sin(inputPhase + baseTime * 0.5) * scale * (heliumFreq / 1.5);
-        
+
         // Efektywność retencji energii (maksymalna w punkcie zwrotnym rezonansu)
         const energyEfficiency = Math.max(0, matchPercentage * 0.98 + (Math.cos(baseTime * 0.1) * 1.5));
 
@@ -324,7 +329,7 @@
         valMatch.innerText = matchPercentage.toFixed(2) + "%";
         valMomentum.innerText = (asymmetricMomentum >= 0 ? "+" : "") + asymmetricMomentum.toFixed(4);
         valEfficiency.innerText = energyEfficiency.toFixed(2) + "%";
-        
+
         // --- WIZUALIZACJA: RDZEŃ MAKRO (NGC 7075 jako Atraktor) ---
         const coreRadius = 35 * scale;
         const gradient = ctx.createRadialGradient(centerX, centerY, 2, centerX, centerY, coreRadius * 2);
@@ -332,7 +337,7 @@
         gradient.addColorStop(0.2, 'rgba(78, 163, 255, 0.8)');
         gradient.addColorStop(0.6, 'rgba(159, 122, 234, 0.2)');
         gradient.addColorStop(1, 'transparent');
-        
+
         ctx.beginPath();
         ctx.arc(centerX, centerY, coreRadius * 2, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
@@ -350,28 +355,28 @@
         // --- WIZUALIZACJA: POTRÓJNA HELISA (Rysowanie 3 splecionych linii sił pola) ---
         const helixColors = ['#4ea3ff', '#ecc94b', '#9f7aea']; // Niebieski, Złoty, Purpurowy
         const totalPoints = 160;
-        
+
         for (let h = 0; h < 3; h++) {
             // Przesunięcie o 120 stopni (2*PI / 3) dla każdej nici potrójnej helisy
             const strandOffset = h * (2 * Math.PI / 3) + inputPhase;
-            
+
             ctx.beginPath();
             ctx.strokeStyle = helixColors[h];
             ctx.lineWidth = (h === 1 && matchPercentage > 85) ? 3 : 1.5; // pogrubienie nici rezonansowej helu
-            
+
             for (let i = 0; i < totalPoints; i++) {
                 // Konwersja do układu biegunowego rozwijającego się na zewnątrz (od jądra)
                 const t = (i / totalPoints) * Math.PI * 4; // obroty wokół centrum
                 const radius = (coreRadius + (i * 1.5)) * scale;
-                
+
                 // Modulacja fali helisy w oparciu o wybraną częstotliwość rezonansu helu i czas
                 const wave = Math.sin(t * heliumFreq - baseTime + strandOffset) * (15 * scale);
-                
+
                 // Pozycja X i Y
                 const angle = t + baseTime * 0.1;
                 const x = centerX + (radius + wave) * Math.cos(angle);
                 const y = centerY + (radius + wave) * Math.sin(angle);
-                
+
                 if (i === 0) {
                     ctx.moveTo(x, y);
                 } else {
@@ -380,7 +385,7 @@
             }
             ctx.stroke();
         }
-        
+
         // Znacznik punktu rezonansu w telemetrii wizualnej (pulsujące fotony)
         if (matchPercentage > 75) {
             ctx.beginPath();
