@@ -1,21 +1,17 @@
 ## 🗂️ Struktura projektów: dwie kategorie
-
 Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozróżnienie jest celowe i konsekwentne:
-
 - **Narzędzia inżynierskie** — kod zweryfikowany, działający na realnych danych, testowalny.
 - **Modele koncepcyjne** — język metaforyczny (Λ–τ–ρ / TIMDR / TRM / GIA) używany jako narzędzie do myślenia, bez klasycznej warstwy obliczeniowej pod spodem. Nie są to teorie naukowe ani modele empiryczne.
-
 ---
-
 ### 🔧 Narzędzia inżynierskie
 *Zweryfikowany kod, realne dane, testy.*
-
 | Repo | Co robi |
 |---|---|
 | [math-validator](https://github.com/jbackk-lang/math-validator) | Walidator wyrażeń matematycznych — detekcja osobliwości i defektów |
 | [math-validator-v2.0](https://github.com/jbackk-lang/math-validator-v2.0) | Druga generacja walidatora, wykrywanie problemów mylnych |
 | [math-validator-3.0](https://github.com/jbackk-lang/math-validator-3.0) | Trzecia generacja — SymPy, algebra liniowa, logika zdaniowa |
 | [synoptyk-v2.0](https://github.com/jbackk-lang/synoptyk-v2.0) | Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4 |
+| [RADAR-TRACKING-TIMDR](https://github.com/jbackk-lang/RADAR-TRACKING-TIMDR) | Tor radarowy 1D (filtr Kalmana / cząsteczkowy) z adaptacyjną regulacją szumu (JRegulator), walidowany na realnych trasach GPS |
 | [analizator-gieldowy](https://github.com/jbackk-lang/analizator-gieldowy) | Analiza rynku — realne dane giełdowe, SMA/VWAP/OBV |
 | [analizator-gieldowy-2.0](https://github.com/jbackk-lang/analizator-gieldowy-2.0) | Druga generacja analizatora giełdowego (FastAPI + Streamlit) |
 | [EasySound](https://github.com/jbackk-lang/EasySound) | Filtrowanie i czyszczenie dźwięku (filtr Butterwortha) |
@@ -27,12 +23,9 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [phi-topology-filter](https://github.com/jbackk-lang/phi-topology-filter) | Filtr obrazu oparty na operatorach Laplace/Sobel/curl |
 | [MAGE-IN-IMAGE-DECODER](https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER) | Modularna analiza obrazu — FFT, HSV, detekcja ruchu |
 | [Helix-Astro](https://github.com/jbackk-lang/Helix-Astro) | Analiza widm astronomicznych — normalizacja, filtracja, korelacja |
-
 ---
-
 ### 🌀 Modele koncepcyjne
 *Warstwa metaforyczna, narzędzie do myślenia — nie teoria naukowa.*
-
 | Repo | Temat |
 |---|---|
 | [Architektura-Mapowania-Zmyslowego-TIMDR-Transduction-](https://github.com/jbackk-lang/Architektura-Mapowania-Zmyslowego-TIMDR-Transduction-) | Sensoryczna brama do modelu pola |
@@ -43,7 +36,7 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [FIELDCORE](https://github.com/jbackk-lang/FIELDCORE) | Kosmos jako układ dwóch skrętów pola |
 | [FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main](https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main) | Architektura AI oparta na Λ–τ–ρ |
 | [genertor-fotonow](https://github.com/jbackk-lang/genertor-fotonow) | Koncepcyjny generator fotonów oparty na skręcie pola |
-| [GIA-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR)) | Fundament matematyczny/logiczny całego systemu TIMDR |
+| [GIA-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR) | Fundament matematyczny/logiczny całego systemu TIMDR |
 | [GSF](https://github.com/jbackk-lang/GSF) | Globalny system finansowy jako pole informacji |
 | [J-Photon-Drive](https://github.com/jbackk-lang/J-Photon-Drive) | Operator J w geometrii helisy |
 | [KHIPU](https://github.com/jbackk-lang/KHIPU) | Koncepcyjna architektura czteroprocesorowa (TETRAGON-4CPU) |
@@ -63,7 +56,5 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [trm-dna-stabilizer](https://github.com/jbackk-lang/trm-dna-stabilizer) | DNA jako topologiczny stabilizator szumu |
 | [trm-particle-geometry](https://github.com/jbackk-lang/trm-particle-geometry) | Cząstki jako węzły geometryczne |
 | [WHITE-LASER-MAP](https://github.com/jbackk-lang/WHITE-LASER-MAP) | Model białego lasera bez fosforu |
-
 ---
-
 *Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026. Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje.*
