@@ -63,6 +63,16 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
 
+    #solar-canvas-container {
+        position: relative;
+        width: 100%;
+        background: #000;
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        border: 1px solid #232d3f;
+    }
+
     #canvas-container {
         position: relative;
         width: 100%;
@@ -198,6 +208,50 @@
 
     <!-- LEWA KOLUMNA: SYMULATOR MATRYCY HELISY (NGC 7075) -->
     <div class="simulation-panel">
+
+        <!-- PANEL: HELIX-ASTRO (Układ Słoneczny) — wstawiony nad Matrycą Potrójnej Helisy -->
+        <h2>Helix-Astro: Symulator Układu Słonecznego</h2>
+        <p style="font-size: 14px; color: var(--text-muted); margin-top: -5px; margin-bottom: 15px;">
+            Wizualizacja orbit jako punktów rezonansowych w uniwersalnej geometrii pola makro.
+            (<a href="https://github.com/jbackk-lang/Helix-Astro" target="_blank">repo Helix-Astro</a>)
+        </p>
+
+        <div id="solar-canvas-container">
+            <canvas id="solarCanvas" width="700" height="400"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="warpSlider">Warp (Prędkość czasu)</label>
+                <input type="range" id="warpSlider" min="0" max="4" step="0.05" value="1">
+            </div>
+            <div class="control-group">
+                <label for="zoomSlider">Skalowanie Układu (Zoom)</label>
+                <input type="range" id="zoomSlider" min="0.5" max="2" step="0.05" value="1">
+            </div>
+            <div class="control-group">
+                <label for="matrixSlider">Intensywność Matrycy Pól</label>
+                <input type="range" id="matrixSlider" min="0" max="100" step="1" value="30">
+            </div>
+        </div>
+
+        <div class="telemetry-board" style="margin-bottom: 25px;">
+            <div class="telemetry-item">
+                <span class="telemetry-label">Równowaga Heliosfery</span>
+                <span class="telemetry-value" id="telEquilibrium">100.00%</span>
+            </div>
+            <div class="telemetry-item">
+                <span class="telemetry-label">Rezonans Skalarny</span>
+                <span class="telemetry-value" id="telResonance">0.00 Hz</span>
+            </div>
+            <div class="telemetry-item">
+                <span class="telemetry-label">Epoka Koniunkcji</span>
+                <span class="telemetry-value" id="telEpoch">0.00 lat</span>
+            </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid #2d3748; margin: 0 0 20px;">
+
         <h2>Matryca Potrójnej Helisy: Sektor NGC 7075</h2>
         <p style="font-size: 14px; color: var(--text-muted); margin-top: -5px; margin-bottom: 15px;">
             Wizualizacja sprzężenia skalarnego geometrii pola. Sygnał helu określa punkt zwrotny rezonansu układu.
@@ -407,6 +461,135 @@
     window.addEventListener('resize', () => {
         // Canvas automatycznie skaluje się za pomocą CSS, zachowując proporcje 700x400
     });
+
+
+    // --- CZĘŚĆ 3: HELIX-ASTRO — SYMULATOR UKŁADU SŁONECZNEGO ---
+    // W osobnym IIFE, żeby zmienne (canvas, ctx, time, ...) nie kolidowały
+    // z silnikiem potrójnej helisy powyżej w tym samym pliku.
+    (function () {
+        const canvas = document.getElementById('solarCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const warpSlider = document.getElementById('warpSlider');
+        const zoomSlider = document.getElementById('zoomSlider');
+        const matrixSlider = document.getElementById('matrixSlider');
+
+        const telEquilibrium = document.getElementById('telEquilibrium');
+        const telResonance = document.getElementById('telResonance');
+        const telEpoch = document.getElementById('telEpoch');
+
+        let time = 0;
+
+        const planets = [
+            { name: 'Merkury', distance: 50, size: 3, speed: 0.04, color: '#94a3b8', angle: 0 },
+            { name: 'Wenus', distance: 80, size: 5.5, speed: 0.015, color: '#eab308', angle: 1.2 },
+            { name: 'Ziemia', distance: 120, size: 6, speed: 0.01, color: '#3b82f6', angle: 2.5 },
+            { name: 'Mars', distance: 160, size: 4.5, speed: 0.008, color: '#ef4444', angle: 0.5 },
+            { name: 'Jowisz', distance: 220, size: 14, speed: 0.002, color: '#f97316', angle: 4.1 },
+            { name: 'Saturn', distance: 280, size: 11, speed: 0.0009, color: '#facc15', angle: 1.8, hasRings: true },
+            { name: 'Uran', distance: 330, size: 8, speed: 0.0004, color: '#22d3ee', angle: 3.3 },
+            { name: 'Neptun', distance: 380, size: 7.5, speed: 0.0002, color: '#6366f1', angle: 5.0 }
+        ];
+
+        function drawSolarSimulation() {
+            const timeWarp = parseFloat(warpSlider.value);
+            const zoom = parseFloat(zoomSlider.value);
+            const matrixIntensity = parseFloat(matrixSlider.value) / 100;
+
+            time += 0.01 * timeWarp;
+
+            ctx.fillStyle = 'rgba(2, 2, 5, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            const epochYears = time / (Math.PI * 2);
+            const resonanceCalc = 14.20 + (matrixIntensity * 72.4) + (Math.sin(time * 0.1) * 0.15);
+            const equilibriumCalc = 100 - (timeWarp * 0.4) + (Math.cos(time * 0.5) * 0.05);
+
+            telEpoch.innerText = epochYears.toFixed(2) + " j.z.";
+            telResonance.innerText = resonanceCalc.toFixed(2) + " GHz";
+            telEquilibrium.innerText = Math.min(100, equilibriumCalc).toFixed(2) + "%";
+
+            if (matrixIntensity > 0) {
+                ctx.strokeStyle = `rgba(16, 185, 129, ${matrixIntensity * 0.15})`;
+                ctx.lineWidth = 1;
+                for (let i = 0; i < 3; i++) {
+                    ctx.beginPath();
+                    const offset = i * (Math.PI * 2 / 3) + time * 0.2;
+                    for (let r = 10; r < 400 * zoom; r += 4) {
+                        const waveAngle = (r * 0.02) + offset;
+                        const x = centerX + r * Math.cos(waveAngle);
+                        const y = centerY + r * Math.sin(waveAngle);
+                        if (r === 10) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                    }
+                    ctx.stroke();
+                }
+            }
+
+            const sunRadius = 24 * zoom;
+            const sunGlow = ctx.createRadialGradient(centerX, centerY, 2, centerX, centerY, sunRadius * 2.5);
+            sunGlow.addColorStop(0, '#ffffff');
+            sunGlow.addColorStop(0.2, '#f97316');
+            sunGlow.addColorStop(0.6, 'rgba(239, 68, 68, 0.3)');
+            sunGlow.addColorStop(1, 'transparent');
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, sunRadius * 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = sunGlow;
+            ctx.fill();
+
+            planets.forEach(planet => {
+                const currentDistance = planet.distance * zoom;
+
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, currentDistance, 0, Math.PI * 2);
+                ctx.strokeStyle = matrixIntensity > 0
+                    ? `rgba(16, 185, 129, ${0.05 + matrixIntensity * 0.15})`
+                    : 'rgba(255, 255, 255, 0.03)';
+                ctx.lineWidth = matrixIntensity > 0.5 ? 1.5 : 1;
+                ctx.stroke();
+
+                planet.angle += planet.speed * timeWarp * 0.5;
+
+                const planetX = centerX + currentDistance * Math.cos(planet.angle);
+                const planetY = centerY + currentDistance * Math.sin(planet.angle);
+
+                if (matrixIntensity > 0.1) {
+                    ctx.beginPath();
+                    ctx.moveTo(centerX, centerY);
+                    ctx.lineTo(planetX, planetY);
+                    ctx.strokeStyle = `rgba(16, 185, 129, ${matrixIntensity * 0.25 * Math.sin(time + planet.speed)})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+
+                ctx.beginPath();
+                ctx.arc(planetX, planetY, planet.size * (zoom * 0.8 + 0.2), 0, Math.PI * 2);
+                ctx.fillStyle = planet.color;
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(planetX, planetY, planet.size * (zoom * 0.8 + 0.2) + 2, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                if (planet.hasRings) {
+                    ctx.beginPath();
+                    ctx.ellipse(planetX, planetY, planet.size * 2 * zoom, planet.size * 0.6 * zoom, -0.2, 0, Math.PI * 2);
+                    ctx.strokeStyle = 'rgba(234, 204, 21, 0.5)';
+                    ctx.lineWidth = 2 * zoom;
+                    ctx.stroke();
+                }
+            });
+
+            requestAnimationFrame(drawSolarSimulation);
+        }
+
+        drawSolarSimulation();
+    })();
 </script>
 
 </body>
