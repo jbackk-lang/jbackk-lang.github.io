@@ -43,7 +43,7 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [FIELDCORE](https://github.com/jbackk-lang/FIELDCORE) | Kosmos jako układ dwóch skrętów pola |
 | [FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main](https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main) | Architektura AI oparta na Λ–τ–ρ |
 | [genertor-fotonow](https://github.com/jbackk-lang/genertor-fotonow) | Koncepcyjny generator fotonów oparty na skręcie pola |
-| [GIA-and-TIMDR](https://github.com/jbackk-lang/GIA-and-TIMDR) | Fundament matematyczny/logiczny całego systemu TIMDR |
+| [GIA-TIMDR]([https://github.com/jbackk-lang/GIA-and-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR)) | Fundament matematyczny/logiczny całego systemu TIMDR |
 | [GSF](https://github.com/jbackk-lang/GSF) | Globalny system finansowy jako pole informacji |
 | [J-Photon-Drive](https://github.com/jbackk-lang/J-Photon-Drive) | Operator J w geometrii helisy |
 | [KHIPU](https://github.com/jbackk-lang/KHIPU) | Koncepcyjna architektura czteroprocesorowa (TETRAGON-4CPU) |
