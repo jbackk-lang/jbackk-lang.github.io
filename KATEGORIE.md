@@ -13,6 +13,8 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [synoptyk-v2.0](https://github.com/jbackk-lang/synoptyk-v2.0) | Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4 |
 | [RADAR-TRACKING-TIMDR](https://github.com/jbackk-lang/RADAR-TRACKING-TIMDR) | Tor radarowy 1D (filtr Kalmana / cząsteczkowy) z adaptacyjną regulacją szumu (JRegulator), walidowany na realnych trasach GPS |
 | [FLIGHT-TRACKING-TIMDR](https://github.com/jbackk-lang/FLIGHT-TRACKING-TIMDR) | Śledzenie trajektorii 3D dla modeli latających (drony, RC) — dane [lat, lon, alt, t], detekcja manewrów i predykcja pozycji |
+| [TIMDR-Earthquake-Core](https://github.com/jbackk-lang/TIMDR-Earthquake-Core) | Rdzeń analizy sejsmicznej — detekcja mikro-wstrząsów, picker STA/LTA zweryfikowany 1:1 z ObsPy, tryb katalogowy na żywych danych USGS |
+| [TIMDR-Echosonda-3D](https://github.com/jbackk-lang/TIMDR-Echosonda-3D) | Analiza chmury punktów dna (batymetria) + detekcja celów w toni wodnej (ryby, ławice, obiekty sztuczne) — silnik sonarowy |
 | [analizator-gieldowy](https://github.com/jbackk-lang/analizator-gieldowy) | Analiza rynku — realne dane giełdowe, SMA/VWAP/OBV |
 | [analizator-gieldowy-2.0](https://github.com/jbackk-lang/analizator-gieldowy-2.0) | Druga generacja analizatora giełdowego (FastAPI + Streamlit) |
 | [EasySound](https://github.com/jbackk-lang/EasySound) | Filtrowanie i czyszczenie dźwięku (filtr Butterwortha) |
@@ -21,6 +23,8 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [Senscore](https://github.com/jbackk-lang/Senscore) | Pipeline filtracji sygnałów z detektorów (5-etapowy, PCA, clustering) |
 | [fusion-tools](https://github.com/jbackk-lang/fusion-tools) | Narzędzia do danych z diagnostyki plazmy (W7-X, JET, DIII-D) |
 | [TIMDR-Battery-Predict](https://github.com/jbackk-lang/TIMDR-Battery-Predict) | Predykcyjne utrzymanie ogniwa/pakietu baterii — fuzja 4 czujników, model degradacji, czas do awarii (TTF), wynik zdrowia |
+| [TIMDR-Industrial-Predict](https://github.com/jbackk-lang/TIMDR-Industrial-Predict) | Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score |
+| [TIMDR-Bio-Signals](https://github.com/jbackk-lang/TIMDR-Bio-Signals) | TIMDR dla sygnałów fizjologicznych (EKG/EEG/puls/oddech) — arytmie, anomalie impulsów, zaniki oscylacji (bezdech). To NIE jest wyrób medyczny |
 | [phi-fiber-dsp](https://github.com/jbackk-lang/phi-fiber-dsp) | Filtr DSP dla sygnałów światłowodowych |
 | [phi-topology-filter](https://github.com/jbackk-lang/phi-topology-filter) | Filtr obrazu oparty na operatorach Laplace/Sobel/curl |
 | [MAGE-IN-IMAGE-DECODER](https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER) | Modularna analiza obrazu — FFT, HSV, detekcja ruchu |
@@ -51,6 +55,7 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [probabilistic-timdr](https://github.com/jbackk-lang/probabilistic-timdr) | Prawdopodobieństwo i warunki brzegowe w TIMDR |
 | [REGULA-GIATIMA](https://github.com/jbackk-lang/REGULA-GIATIMA) | Notacja operatorowa GIATIMA |
 | [Spoleczny-Protokol-Informacyjny](https://github.com/jbackk-lang/Spoleczny-Protokol-Informacyjny) | Protokół kodowania komunikatów (TIMDERA) |
+| [THE](https://github.com/jbackk-lang/THE) | TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej) |
 | [TIMDER-Multisensory-Meditation-Engine](https://github.com/jbackk-lang/TIMDER-Multisensory-Meditation-Engine) | Multisensoryczna medytacja geometryczna |
 | [TIV](https://github.com/jbackk-lang/TIV) | Koncepcyjna "waluta informacyjna" TIMDR |
 | [Topological-Reduction-Model-TRM-Structure-Twist-and-Information-Flow](https://github.com/jbackk-lang/Topological-Reduction-Model-TRM-Structure-Twist-and-Information-Flow) | Fale topologiczne w biosferze, geologii, kosmosie |
