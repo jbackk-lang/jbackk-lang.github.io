@@ -73,7 +73,6 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [Topological-Reduction-Model-TRM](https://github.com/jbackk-lang/Topological-Reduction-Model-TRM) | Fale topologiczne w biosferze, geologii, kosmosie |
 | [topologia-informacji](https://github.com/jbackk-lang/topologia-informacji) | Centralny framework pojęciowy Λ–τ–ρ |
 | [TRM-Geometry-Core](https://github.com/jbackk-lang/TRM-Geometry-Core) | Geometria bazowa modeli TRM/TIMDR |
-| [trm-dna-stabilizer](https://github.com/jbackk-lang/trm-dna-stabilizer) | DNA jako topologiczny stabilizator szumu |
 | [trm-particle-geometry](https://github.com/jbackk-lang/trm-particle-geometry) | Cząstki jako węzły geometryczne |
 | [WHITE-LASER-MAP](https://github.com/jbackk-lang/WHITE-LASER-MAP) | Model białego lasera bez fosforu |
 ---
