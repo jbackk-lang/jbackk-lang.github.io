@@ -36,12 +36,18 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [Helix-Lock](https://github.com/jbackk-lang/Helix-Lock) | Szyfrator plików z HMAC i licznikiem odczytów |
 | [topologic](https://github.com/jbackk-lang/topologic) | Biblioteka operatorów sygnałowych: zero-crossing, z-score, korelacja kierunkowa |
 | [Senscore](https://github.com/jbackk-lang/Senscore) | Pipeline filtracji sygnałów z detektorów (5-etapowy, PCA, clustering) |
-| [fusion-tools](https://github.com/jbackk-lang/fusion-tools) | Narzędzia do danych z diagnostyki plazmy (W7-X, JET, DIII-D) |
+| [TIMDR-fusion-tools](https://github.com/jbackk-lang/TIMDR-fusion-tools) | Narzędzia do danych z diagnostyki plazmy (W7-X, JET, DIII-D, EAST) — detekcja punktów skrętu, redukcja szumu |
 | [phi-fiber-dsp](https://github.com/jbackk-lang/phi-fiber-dsp) | Filtr DSP dla sygnałów światłowodowych |
 | [phi-topology-filter](https://github.com/jbackk-lang/phi-topology-filter) | Filtr obrazu oparty na operatorach Laplace/Sobel/curl |
 | [MAGE-IN-IMAGE-DECODER](https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER) | Modularna analiza obrazu — FFT, HSV, detekcja ruchu |
 | [Helix-Astro](https://github.com/jbackk-lang/Helix-Astro) | Analiza widm astronomicznych — normalizacja, filtracja, korelacja |
 | [TIMDR-Quantum-Lattice](https://github.com/jbackk-lang/TIMDR-Quantum-Lattice) | Sprzężone oscylatory fazowe na siatce 10×10 (rodzina Kuramoto — mimo nazwy NIE mechanika kwantowa), dwa zweryfikowane cele predykcyjne dla Ω(t): lokalizacja hotspotów i czas do progu |
+| [TIMDR-Robot](https://github.com/jbackk-lang/TIMDR-Robot) | Warstwa TIMDR dla robota wieloosiowego i podsystemów (chwytak, podstawa mobilna, kamera, zasilanie) — detekcja anomalii, flota robotów, mosty integracyjne ROS2/MQTT/OPC-UA |
+| [TIMDR-Aviation-Diagnostics](https://github.com/jbackk-lang/TIMDR-Aviation-Diagnostics) | Transfer TIMDR-Core (1:1 z TIMDR-Earthquake-Core) do diagnostyki silników lotniczych — test na realnych danych degradacji silnika turbowentylatorowego, z jawnym opisem ograniczeń środowiska testowego |
+| [TIMDR-Materials-Design](https://github.com/jbackk-lang/TIMDR-Materials-Design) | 8-krokowa procedura projektowania materiału od zera metodą TIMDR (anomalia/defekt/skręt/rezonans) — każdy krok to osobny, przetestowany moduł kodu |
+| [TIMDR-Cosmology-Filters](https://github.com/jbackk-lang/TIMDR-Cosmology-Filters) | 3 filtry anomalii dla danych kosmologicznych zbudowane od zera (odstępy pików akustycznych CMB, precesja peryhelium Merkurego, napięcie Hubble'a) — realne, cytowane dane (Planck 2018, MESSENGER, SH0ES) z propagacją niepewności |
+| [TIMDR-EV-Predict](https://github.com/jbackk-lang/TIMDR-EV-Predict) | Fuzja 3 podsystemów pojazdu elektrycznego (bateria + silnik elektryczny + ładowanie/sieć) w jeden wynik zdrowia i TTF pojazdu, zasada najsłabszego ogniwa — realne dane starzenia baterii NASA PCoE, most do CAN/OBD-II |
+| [TEST-TIMDR](https://github.com/jbackk-lang/TEST-TIMDR) | Zbiór wyników empirycznych testów/audytów twierdzeń TIMDR w 5 niezależnych wątkach (kosmologia, liczby pierwsze, torsja, bezpieczeństwo, architektura wielomodułowa) — każdy z pre-rejestracją i kontrolą negatywną, uczciwie raportowane sukcesy i porażki |
 ---
 ### 🌀 Modele koncepcyjne
 *Warstwa metaforyczna, narzędzie do myślenia — nie teoria naukowa.*
@@ -65,7 +71,6 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [PC_TIMDR](https://github.com/jbackk-lang/PC_TIMDR) | Koncepcyjny procesor geometryczny F4-RED |
 | [Photo-Hel](https://github.com/jbackk-lang/Photo-Hel) | Interakcja foton–hel jako model koncepcyjny |
 | [probabilistic-timdr](https://github.com/jbackk-lang/probabilistic-timdr) | Prawdopodobieństwo i warunki brzegowe w TIMDR |
-| [REGULA-GIATIMA](https://github.com/jbackk-lang/REGULA-GIATIMA) | Notacja operatorowa GIATIMA |
 | [Spoleczny-Protokol-Informacyjny](https://github.com/jbackk-lang/Spoleczny-Protokol-Informacyjny) | Protokół kodowania komunikatów (TIMDERA) |
 | [THE_TIMDR_Hyperflow_Engine](https://github.com/jbackk-lang/THE_TIMDR_Hyperflow_Engine) | TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej) |
 | [TIMDR-Multisensory-Meditation-Engine](https://github.com/jbackk-lang/TIMDR-Multisensory-Meditation-Engine) | Multisensoryczna medytacja geometryczna |
