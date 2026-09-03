@@ -7,7 +7,6 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 *Zweryfikowany kod, realne dane, testy.*
 | Repo | Co robi |
 |---|---|
-| [math-validator](https://github.com/jbackk-lang/math-validator) | Walidator wyrażeń matematycznych — detekcja osobliwości i defektów |
 | [math-validator-v2.0](https://github.com/jbackk-lang/math-validator-v2.0) | Druga generacja walidatora, wykrywanie problemów mylnych |
 | [math-validator-3.0](https://github.com/jbackk-lang/math-validator-3.0) | Trzecia generacja — SymPy, algebra liniowa, logika zdaniowa |
 | [synoptyk-v2.0](https://github.com/jbackk-lang/synoptyk-v2.0) | Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4 |
@@ -74,6 +73,7 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [Spoleczny-Protokol-Informacyjny](https://github.com/jbackk-lang/Spoleczny-Protokol-Informacyjny) | Protokół kodowania komunikatów (TIMDERA) |
 | [THE_TIMDR_Hyperflow_Engine](https://github.com/jbackk-lang/THE_TIMDR_Hyperflow_Engine) | TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej) |
 | [TIMDR-Multisensory-Meditation-Engine](https://github.com/jbackk-lang/TIMDR-Multisensory-Meditation-Engine) | Multisensoryczna medytacja geometryczna |
+| [TIMDR-Philosophical-Map](https://github.com/jbackk-lang/TIMDR-Philosophical-Map) | Filozoficzno-logiczno-topologiczna mapa zmiany reżimów — cztery triggery (SCALE/STRUCTURE/MODEL_CONFLICT/CONTINUITY) |
 | [TIV](https://github.com/jbackk-lang/TIV) | Koncepcyjna "waluta informacyjna" TIMDR |
 | [Topological-Reduction-Model-TRM](https://github.com/jbackk-lang/Topological-Reduction-Model-TRM) | Fale topologiczne w biosferze, geologii, kosmosie |
 | [topologia-informacji](https://github.com/jbackk-lang/topologia-informacji) | Centralny framework pojęciowy Λ–τ–ρ |
