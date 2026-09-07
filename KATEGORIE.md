@@ -1,13 +1,13 @@
-## 🗂️ Struktura projektów: dwie kategorie
-Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozróżnienie jest celowe i konsekwentne:
+## 🗂️ Struktura projektów: trzy kategorie
+Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozróżnienie jest celowe i konsekwentne:
 - **Narzędzia inżynierskie** — kod zweryfikowany, działający na realnych danych, testowalny.
+- **Formalizacje TIMDR** — aksjomaty z konkretną implementacją i przechodzącymi testami, ale zweryfikowane tylko na przypadkach syntetycznych/analitycznie znanych, nie na realnych danych wejściowych.
 - **Modele koncepcyjne** — język metaforyczny (Λ–τ–ρ / TIMDR / TRM / GIA) używany jako narzędzie do myślenia, bez klasycznej warstwy obliczeniowej pod spodem. Nie są to teorie naukowe ani modele empiryczne.
 ---
 ### 🔧 Narzędzia inżynierskie
 *Zweryfikowany kod, realne dane, testy.*
 | Repo | Co robi |
 |---|---|
-| [math-validator](https://github.com/jbackk-lang/math-validator) | Walidator wyrażeń matematycznych — detekcja osobliwości i defektów |
 | [math-validator-v2.0](https://github.com/jbackk-lang/math-validator-v2.0) | Druga generacja walidatora, wykrywanie problemów mylnych |
 | [math-validator-3.0](https://github.com/jbackk-lang/math-validator-3.0) | Trzecia generacja — SymPy, algebra liniowa, logika zdaniowa |
 | [synoptyk-v2.0](https://github.com/jbackk-lang/synoptyk-v2.0) | Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4 |
@@ -48,6 +48,15 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [TIMDR-Cosmology-Filters](https://github.com/jbackk-lang/TIMDR-Cosmology-Filters) | 3 filtry anomalii dla danych kosmologicznych zbudowane od zera (odstępy pików akustycznych CMB, precesja peryhelium Merkurego, napięcie Hubble'a) — realne, cytowane dane (Planck 2018, MESSENGER, SH0ES) z propagacją niepewności |
 | [TIMDR-EV-Predict](https://github.com/jbackk-lang/TIMDR-EV-Predict) | Fuzja 3 podsystemów pojazdu elektrycznego (bateria + silnik elektryczny + ładowanie/sieć) w jeden wynik zdrowia i TTF pojazdu, zasada najsłabszego ogniwa — realne dane starzenia baterii NASA PCoE, most do CAN/OBD-II |
 | [TEST-TIMDR](https://github.com/jbackk-lang/TEST-TIMDR) | Zbiór wyników empirycznych testów/audytów twierdzeń TIMDR w 5 niezależnych wątkach (kosmologia, liczby pierwsze, torsja, bezpieczeństwo, architektura wielomodułowa) — każdy z pre-rejestracją i kontrolą negatywną, uczciwie raportowane sukcesy i porażki |
+| [TIMDR-Math-Formalism](https://github.com/jbackk-lang/TIMDR-Math-Formalism) | Formalizacja aksjomatyczna gałęzi sygnałowej (M/S) jako kodu — tempo/drift czasu + detektory anomalia/defekt/skręt, protokół pre-rejestracji/kontroli/Manna-Whitneya; 62/63 testów, zwalidowane też na realnych danych pogodowych Kraków |
+---
+### 🧮 Formalizacje TIMDR
+*Aksjomaty z konkretną, testowaną implementacją — ale zweryfikowane tylko na przypadkach syntetycznych/analitycznie znanych, nie na realnych danych. Mają realną warstwę obliczeniową (w odróżnieniu od modeli koncepcyjnych poniżej), ale bez testu na realnych danych (w odróżnieniu od narzędzi inżynierskich powyżej).*
+| Repo | Co robi |
+|---|---|
+| [TIMDR-Geometry-Formalism](https://github.com/jbackk-lang/TIMDR-Geometry-Formalism) | Dyskretny operator kształtu (Weingarten) na siatce 3D + kongruencja trajektorii Γ(t,s) dla gałęzi geometrycznej (G) — 17/17 testów na przypadkach o znanej analitycznie krzywiźnie (płaszczyzna/sfera/walec) |
+| [TIMDR-Modal-Formalism](https://github.com/jbackk-lang/TIMDR-Modal-Formalism) | Pierwsza implementacja gałęzi modalnej (K) jako kodu — modalność (f,φ,A), interferencja, rezonans modalny, mapa synchronizacji faz; 17/17 testów |
+| [TIMDR-Time-Formalism](https://github.com/jbackk-lang/TIMDR-Time-Formalism) | Chronoproces Ξ=(T,x,Γ,φ) — orkiestracja trzech gałęzi TIMDR (M/S, G, K) na wspólnym nośniku czasu bez ich utożsamiania, plus most Fouriera M/S↔K oparty na zasadzie nieoznaczoności Gabora; 18/18 testów |
 ---
 ### 🌀 Modele koncepcyjne
 *Warstwa metaforyczna, narzędzie do myślenia — nie teoria naukowa.*
@@ -61,7 +70,7 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [FIELDCORE](https://github.com/jbackk-lang/FIELDCORE) | Kosmos jako układ dwóch skrętów pola |
 | [FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main](https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main) | Architektura AI oparta na Λ–τ–ρ |
 | [genertor-fotonow](https://github.com/jbackk-lang/genertor-fotonow) | Koncepcyjny generator fotonów oparty na skręcie pola |
-| [GIA-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR) | Fundament matematyczny/logiczny całego systemu TIMDR |
+| [GIA-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR) | Fundament matematyczny/logiczny całego systemu TIMDR — teoria i aksjomaty (Axioms_S/G/K, Chronoproces Ξ); implementacje kodu żyją w repo-siostrach z kategorii „Formalizacje TIMDR" powyżej |
 | [GSF](https://github.com/jbackk-lang/GSF) | Globalny system finansowy jako pole informacji |
 | [J-Photon-Drive](https://github.com/jbackk-lang/J-Photon-Drive) | Operator J w geometrii helisy |
 | [KHIPU](https://github.com/jbackk-lang/KHIPU) | Koncepcyjna architektura czteroprocesorowa (TETRAGON-4CPU) |
@@ -74,6 +83,7 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [Spoleczny-Protokol-Informacyjny](https://github.com/jbackk-lang/Spoleczny-Protokol-Informacyjny) | Protokół kodowania komunikatów (TIMDERA) |
 | [THE_TIMDR_Hyperflow_Engine](https://github.com/jbackk-lang/THE_TIMDR_Hyperflow_Engine) | TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej) |
 | [TIMDR-Multisensory-Meditation-Engine](https://github.com/jbackk-lang/TIMDR-Multisensory-Meditation-Engine) | Multisensoryczna medytacja geometryczna |
+| [TIMDR-Philosophical-Map](https://github.com/jbackk-lang/TIMDR-Philosophical-Map) | Filozoficzno-logiczno-topologiczna mapa zmiany reżimów — cztery triggery (SCALE/STRUCTURE/MODEL_CONFLICT/CONTINUITY) |
 | [TIV](https://github.com/jbackk-lang/TIV) | Koncepcyjna "waluta informacyjna" TIMDR |
 | [Topological-Reduction-Model-TRM](https://github.com/jbackk-lang/Topological-Reduction-Model-TRM) | Fale topologiczne w biosferze, geologii, kosmosie |
 | [topologia-informacji](https://github.com/jbackk-lang/topologia-informacji) | Centralny framework pojęciowy Λ–τ–ρ |
@@ -81,4 +91,4 @@ Repozytoria w tym profilu dzielą się na dwie wyraźnie różne kategorie. Rozr
 | [trm-particle-geometry](https://github.com/jbackk-lang/trm-particle-geometry) | Cząstki jako węzły geometryczne |
 | [WHITE-LASER-MAP](https://github.com/jbackk-lang/WHITE-LASER-MAP) | Model białego lasera bez fosforu |
 ---
-*Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026. Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje.*
+*Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we wrześniu 2026 o kategorię „Formalizacje TIMDR". Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje. Kategoria „Formalizacje TIMDR" oznacza działający, przetestowany kod bez tego wymogu realnych danych.*
