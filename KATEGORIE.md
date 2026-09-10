@@ -124,6 +124,7 @@ nagłówku każdego zwendorowanego pliku).
 | universal-state-analyzer | protokół testu Manna-Whitneya (`pipeline.py`) | TIMDR-Math-Formalism |
 | TIMDR-Aviation-Diagnostics | rdzeń TIMDR-Core (transfer 1:1, opisany wprost w repo) | TIMDR-Earthquake-Core |
 | TIMDR-Quantum-Lattice | rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger) | TIMDR-META-DYNAMICS |
+| TIMDR-Quantum-Lattice | uniwersalny walidator Λ-τ-ρ-J (`meta_validator.py`) + protokół Manna-Whitneya (`pipeline.py`, zależność walidatora) | TIMDR-Math-Formalism |
 
 Chronologia integracji formalizmu Λ-τ-ρ-J (kto pierwszy, kto po kim):
 Analizator_Gieldowy_v3.0 (pierwsza, finansowa) → Synoptyk-v3 (pogodowa) →
@@ -136,5 +137,18 @@ jedyna dotąd na AGREGATOWYM stanie całego pola — nie pojedynczym kanale
 odróżnia aktywną dynamikę od ustabilizowania, statystycznie istotnie, ale
 domyślne progi klasyfikacji fazy nigdy się nie odpalają na tej skali
 danych — pełne liczby w `meta_adapter.py` tego repo).
+
+Uniwersalny walidator formalizmu (`TIMDR-Math-Formalism/timdr_formalism/meta_validator.py`,
+10 września 2026): zamiast pisać osobną walidację Λ-τ-ρ-J dla każdej
+domeny, powstał JEDEN, domenowo-agnostyczny walidator (ksztalt/zakresy,
+izolacja kanałów, diagnostyka progów fazowych, walidacja statystyczna —
+Mann-Whitney + Kołmogorow-Smirnow + stabilność faz + spójność
+między-ziarnowa), zwendorowany do TIMDR-Quantum-Lattice jako pierwszy
+klient. Zastosowany do realnego wyniku kolapsu tej siatki, potwierdził
+znane ustalenia I ujawnił nowe: kanały Λ i τ są silnie skorelowane
+rangowo podczas aktywnego kolapsu (prawdopodobnie wspólny monotoniczny
+trend obu wielkości, nie duplikat liczenia — rozróżnienie potwierdzone
+kontrastem z kontrolą negatywną), podczas gdy kanał J (rezonans)
+pozostaje niezależny nawet wtedy — brak powtórzenia błędu Ω=D+|R|.
 ---
 *Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we wrześniu 2026 o kategorię „Formalizacje TIMDR" i o sekcję powiązań kodu (10 września 2026, po uniezależnieniu repo od sibling-importu). Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje. Kategoria „Formalizacje TIMDR" oznacza działający, przetestowany kod bez tego wymogu realnych danych.*
