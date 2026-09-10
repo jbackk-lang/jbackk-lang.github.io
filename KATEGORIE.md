@@ -41,7 +41,7 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 | [phi-topology-filter](https://github.com/jbackk-lang/phi-topology-filter) | Filtr obrazu oparty na operatorach Laplace/Sobel/curl |
 | [MAGE-IN-IMAGE-DECODER](https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER) | Modularna analiza obrazu — FFT, HSV, detekcja ruchu |
 | [Helix-Astro](https://github.com/jbackk-lang/Helix-Astro) | Analiza widm astronomicznych — normalizacja, filtracja, korelacja |
-| [TIMDR-Quantum-Lattice](https://github.com/jbackk-lang/TIMDR-Quantum-Lattice) | Sprzężone oscylatory fazowe na siatce 10×10 (rodzina Kuramoto — mimo nazwy NIE mechanika kwantowa), dwa zweryfikowane cele predykcyjne dla Ω(t): lokalizacja hotspotów i czas do progu |
+| [TIMDR-Quantum-Lattice](https://github.com/jbackk-lang/TIMDR-Quantum-Lattice) | Sprzężone oscylatory fazowe na siatce 10×10 (rodzina Kuramoto — mimo nazwy NIE mechanika kwantowa), dwa zweryfikowane cele predykcyjne dla Ω(t): lokalizacja hotspotów i czas do progu; plus agregatowa integracja TIMDR-META-DYNAMICS (Λ-τ-ρ-J) — mechanizm poprawnie odróżnia aktywną dynamikę od ustabilizowania, ale domyślne progi klasyfikacji fazy nie są skalibrowane na tej skali danych |
 | [TIMDR-Robot](https://github.com/jbackk-lang/TIMDR-Robot) | Warstwa TIMDR dla robota wieloosiowego i podsystemów (chwytak, podstawa mobilna, kamera, zasilanie) — detekcja anomalii, flota robotów, mosty integracyjne ROS2/MQTT/OPC-UA |
 | [TIMDR-Aviation-Diagnostics](https://github.com/jbackk-lang/TIMDR-Aviation-Diagnostics) | Transfer TIMDR-Core (1:1 z TIMDR-Earthquake-Core) do diagnostyki silników lotniczych — test na realnych danych degradacji silnika turbowentylatorowego, z jawnym opisem ograniczeń środowiska testowego |
 | [TIMDR-Materials-Design](https://github.com/jbackk-lang/TIMDR-Materials-Design) | 8-krokowa procedura projektowania materiału od zera metodą TIMDR (anomalia/defekt/skręt/rezonans) — każdy krok to osobny, przetestowany moduł kodu |
@@ -123,12 +123,18 @@ nagłówku każdego zwendorowanego pliku).
 | Analizator_Gieldowy_v3.0 | rdzeń Λ-τ-ρ-J + FieldEvolution/MetaPredict | TIMDR-META-DYNAMICS |
 | universal-state-analyzer | protokół testu Manna-Whitneya (`pipeline.py`) | TIMDR-Math-Formalism |
 | TIMDR-Aviation-Diagnostics | rdzeń TIMDR-Core (transfer 1:1, opisany wprost w repo) | TIMDR-Earthquake-Core |
+| TIMDR-Quantum-Lattice | rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger) | TIMDR-META-DYNAMICS |
 
 Chronologia integracji formalizmu Λ-τ-ρ-J (kto pierwszy, kto po kim):
 Analizator_Gieldowy_v3.0 (pierwsza, finansowa) → Synoptyk-v3 (pogodowa) →
 TIMDR-Earthquake-Core (sejsmiczna) → TIMDR-Industrial-Predict (wibracja
 łożysk, dane realne CWRU) → TIMDR-Grid-Monitor (starzenie sieci
 energetycznej, reużywa też całą warstwę okienkowania z
-TIMDR-Earthquake-Core, nie tylko rdzeń).
+TIMDR-Earthquake-Core, nie tylko rdzeń) → TIMDR-Quantum-Lattice (szósta,
+jedyna dotąd na AGREGATOWYM stanie całego pola — nie pojedynczym kanale
+1D — z uczciwym wynikiem częściowo negatywnym: mechanizm poprawnie
+odróżnia aktywną dynamikę od ustabilizowania, statystycznie istotnie, ale
+domyślne progi klasyfikacji fazy nigdy się nie odpalają na tej skali
+danych — pełne liczby w `meta_adapter.py` tego repo).
 ---
 *Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we wrześniu 2026 o kategorię „Formalizacje TIMDR" i o sekcję powiązań kodu (10 września 2026, po uniezależnieniu repo od sibling-importu). Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje. Kategoria „Formalizacje TIMDR" oznacza działający, przetestowany kod bez tego wymogu realnych danych.*
