@@ -49,6 +49,7 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 | [TIMDR-EV-Predict](https://github.com/jbackk-lang/TIMDR-EV-Predict) | Fuzja 3 podsystemów pojazdu elektrycznego (bateria + silnik elektryczny + ładowanie/sieć) w jeden wynik zdrowia i TTF pojazdu, zasada najsłabszego ogniwa — realne dane starzenia baterii NASA PCoE, most do CAN/OBD-II |
 | [TEST-TIMDR](https://github.com/jbackk-lang/TEST-TIMDR) | Zbiór wyników empirycznych testów/audytów twierdzeń TIMDR w 5 niezależnych wątkach (kosmologia, liczby pierwsze, torsja, bezpieczeństwo, architektura wielomodułowa) — każdy z pre-rejestracją i kontrolą negatywną, uczciwie raportowane sukcesy i porażki |
 | [TIMDR-Math-Formalism](https://github.com/jbackk-lang/TIMDR-Math-Formalism) | Formalizacja aksjomatyczna gałęzi sygnałowej (M/S) jako kodu — tempo/drift czasu + detektory anomalia/defekt/skręt, protokół pre-rejestracji/kontroli/Manna-Whitneya; 62/63 testów, zwalidowane też na realnych danych pogodowych Kraków |
+| [Synoptyk-v3](https://github.com/jbackk-lang/Synoptyk-v3) | Trzecie podejście do prognozy pogody w tym ekosystemie — pogoda jako pole na siatce geograficznej ("membrana", nie niezależne szeregi czasowe per stacja), analiza widmowa/geometria różniczkowa (fronty, wiry, rezonans międzypolowy), realne dane Open-Meteo (live + archiwum, 10-dniowy backtest trafności) |
 ---
 ### 🧮 Formalizacje TIMDR
 *Aksjomaty z konkretną, testowaną implementacją — ale zweryfikowane tylko na przypadkach syntetycznych/analitycznie znanych, nie na realnych danych. Mają realną warstwę obliczeniową (w odróżnieniu od modeli koncepcyjnych poniżej), ale bez testu na realnych danych (w odróżnieniu od narzędzi inżynierskich powyżej).*
@@ -91,4 +92,43 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 | [trm-particle-geometry](https://github.com/jbackk-lang/trm-particle-geometry) | Cząstki jako węzły geometryczne |
 | [WHITE-LASER-MAP](https://github.com/jbackk-lang/WHITE-LASER-MAP) | Model białego lasera bez fosforu |
 ---
-*Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we wrześniu 2026 o kategorię „Formalizacje TIMDR". Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje. Kategoria „Formalizacje TIMDR" oznacza działający, przetestowany kod bez tego wymogu realnych danych.*
+### 🔗 Powiązania kodu między repozytoriami (pochodzenie wspólnych fragmentów)
+
+Kilka repozytoriów z kategorii „Narzędzia inżynierskie" powstało przez
+**wielokrotne użycie tego samego, raz napisanego i przetestowanego kodu**
+(formalizm Λ-τ-ρ-J z TIMDR-META-DYNAMICS, rdzeń sejsmiczny flow/twist/trm z
+TIMDR-Earthquake-Core, protokół Manna-Whitneya z TIMDR-Math-Formalism),
+zamiast pisania tej samej matematyki od nowa w każdym repo. **Do
+2026-09-10 to współdzielenie działało przez sibling-import w czasie
+wykonania** (repo B ładowało plik z repo A, wymagając obu folderów obok
+siebie na dysku, w konkretnym, jednomaszynowym układzie katalogów). **Od
+2026-09-10 każde z poniższych repo jest niezależne** — kod współdzielony
+został zwendorowany (skopiowany 1:1, z jawnym nagłówkiem "ZWENDOROWANE" w
+każdym pliku) do repo, które go używa, więc każde repo działa samodzielnie
+po sklonowaniu WYŁĄCZNIE siebie, bez wymogu posiadania innych repo obok.
+Poniższa tabela dokumentuje to **pochodzenie/pokrewieństwo kodu**, nie
+zależność uruchomieniową — jeśli źródłowe repo kiedyś zmieni tę logikę,
+kopie NIE zaktualizują się automatycznie (świadomy kompromis, opisany w
+nagłówku każdego zwendorowanego pliku).
+
+| Repo (używa kopii) | Zwendorowany fragment | Pochodzenie (oryginał) |
+|---|---|---|
+| TIMDR-Grid-Monitor | rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger) | TIMDR-META-DYNAMICS |
+| TIMDR-Grid-Monitor | rdzeń sejsmiczny (flow/twist/trm) + warstwa okienkowania meta-serii | TIMDR-Earthquake-Core |
+| TIMDR-Industrial-Predict | rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger) | TIMDR-META-DYNAMICS |
+| TIMDR-Industrial-Predict | rdzeń sejsmiczny (flow/trm, domenowo-niezależne) | TIMDR-Earthquake-Core |
+| TIMDR-Earthquake-Core | rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger) | TIMDR-META-DYNAMICS |
+| TIMDR-Earthquake-Core | protokół testu Manna-Whitneya (`pipeline.py`) | TIMDR-Math-Formalism |
+| Synoptyk-v3 | rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger) | TIMDR-META-DYNAMICS |
+| Analizator_Gieldowy_v3.0 | rdzeń Λ-τ-ρ-J + FieldEvolution/MetaPredict | TIMDR-META-DYNAMICS |
+| universal-state-analyzer | protokół testu Manna-Whitneya (`pipeline.py`) | TIMDR-Math-Formalism |
+| TIMDR-Aviation-Diagnostics | rdzeń TIMDR-Core (transfer 1:1, opisany wprost w repo) | TIMDR-Earthquake-Core |
+
+Chronologia integracji formalizmu Λ-τ-ρ-J (kto pierwszy, kto po kim):
+Analizator_Gieldowy_v3.0 (pierwsza, finansowa) → Synoptyk-v3 (pogodowa) →
+TIMDR-Earthquake-Core (sejsmiczna) → TIMDR-Industrial-Predict (wibracja
+łożysk, dane realne CWRU) → TIMDR-Grid-Monitor (starzenie sieci
+energetycznej, reużywa też całą warstwę okienkowania z
+TIMDR-Earthquake-Core, nie tylko rdzeń).
+---
+*Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we wrześniu 2026 o kategorię „Formalizacje TIMDR" i o sekcję powiązań kodu (10 września 2026, po uniezależnieniu repo od sibling-importu). Kategoria „narzędzia inżynierskie" oznacza, że w repozytorium znajduje się działający kod przetwarzający realne dane wejściowe — nie jest to gwarancja bezbłędności, tylko potwierdzenie, że narzędzie robi to, co deklaruje. Kategoria „Formalizacje TIMDR" oznacza działający, przetestowany kod bez tego wymogu realnych danych.*
