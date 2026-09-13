@@ -158,8 +158,7 @@
         padding: 20px;
         border-radius: 8px;
         border: 1px solid #2d3748;
-        max-height: 85vh;
-        overflow-y: auto;
+        max-height: none;
     }
 
     .repo {
@@ -246,34 +245,157 @@
 
 <h1>Zintegrowany Panel Badawczy: jbackk-lang</h1>
 
-<svg width="100%" viewBox="0 0 680 100" xmlns="http://www.w3.org/2000/svg" role="img" style="margin-bottom: 20px; max-width: 680px; display: block;">
-<title>Cztery gałęzie TIMDR</title>
-<desc>M/S sygnał, G geometria, K modalny, meta-dynamika Λ-τ-ρ-J — cztery niezależne konstrukcje matematyczne TIMDR.</desc>
-<g>
-<rect x="40" y="20" width="135" height="56" rx="6" fill="var(--panel-bg)" stroke="var(--accent-blue)" stroke-width="1"/>
-<rect x="40" y="20" width="3" height="56" fill="var(--accent-blue)"/>
-<text x="107.5" y="42" text-anchor="middle" font-family="inherit" font-size="14" font-weight="600" fill="var(--text-color)">M/S — sygnał</text>
-<text x="107.5" y="60" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text-muted)">Anomalia, skręt</text>
-</g>
-<g>
-<rect x="190" y="20" width="135" height="56" rx="6" fill="var(--panel-bg)" stroke="#38b2ac" stroke-width="1"/>
-<rect x="190" y="20" width="3" height="56" fill="#38b2ac"/>
-<text x="257.5" y="42" text-anchor="middle" font-family="inherit" font-size="14" font-weight="600" fill="var(--text-color)">G — geometria</text>
-<text x="257.5" y="60" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text-muted)">Skręt, krzywizna</text>
-</g>
-<g>
-<rect x="340" y="20" width="135" height="56" rx="6" fill="var(--panel-bg)" stroke="var(--accent-purple)" stroke-width="1"/>
-<rect x="340" y="20" width="3" height="56" fill="var(--accent-purple)"/>
-<text x="407.5" y="42" text-anchor="middle" font-family="inherit" font-size="14" font-weight="600" fill="var(--text-color)">K — modalny</text>
-<text x="407.5" y="60" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text-muted)">Rezonans fazowy</text>
-</g>
-<g>
-<rect x="490" y="20" width="135" height="56" rx="6" fill="var(--panel-bg)" stroke="#ed8936" stroke-width="1"/>
-<rect x="490" y="20" width="3" height="56" fill="#ed8936"/>
-<text x="557.5" y="42" text-anchor="middle" font-family="inherit" font-size="14" font-weight="600" fill="var(--text-color)">Meta-dynamika</text>
-<text x="557.5" y="60" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text-muted)">4 miary, 6 domen</text>
-</g>
-</svg>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:24px;">
+
+<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">M/S — sygnał w rurze 2σ</p>
+<canvas id="c3dMS" style="width:100%;height:200px;display:block;"></canvas>
+</div>
+
+<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">G — normalne na sferze, Δp</p>
+<canvas id="c3dG" style="width:100%;height:200px;display:block;"></canvas>
+</div>
+
+<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">K — dwie spirale fazowe</p>
+<canvas id="c3dK" style="width:100%;height:200px;display:block;"></canvas>
+</div>
+
+<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">Meta-dynamika — 4 spirale Λτρj</p>
+<canvas id="c3dMeta" style="width:100%;height:200px;display:block;"></canvas>
+</div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  function setupScene(canvasId, height){
+    var canvas = document.getElementById(canvasId);
+    var container = canvas.parentElement;
+    var w = container.clientWidth || 260;
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(45, w/height, 0.1, 100);
+    var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
+    renderer.setClearColor(0x000000,0);
+    renderer.setSize(w,height);
+    renderer.setPixelRatio(window.devicePixelRatio||1);
+    var group = new THREE.Group();
+    scene.add(group);
+    var state = {dragging:false,lastX:0,lastY:0};
+    canvas.style.cursor='grab';
+    canvas.addEventListener('pointerdown',function(e){state.dragging=true;state.lastX=e.clientX;state.lastY=e.clientY;canvas.style.cursor='grabbing';});
+    window.addEventListener('pointerup',function(){state.dragging=false;canvas.style.cursor='grab';});
+    window.addEventListener('pointermove',function(e){
+      if(!state.dragging) return;
+      var dx=e.clientX-state.lastX, dy=e.clientY-state.lastY;
+      state.lastX=e.clientX; state.lastY=e.clientY;
+      group.rotation.y += dx*0.01;
+      group.rotation.x += dy*0.01;
+    });
+    return {scene:scene,camera:camera,renderer:renderer,group:group,state:state,canvas:canvas,height:height};
+  }
+
+  var msS = setupScene('c3dMS', 200);
+  msS.camera.position.set(6,4,8); msS.camera.lookAt(0,0,0);
+  var n=60, sig=[];
+  for (var i=0;i<n;i++){
+    var v = Math.sin(i/6)*1.2 + (Math.random()-0.5)*0.5;
+    if (i===22) v += 2.6;
+    if (i===45) v -= 2.4;
+    sig.push(v);
+  }
+  var mean = sig.reduce(function(a,b){return a+b;},0)/n;
+  var std = Math.sqrt(sig.reduce(function(a,b){return a+(b-mean)*(b-mean);},0)/n);
+  var tubeGeo = new THREE.CylinderGeometry(2*std, 2*std, 6.4, 24, 1, true);
+  tubeGeo.rotateZ(Math.PI/2);
+  var tube = new THREE.Mesh(tubeGeo, new THREE.MeshBasicMaterial({color:0x4ea3ff, transparent:true, opacity:0.2, side:THREE.DoubleSide}));
+  tube.position.y = mean;
+  msS.group.add(tube);
+  var msPts = sig.map(function(v,idx){ return new THREE.Vector3((idx/n)*6-3, v, 0); });
+  msS.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(msPts), new THREE.LineBasicMaterial({color:0x4ea3ff})));
+  sig.forEach(function(v,idx){
+    if (v>mean+2*std || v<mean-2*std){
+      var sph = new THREE.Mesh(new THREE.SphereGeometry(0.12,12,12), new THREE.MeshBasicMaterial({color:0xfc8181}));
+      sph.position.set((idx/n)*6-3, v, 0);
+      msS.group.add(sph);
+    }
+  });
+
+  var gS = setupScene('c3dG', 200);
+  gS.camera.position.set(4,3,5); gS.camera.lookAt(0,0,0);
+  gS.group.add(new THREE.Mesh(new THREE.SphereGeometry(2,24,16), new THREE.MeshBasicMaterial({color:0x38b2ac, wireframe:true, transparent:true, opacity:0.55})));
+  function spherePoint(theta,phi){ return new THREE.Vector3(2*Math.sin(phi)*Math.cos(theta), 2*Math.cos(phi), 2*Math.sin(phi)*Math.sin(theta)); }
+  var p1 = spherePoint(0.2,1.2), p2 = spherePoint(0.6,1.2);
+  [p1,p2].forEach(function(p){
+    var dot = new THREE.Mesh(new THREE.SphereGeometry(0.09,10,10), new THREE.MeshBasicMaterial({color:0xeee}));
+    dot.position.copy(p);
+    gS.group.add(dot);
+  });
+  [[p1],[p2]].forEach(function(arr){
+    var p = arr[0]; var nDir = p.clone().normalize();
+    var end = p.clone().add(nDir.multiplyScalar(1.1));
+    gS.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([p,end]), new THREE.LineBasicMaterial({color:0x9f7aea})));
+  });
+  gS.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([p1,p2]), new THREE.LineBasicMaterial({color:0xed8936})));
+
+  var kS = setupScene('c3dK', 200);
+  kS.camera.position.set(5,4,7); kS.camera.lookAt(0,0,0);
+  var steps=200, turns=4, kPts1=[], kPts2=[];
+  for (var s=0;s<=steps;s++){
+    var frac = s/steps;
+    var x = frac*6-3;
+    var t1 = 2*Math.PI*turns*frac;
+    var t2 = 2*Math.PI*turns*frac*0.8 + 1.2;
+    kPts1.push(new THREE.Vector3(x, Math.cos(t1), Math.sin(t1)));
+    kPts2.push(new THREE.Vector3(x, Math.cos(t2)*1.6, Math.sin(t2)*1.6));
+  }
+  kS.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(kPts1), new THREE.LineBasicMaterial({color:0x4ea3ff})));
+  kS.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(kPts2), new THREE.LineBasicMaterial({color:0x9f7aea})));
+
+  var metaS = setupScene('c3dMeta', 200);
+  metaS.camera.position.set(10,6,12); metaS.camera.lookAt(0,0,0);
+  var mOffsets=[-4.5,-1.5,1.5,4.5];
+  var mColors=[0x4ea3ff,0xed8936,0x38b2ac,0xecc94b];
+  var mFuncs=[
+    function(frac){ return 0.3+Math.sqrt(frac*40)*0.35; },
+    function(frac){ return 1.2+Math.sin(frac*40/5)*0.5; },
+    function(frac){ return 2.2*Math.exp(-frac*40/25); },
+    function(frac){ return 0.2+2/(1+Math.exp(-(frac*40-20)/4)); }
+  ];
+  mFuncs.forEach(function(fn,idx){
+    var pts=[], mSteps=150, mTurns=5;
+    for (var s2=0;s2<=mSteps;s2++){
+      var frac2 = s2/mSteps;
+      var r = fn(frac2);
+      var t = 2*Math.PI*mTurns*frac2;
+      var y = -2.5+frac2*5;
+      pts.push(new THREE.Vector3(mOffsets[idx]+r*Math.cos(t), y, r*Math.sin(t)));
+    }
+    metaS.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({color:mColors[idx]})));
+  });
+
+  var allScenes = [msS,gS,kS,metaS];
+  function animate(){
+    requestAnimationFrame(animate);
+    allScenes.forEach(function(sc){
+      if (!sc.state.dragging) sc.group.rotation.y += 0.004;
+      sc.renderer.render(sc.scene, sc.camera);
+    });
+  }
+  animate();
+
+  window.addEventListener('resize', function(){
+    allScenes.forEach(function(sc){
+      var w = sc.canvas.parentElement.clientWidth || 260;
+      sc.camera.aspect = w/sc.height;
+      sc.camera.updateProjectionMatrix();
+      sc.renderer.setSize(w, sc.height);
+    });
+  });
+})();
+</script>
 
 <div class="dashboard-container">
 
