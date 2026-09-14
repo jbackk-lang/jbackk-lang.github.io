@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katalog repozytoriów — jbackk-lang</title>
+<style>
+    :root {
+        --bg-color: #0d0d11;
+        --panel-bg: #16161f;
+        --accent-blue: #4ea3ff;
+        --accent-gold: #ecc94b;
+        --accent-purple: #9f7aea;
+        --accent-green: #48bb78;
+        --text-color: #eee;
+        --text-muted: #a0aec0;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        padding: 20px;
+        margin: 0;
+        box-sizing: border-box;
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1, h2 { font-weight: 600; letter-spacing: -0.5px; }
+    h1 { color: #fff; border-bottom: 1px solid #2d3748; padding-bottom: 10px; margin-top: 0; }
+    h2 { color: #fff; margin-top: 40px; }
+    a { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    .back-link { display: inline-block; margin-bottom: 18px; font-size: 14px; color: var(--text-muted); }
+    .back-link:hover { color: var(--accent-blue); }
+    .intro {
+        background: var(--panel-bg);
+        border: 1px solid #2d3748;
+        border-radius: 8px;
+        padding: 18px 22px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+    .intro strong { color: var(--text-color); }
+    .section-desc { color: var(--text-muted); font-size: 13px; font-style: italic; margin: -6px 0 16px; }
+    .repos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 12px;
+    }
+    .repo {
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 6px;
+        border-left: 3px solid var(--accent-purple);
+        transition: transform 0.15s, background 0.15s;
+    }
+    .repo:hover { transform: translateX(3px); background: rgba(255, 255, 255, 0.05); }
+    .repo a { font-weight: 600; font-size: 14px; }
+    .repo-desc { font-size: 13px; color: var(--text-muted); margin: 6px 0 0; line-height: 1.4; }
+    .repo-flag {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--accent-gold);
+        background: rgba(236, 201, 75, 0.08);
+        border: 1px solid rgba(236, 201, 75, 0.3);
+        border-radius: 4px;
+        padding: 6px 8px;
+        line-height: 1.4;
+    }
+    .moved-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 10px;
+        vertical-align: middle;
+        margin-left: 4px;
+    }
+    .moved-archive { background: rgba(159, 122, 234, 0.15); color: #c9b3f5; border: 1px solid rgba(159, 122, 234, 0.4); }
+    .moved-gia { background: rgba(78, 163, 255, 0.15); color: #a9d3ff; border: 1px solid rgba(78, 163, 255, 0.4); }
+    section.engineering { border-top: 3px solid var(--accent-green); padding-top: 4px; }
+    section.formalism { border-top: 3px solid var(--accent-blue); padding-top: 4px; }
+    section.concept { border-top: 3px solid var(--accent-purple); padding-top: 4px; }
+    table.lineage {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    table.lineage th, table.lineage td {
+        border-bottom: 1px solid #2d3748;
+        padding: 8px 10px;
+        text-align: left;
+    }
+    table.lineage th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #2d3748; font-size: 12px; color: #718096; font-style: italic; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="index.html">&larr; wróć do panelu głównego</a>
+<h1>🗂️ Katalog repozytoriów: co gdzie mieszka</h1>
+
+<div class="intro">
+Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie: <strong>narzędzia inżynierskie</strong>
+(kod zweryfikowany na realnych danych), <strong>formalizacje TIMDR</strong> (aksjomaty z testowaną
+implementacją, ale bez walidacji na realnych danych) i <strong>modele koncepcyjne</strong> (metafory,
+narzędzie do myślenia — nie teorie naukowe).
+<br><br>
+<strong>Konsolidacja z 2026-09-14:</strong> 4 repozytoria formalizmów (Math/Geometry/Modal/Time) zostały
+scalone jako podkatalogi <a href="https://github.com/jbackk-lang/GIA-TIMDR" target="_blank">GIA-TIMDR</a>,
+a 16 repozytoriów modeli koncepcyjnych — jako podkatalogi
+<a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive" target="_blank">TIMDR-Concept-Archive</a>,
+oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów. Poniższe odznaki
+(📦 / 🧮) pokazują, które repo się przeniosło i dokąd.
+</div>
+
+<section class="engineering">
+<h2>🔧 🔧 Narzędzia inżynierskie</h2>
+<p class="section-desc">Zweryfikowany kod, realne dane, testy.</p>
+<div class="repos-grid">
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/math-validator-v2.0" target="_blank">math-validator-v2.0</a> 
+        <div class="repo-desc">Druga generacja walidatora, wykrywanie problemów mylnych</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/math-validator-3.0" target="_blank">math-validator-3.0</a> 
+        <div class="repo-desc">Trzecia generacja — SymPy, algebra liniowa, logika zdaniowa</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/synoptyk-v2.0" target="_blank">synoptyk-v2.0</a> 
+        <div class="repo-desc">Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/SYNOPTYK-ARCTIC" target="_blank">SYNOPTYK-ARCTIC</a> 
+        <div class="repo-desc">Wariant Synoptyka dla stacji arktycznej (Longyearbyen) — realny, zmierzony bias/MAE prognozy vs archiwum Open-Meteo (backtest 90 dni), dashboard www</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/RADAR-TRACKING" target="_blank">RADAR-TRACKING</a> 
+        <div class="repo-desc">Wcześniejsza, bazowa wersja toru radarowego (TRM/GIA/TIMDR, klastrowanie przez KD-tree, asocjacja węgierska) — zobacz też RADAR-TRACKING-TIMDR (rozszerzona wersja)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/RADAR-TRACKING-TIMDR" target="_blank">RADAR-TRACKING-TIMDR</a> 
+        <div class="repo-desc">Tor radarowy 1D (filtr Kalmana / cząsteczkowy) z adaptacyjną regulacją szumu (JRegulator), walidowany na realnych trasach GPS</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Radar-Module" target="_blank">TIMDR-Radar-Module</a> 
+        <div class="repo-desc">Moduł RCS (rezonans w reżimie Mie) dla sygnałów radarowych</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/FLIGHT-TRACKING-TIMDR" target="_blank">FLIGHT-TRACKING-TIMDR</a> 
+        <div class="repo-desc">Śledzenie trajektorii 3D dla modeli latających (drony, RC) — filtr Kalmana, detekcja manewrów, fuzja radar+IMU; walidowane na danych syntetycznych, nie na realnych lotach</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Earthquake-Core" target="_blank">TIMDR-Earthquake-Core</a> 
+        <div class="repo-desc">Rdzeń analizy sejsmicznej — detekcja mikro-wstrząsów, picker STA/LTA zweryfikowany 1:1 z ObsPy, tryb katalogowy na żywych danych USGS; test trybu prekursorowego dał wynik negatywny (brak sygnału), udokumentowane wprost w repo</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Echosonda-3D" target="_blank">TIMDR-Echosonda-3D</a> 
+        <div class="repo-desc">Analiza chmury punktów dna (batymetria) + detekcja celów w toni wodnej (ryby, ławice, obiekty sztuczne) — silnik sonarowy</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Grid-Monitor" target="_blank">TIMDR-Grid-Monitor</a> 
+        <div class="repo-desc">Monitoring starzenia kabli energetycznych (model Arrhenius) + alerty przekroczenia reżimu</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-DNA" target="_blank">TIMDR-DNA</a> 
+        <div class="repo-desc">Detekcja anomalii głębokości pokrycia sekwencjonowania (styl CNV) — narzędzie badawcze, silne zastrzeżenie w repo: to NIE jest diagnostyka medyczna</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Bio-Signals" target="_blank">TIMDR-Bio-Signals</a> 
+        <div class="repo-desc">TIMDR dla sygnałów fizjologicznych (EKG/EEG/puls/oddech) — arytmie, anomalie impulsów, zaniki oscylacji (bezdech). To NIE jest wyrób medyczny</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/analizator-gieldowy" target="_blank">analizator-gieldowy</a> 
+        <div class="repo-desc">Analiza rynku — realne dane giełdowe, SMA/VWAP/OBV</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/analizator-gieldowy-2.0" target="_blank">analizator-gieldowy-2.0</a> 
+        <div class="repo-desc">Druga generacja analizatora giełdowego (FastAPI + Streamlit)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Analizator_Gieldowy_v3.0" target="_blank">Analizator_Gieldowy_v3.0</a> 
+        <div class="repo-desc">Trzecia generacja — sygnały TIMDR na realnych danych z yfinance. To NIE jest doradztwo inwestycyjne</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/deliverable_timdr_finanse" target="_blank">deliverable_timdr_finanse</a> 
+        <div class="repo-desc">Rdzeń TIMDR dla danych finansowych + ringdown_resonance() — narzędzie badawczo-edukacyjne, nie doradztwo inwestycyjne</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Crypto-Graph" target="_blank">TIMDR-Crypto-Graph</a> 
+        <div class="repo-desc">Graf transakcji (węzły=portfele, krawędzie=transfery) z rdzeniem helisa/rezonans/defekt do detekcji anomalii AML — zweryfikowany ślepy punkt self-eq, poprawka (kalibrowany eq + żywe dane) i peer-group eq po kohortach niezależnych od grafu</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/universal-state-analyzer" target="_blank">universal-state-analyzer</a> 
+        <div class="repo-desc">Źródłowa implementacja ringdown_resonance() (opis powygaśnięciowego, tłumionego wygaszania oscylacji sygnału po zdarzeniu), zwalidowana na syntetycznym ground truth</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-META-DYNAMICS" target="_blank">TIMDR-META-DYNAMICS</a> 
+        <div class="repo-desc">Symulacja i wizualizacja meta-przepływu (krzywizna/skręt pola, MetaPredict z tłumieniem)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Battery-Predict" target="_blank">TIMDR-Battery-Predict</a> 
+        <div class="repo-desc">Predykcyjne utrzymanie ogniwa/pakietu baterii — fuzja 4 czujników, model degradacji, czas do awarii (TTF), wynik zdrowia</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Industrial-Predict" target="_blank">TIMDR-Industrial-Predict</a> 
+        <div class="repo-desc">Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Security-Module" target="_blank">TIMDR-Security-Module</a> 
+        <div class="repo-desc">Detekcja anomalii w ruchu/zdarzeniach sieciowych na bazie sygnału stanu TIMDR</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/KHIPU-NEURAL" target="_blank">KHIPU-NEURAL</a> 
+        <div class="repo-desc">Test, czy koncepcja State9/GIPU z KHIPU przekłada się na moduł sieci neuronowej — wynik mieszany, jawnie opisany (pomaga przy zadaniach dyskretnych, szkodzi przy ciągłych)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/EasySound" target="_blank">EasySound</a> 
+        <div class="repo-desc">Filtrowanie i czyszczenie dźwięku (filtr Butterwortha)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Helix-Lock" target="_blank">Helix-Lock</a> 
+        <div class="repo-desc">Szyfrator plików z HMAC i licznikiem odczytów</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/topologic" target="_blank">topologic</a> 
+        <div class="repo-desc">Biblioteka operatorów sygnałowych: zero-crossing, z-score, korelacja kierunkowa</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Senscore" target="_blank">Senscore</a> 
+        <div class="repo-desc">Pipeline filtracji sygnałów z detektorów (5-etapowy, PCA, clustering)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-fusion-tools" target="_blank">TIMDR-fusion-tools</a> 
+        <div class="repo-desc">Narzędzia do danych z diagnostyki plazmy (W7-X, JET, DIII-D, EAST) — detekcja punktów skrętu, redukcja szumu</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/phi-fiber-dsp" target="_blank">phi-fiber-dsp</a> 
+        <div class="repo-desc">Filtr DSP dla sygnałów światłowodowych</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/phi-topology-filter" target="_blank">phi-topology-filter</a> 
+        <div class="repo-desc">Filtr obrazu oparty na operatorach Laplace/Sobel/curl</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER" target="_blank">MAGE-IN-IMAGE-DECODER</a> 
+        <div class="repo-desc">Modularna analiza obrazu — FFT, HSV, detekcja ruchu</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Helix-Astro" target="_blank">Helix-Astro</a> 
+        <div class="repo-desc">Analiza widm astronomicznych — normalizacja, filtracja, korelacja</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TIMDR-Quantum-Lattice" target="_blank">TIMDR-Quantum-Lattice</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Sprzężone oscylatory fazowe na siatce 10×10 (rodzina Kuramoto — mimo nazwy NIE mechanika kwantowa), dwa zweryfikowane cele predykcyjne dla Ω(t): lokalizacja hotspotów i czas do progu; plus agregatowa integracja TIMDR-META-DYNAMICS (Λ-τ-ρ-J) — mechanizm poprawnie odróżnia aktywną dynamikę od ustabilizowania, ale domyślne progi klasyfikacji fazy nie są skalibrowane na tej skali danych</div>
+        <div class="repo-flag">⚠️ Ma realny, zweryfikowany kod (8 plików kodu) — charakterem bliżej mu do narzędzi inżynierskich niż do reszty archiwum, ale trafiło tu razem z pozostałymi 15 repo koncepcyjnymi. Zostawione w archiwum decyzją autora (2026-09-14) — historia i kod są kompletne.</div>
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Robot" target="_blank">TIMDR-Robot</a> 
+        <div class="repo-desc">Warstwa TIMDR dla robota wieloosiowego i podsystemów (chwytak, podstawa mobilna, kamera, zasilanie) — detekcja anomalii, flota robotów, mosty integracyjne ROS2/MQTT/OPC-UA</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Aviation-Diagnostics" target="_blank">TIMDR-Aviation-Diagnostics</a> 
+        <div class="repo-desc">Transfer TIMDR-Core (1:1 z TIMDR-Earthquake-Core) do diagnostyki silników lotniczych — test na realnych danych degradacji silnika turbowentylatorowego, z jawnym opisem ograniczeń środowiska testowego</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Materials-Design" target="_blank">TIMDR-Materials-Design</a> 
+        <div class="repo-desc">8-krokowa procedura projektowania materiału od zera metodą TIMDR (anomalia/defekt/skręt/rezonans) — każdy krok to osobny, przetestowany moduł kodu</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Cosmology-Filters" target="_blank">TIMDR-Cosmology-Filters</a> 
+        <div class="repo-desc">3 filtry anomalii dla danych kosmologicznych zbudowane od zera (odstępy pików akustycznych CMB, precesja peryhelium Merkurego, napięcie Hubble&#x27;a) — realne, cytowane dane (Planck 2018, MESSENGER, SH0ES) z propagacją niepewności</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-EV-Predict" target="_blank">TIMDR-EV-Predict</a> 
+        <div class="repo-desc">Fuzja 3 podsystemów pojazdu elektrycznego (bateria + silnik elektryczny + ładowanie/sieć) w jeden wynik zdrowia i TTF pojazdu, zasada najsłabszego ogniwa — realne dane starzenia baterii NASA PCoE, most do CAN/OBD-II</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TEST-TIMDR" target="_blank">TEST-TIMDR</a> 
+        <div class="repo-desc">Zbiór wyników empirycznych testów/audytów twierdzeń TIMDR w 5 niezależnych wątkach (kosmologia, liczby pierwsze, torsja, bezpieczeństwo, architektura wielomodułowa) — każdy z pre-rejestracją i kontrolą negatywną, uczciwie raportowane sukcesy i porażki</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Synoptyk-v3" target="_blank">Synoptyk-v3</a> 
+        <div class="repo-desc">Trzecie podejście do prognozy pogody w tym ekosystemie — pogoda jako pole na siatce geograficznej (&quot;membrana&quot;, nie niezależne szeregi czasowe per stacja), analiza widmowa/geometria różniczkowa (fronty, wiry, rezonans międzypolowy), realne dane Open-Meteo (live + archiwum, 10-dniowy backtest trafności)</div>
+        
+      </div>
+</div>
+</section>
+
+<section class="formalism">
+<h2>🧮 🧮 Formalizacje TIMDR</h2>
+<p class="section-desc">Aksjomaty z konkretną, testowaną implementacją — ale zweryfikowane tylko na przypadkach syntetycznych/analitycznie znanych, nie na realnych danych. Mają realną warstwę obliczeniową (w odróżnieniu od modeli koncepcyjnych poniżej), ale bez testu na realnych danych (w odróżnieniu od narzędzi inżynierskich powyżej).</p>
+<div class="repos-grid">
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Math-Formalism" target="_blank">TIMDR-Math-Formalism</a> <span class="moved-badge moved-gia">🧮 w GIA-TIMDR</span>
+        <div class="repo-desc">Formalizacja aksjomatyczna gałęzi sygnałowej (M/S) jako kodu — tempo/drift czasu + detektory anomalia/defekt/skręt, protokół pre-rejestracji/kontroli/Manna-Whitneya; 62/63 testów, zwalidowane też na realnych danych pogodowych Kraków</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Geometry-Formalism" target="_blank">TIMDR-Geometry-Formalism</a> <span class="moved-badge moved-gia">🧮 w GIA-TIMDR</span>
+        <div class="repo-desc">Dyskretny operator kształtu (Weingarten) na siatce 3D + kongruencja trajektorii Γ(t,s) dla gałęzi geometrycznej (G) — 17/17 testów na przypadkach o znanej analitycznie krzywiźnie (płaszczyzna/sfera/walec)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Modal-Formalism" target="_blank">TIMDR-Modal-Formalism</a> <span class="moved-badge moved-gia">🧮 w GIA-TIMDR</span>
+        <div class="repo-desc">Pierwsza implementacja gałęzi modalnej (K) jako kodu — modalność (f,φ,A), interferencja, rezonans modalny, mapa synchronizacji faz; 17/17 testów</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Time-Formalism" target="_blank">TIMDR-Time-Formalism</a> <span class="moved-badge moved-gia">🧮 w GIA-TIMDR</span>
+        <div class="repo-desc">Chronoproces Ξ=(T,x,Γ,φ) — orkiestracja trzech gałęzi TIMDR (M/S, G, K) na wspólnym nośniku czasu bez ich utożsamiania, plus most Fouriera M/S↔K oparty na zasadzie nieoznaczoności Gabora; 18/18 testów</div>
+        
+      </div>
+</div>
+</section>
+
+<section class="concept">
+<h2>🌀 🌀 Modele koncepcyjne</h2>
+<p class="section-desc">Warstwa metaforyczna, narzędzie do myślenia — nie teoria naukowa.</p>
+<div class="repos-grid">
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Architektura-Mapowania-Zmyslowego-TIMDR" target="_blank">Architektura-Mapowania-Zmyslowego-TIMDR</a> 
+        <div class="repo-desc">Sensoryczna brama do modelu pola</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/AstroCycles-TIMDR" target="_blank">AstroCycles-TIMDR</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Cykle astrologiczne w języku TIMDR</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/astro-map" target="_blank">astro-map</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Symboliczna mapa danych astronomicznych</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/Boundary-Matter" target="_blank">Boundary-Matter</a> 
+        <div class="repo-desc">Silnik decyzyjny generujący sprzeczne tezy rynkowe</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/FAI" target="_blank">FAI</a> 
+        <div class="repo-desc">Minimalny model AI oparty na stanach λ/τ/ρ</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/FIELDCORE" target="_blank">FIELDCORE</a> 
+        <div class="repo-desc">Kosmos jako układ dwóch skrętów pola</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main" target="_blank">FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main</a> 
+        <div class="repo-desc">Architektura AI oparta na Λ–τ–ρ</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/genertor-fotonow" target="_blank">genertor-fotonow</a> 
+        <div class="repo-desc">Koncepcyjny generator fotonów oparty na skręcie pola</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/GIA-TIMDR" target="_blank">GIA-TIMDR</a> 
+        <div class="repo-desc">Fundament matematyczny/logiczny całego systemu TIMDR — teoria i aksjomaty (Axioms_S/G/K, Chronoproces Ξ); implementacje kodu żyją w repo-siostrach z kategorii „Formalizacje TIMDR&quot; powyżej</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/GSF" target="_blank">GSF</a> 
+        <div class="repo-desc">Globalny system finansowy jako pole informacji</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/J-Photon-Drive" target="_blank">J-Photon-Drive</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Operator J w geometrii helisy</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/KHIPU" target="_blank">KHIPU</a> 
+        <div class="repo-desc">Koncepcyjna architektura czteroprocesorowa (TETRAGON-4CPU)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/MAGE-EGYPT-OPERATORS" target="_blank">MAGE-EGYPT-OPERATORS</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Interpretacja egipskich znaków operacyjnych</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/MAPA-PO-HELU-STRUKTURA" target="_blank">MAPA-PO-HELU-STRUKTURA</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Układ pierwiastków jako struktura topologiczna</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/MOD-DWOISTOSCI-ELEKTRONU" target="_blank">MOD-DWOISTOSCI-ELEKTRONU</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Model elektronu jako dwuwarstwowego stanu pola</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/PC_TIMDR" target="_blank">PC_TIMDR</a> 
+        <div class="repo-desc">Koncepcyjny procesor geometryczny F4-RED</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/Photo-Hel" target="_blank">Photo-Hel</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Interakcja foton–hel jako model koncepcyjny</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/probabilistic-timdr" target="_blank">probabilistic-timdr</a> 
+        <div class="repo-desc">Prawdopodobieństwo i warunki brzegowe w TIMDR</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/Spoleczny-Protokol-Informacyjny" target="_blank">Spoleczny-Protokol-Informacyjny</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Protokół kodowania komunikatów (TIMDERA)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/THE_TIMDR_Hyperflow_Engine" target="_blank">THE_TIMDR_Hyperflow_Engine</a> 
+        <div class="repo-desc">TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Multisensory-Meditation-Engine" target="_blank">TIMDR-Multisensory-Meditation-Engine</a> 
+        <div class="repo-desc">Multisensoryczna medytacja geometryczna</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TIMDR-Philosophical-Map" target="_blank">TIMDR-Philosophical-Map</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Filozoficzno-logiczno-topologiczna mapa zmiany reżimów — cztery triggery (SCALE/STRUCTURE/MODEL_CONFLICT/CONTINUITY)</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TIV" target="_blank">TIV</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Koncepcyjna &quot;waluta informacyjna&quot; TIMDR</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/Topological-Reduction-Model-TRM" target="_blank">Topological-Reduction-Model-TRM</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Fale topologiczne w biosferze, geologii, kosmosie</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/topologia-informacji" target="_blank">topologia-informacji</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Centralny framework pojęciowy Λ–τ–ρ</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TRM-Geometry-Core" target="_blank">TRM-Geometry-Core</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Geometria bazowa modeli TRM/TIMDR</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/trm-particle-geometry" target="_blank">trm-particle-geometry</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Cząstki jako węzły geometryczne</div>
+        
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/WHITE-LASER-MAP" target="_blank">WHITE-LASER-MAP</a> <span class="moved-badge moved-archive">📦 w TIMDR-Concept-Archive</span>
+        <div class="repo-desc">Model białego lasera bez fosforu</div>
+        
+      </div>
+</div>
+</section>
+
+<h2>🔗 Powiązania kodu między repozytoriami (pochodzenie wspólnych fragmentów)</h2>
+<p class="section-desc">
+Kilka repozytoriów z kategorii „Narzędzia inżynierskie" powstało przez wielokrotne użycie tego samego,
+raz napisanego i przetestowanego kodu. Od 2026-09-10 każde z poniższych repo jest niezależne — kod
+współdzielony został zwendorowany (skopiowany 1:1, z jawnym nagłówkiem „ZWENDOROWANE") do repo, które go
+używa. Tabela dokumentuje pochodzenie/pokrewieństwo kodu, nie zależność uruchomieniową.
+</p>
+<table class="lineage">
+<tr><th>Repo (używa kopii)</th><th>Zwendorowany fragment</th><th>Pochodzenie (oryginał)</th></tr>
+        <tr><td>TIMDR-Grid-Monitor</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
+        <tr><td>TIMDR-Grid-Monitor</td><td>rdzeń sejsmiczny (flow/twist/trm) + warstwa okienkowania meta-serii</td><td>TIMDR-Earthquake-Core</td></tr>
+        <tr><td>TIMDR-Industrial-Predict</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
+        <tr><td>TIMDR-Industrial-Predict</td><td>rdzeń sejsmiczny (flow/trm, domenowo-niezależne)</td><td>TIMDR-Earthquake-Core</td></tr>
+        <tr><td>TIMDR-Earthquake-Core</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
+        <tr><td>TIMDR-Earthquake-Core</td><td>protokół testu Manna-Whitneya (pipeline.py)</td><td>TIMDR-Math-Formalism</td></tr>
+        <tr><td>Synoptyk-v3</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
+        <tr><td>Analizator_Gieldowy_v3.0</td><td>rdzeń Λ-τ-ρ-J + FieldEvolution/MetaPredict</td><td>TIMDR-META-DYNAMICS</td></tr>
+        <tr><td>universal-state-analyzer</td><td>protokół testu Manna-Whitneya (pipeline.py)</td><td>TIMDR-Math-Formalism</td></tr>
+        <tr><td>TIMDR-Aviation-Diagnostics</td><td>rdzeń TIMDR-Core (transfer 1:1, opisany wprost w repo)</td><td>TIMDR-Earthquake-Core</td></tr>
+        <tr><td>TIMDR-Quantum-Lattice</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
+        <tr><td>TIMDR-Quantum-Lattice</td><td>uniwersalny walidator Λ-τ-ρ-J (meta_validator.py) + protokół Manna-Whitneya</td><td>TIMDR-Math-Formalism</td></tr>
+</table>
+
+<footer>
+Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we
+wrześniu 2026 o kategorię „Formalizacje TIMDR", sekcję powiązań kodu (10 września) i konsolidację
+repozytoriów formalizmów/modeli koncepcyjnych (14 września). Pełna, źródłowa wersja tego podziału:
+<a href="https://github.com/jbackk-lang/jbackk-lang.github.io/blob/main/KATEGORIE.md" target="_blank">KATEGORIE.md</a>.
+</footer>
+
+</body>
+</html>
