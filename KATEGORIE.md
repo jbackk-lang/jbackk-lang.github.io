@@ -41,31 +41,31 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 | [phi-topology-filter](https://github.com/jbackk-lang/phi-topology-filter) | Filtr obrazu oparty na operatorach Laplace/Sobel/curl |
 | [MAGE-IN-IMAGE-DECODER](https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER) | Modularna analiza obrazu — FFT, HSV, detekcja ruchu |
 | [Helix-Astro](https://github.com/jbackk-lang/Helix-Astro) | Analiza widm astronomicznych — normalizacja, filtracja, korelacja |
-| [TIMDR-Quantum-Lattice](https://github.com/jbackk-lang/TIMDR-Quantum-Lattice) | Sprzężone oscylatory fazowe na siatce 10×10 (rodzina Kuramoto — mimo nazwy NIE mechanika kwantowa), dwa zweryfikowane cele predykcyjne dla Ω(t): lokalizacja hotspotów i czas do progu; plus agregatowa integracja TIMDR-META-DYNAMICS (Λ-τ-ρ-J) — mechanizm poprawnie odróżnia aktywną dynamikę od ustabilizowania, ale domyślne progi klasyfikacji fazy nie są skalibrowane na tej skali danych |
+| [TIMDR-Quantum-Lattice](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TIMDR-Quantum-Lattice) | Sprzężone oscylatory fazowe na siatce 10×10 (rodzina Kuramoto — mimo nazwy NIE mechanika kwantowa), dwa zweryfikowane cele predykcyjne dla Ω(t): lokalizacja hotspotów i czas do progu; plus agregatowa integracja TIMDR-META-DYNAMICS (Λ-τ-ρ-J) — mechanizm poprawnie odróżnia aktywną dynamikę od ustabilizowania, ale domyślne progi klasyfikacji fazy nie są skalibrowane na tej skali danych |
 | [TIMDR-Robot](https://github.com/jbackk-lang/TIMDR-Robot) | Warstwa TIMDR dla robota wieloosiowego i podsystemów (chwytak, podstawa mobilna, kamera, zasilanie) — detekcja anomalii, flota robotów, mosty integracyjne ROS2/MQTT/OPC-UA |
 | [TIMDR-Aviation-Diagnostics](https://github.com/jbackk-lang/TIMDR-Aviation-Diagnostics) | Transfer TIMDR-Core (1:1 z TIMDR-Earthquake-Core) do diagnostyki silników lotniczych — test na realnych danych degradacji silnika turbowentylatorowego, z jawnym opisem ograniczeń środowiska testowego |
 | [TIMDR-Materials-Design](https://github.com/jbackk-lang/TIMDR-Materials-Design) | 8-krokowa procedura projektowania materiału od zera metodą TIMDR (anomalia/defekt/skręt/rezonans) — każdy krok to osobny, przetestowany moduł kodu |
 | [TIMDR-Cosmology-Filters](https://github.com/jbackk-lang/TIMDR-Cosmology-Filters) | 3 filtry anomalii dla danych kosmologicznych zbudowane od zera (odstępy pików akustycznych CMB, precesja peryhelium Merkurego, napięcie Hubble'a) — realne, cytowane dane (Planck 2018, MESSENGER, SH0ES) z propagacją niepewności |
 | [TIMDR-EV-Predict](https://github.com/jbackk-lang/TIMDR-EV-Predict) | Fuzja 3 podsystemów pojazdu elektrycznego (bateria + silnik elektryczny + ładowanie/sieć) w jeden wynik zdrowia i TTF pojazdu, zasada najsłabszego ogniwa — realne dane starzenia baterii NASA PCoE, most do CAN/OBD-II |
 | [TEST-TIMDR](https://github.com/jbackk-lang/TEST-TIMDR) | Zbiór wyników empirycznych testów/audytów twierdzeń TIMDR w 5 niezależnych wątkach (kosmologia, liczby pierwsze, torsja, bezpieczeństwo, architektura wielomodułowa) — każdy z pre-rejestracją i kontrolą negatywną, uczciwie raportowane sukcesy i porażki |
-| [TIMDR-Math-Formalism](https://github.com/jbackk-lang/TIMDR-Math-Formalism) | Formalizacja aksjomatyczna gałęzi sygnałowej (M/S) jako kodu — tempo/drift czasu + detektory anomalia/defekt/skręt, protokół pre-rejestracji/kontroli/Manna-Whitneya; 62/63 testów, zwalidowane też na realnych danych pogodowych Kraków |
+| [TIMDR-Math-Formalism](https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Math-Formalism) | Formalizacja aksjomatyczna gałęzi sygnałowej (M/S) jako kodu — tempo/drift czasu + detektory anomalia/defekt/skręt, protokół pre-rejestracji/kontroli/Manna-Whitneya; 62/63 testów, zwalidowane też na realnych danych pogodowych Kraków |
 | [Synoptyk-v3](https://github.com/jbackk-lang/Synoptyk-v3) | Trzecie podejście do prognozy pogody w tym ekosystemie — pogoda jako pole na siatce geograficznej ("membrana", nie niezależne szeregi czasowe per stacja), analiza widmowa/geometria różniczkowa (fronty, wiry, rezonans międzypolowy), realne dane Open-Meteo (live + archiwum, 10-dniowy backtest trafności) |
 ---
 ### 🧮 Formalizacje TIMDR
 *Aksjomaty z konkretną, testowaną implementacją — ale zweryfikowane tylko na przypadkach syntetycznych/analitycznie znanych, nie na realnych danych. Mają realną warstwę obliczeniową (w odróżnieniu od modeli koncepcyjnych poniżej), ale bez testu na realnych danych (w odróżnieniu od narzędzi inżynierskich powyżej).*
 | Repo | Co robi |
 |---|---|
-| [TIMDR-Geometry-Formalism](https://github.com/jbackk-lang/TIMDR-Geometry-Formalism) | Dyskretny operator kształtu (Weingarten) na siatce 3D + kongruencja trajektorii Γ(t,s) dla gałęzi geometrycznej (G) — 17/17 testów na przypadkach o znanej analitycznie krzywiźnie (płaszczyzna/sfera/walec) |
-| [TIMDR-Modal-Formalism](https://github.com/jbackk-lang/TIMDR-Modal-Formalism) | Pierwsza implementacja gałęzi modalnej (K) jako kodu — modalność (f,φ,A), interferencja, rezonans modalny, mapa synchronizacji faz; 17/17 testów |
-| [TIMDR-Time-Formalism](https://github.com/jbackk-lang/TIMDR-Time-Formalism) | Chronoproces Ξ=(T,x,Γ,φ) — orkiestracja trzech gałęzi TIMDR (M/S, G, K) na wspólnym nośniku czasu bez ich utożsamiania, plus most Fouriera M/S↔K oparty na zasadzie nieoznaczoności Gabora; 18/18 testów |
+| [TIMDR-Geometry-Formalism](https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Geometry-Formalism) | Dyskretny operator kształtu (Weingarten) na siatce 3D + kongruencja trajektorii Γ(t,s) dla gałęzi geometrycznej (G) — 17/17 testów na przypadkach o znanej analitycznie krzywiźnie (płaszczyzna/sfera/walec) |
+| [TIMDR-Modal-Formalism](https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Modal-Formalism) | Pierwsza implementacja gałęzi modalnej (K) jako kodu — modalność (f,φ,A), interferencja, rezonans modalny, mapa synchronizacji faz; 17/17 testów |
+| [TIMDR-Time-Formalism](https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Time-Formalism) | Chronoproces Ξ=(T,x,Γ,φ) — orkiestracja trzech gałęzi TIMDR (M/S, G, K) na wspólnym nośniku czasu bez ich utożsamiania, plus most Fouriera M/S↔K oparty na zasadzie nieoznaczoności Gabora; 18/18 testów |
 ---
 ### 🌀 Modele koncepcyjne
 *Warstwa metaforyczna, narzędzie do myślenia — nie teoria naukowa.*
 | Repo | Temat |
 |---|---|
 | [Architektura-Mapowania-Zmyslowego-TIMDR](https://github.com/jbackk-lang/Architektura-Mapowania-Zmyslowego-TIMDR) | Sensoryczna brama do modelu pola |
-| [AstroCycles-TIMDR](https://github.com/jbackk-lang/AstroCycles-TIMDR) | Cykle astrologiczne w języku TIMDR |
-| [astro-map](https://github.com/jbackk-lang/astro-map) | Symboliczna mapa danych astronomicznych |
+| [AstroCycles-TIMDR](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/AstroCycles-TIMDR) | Cykle astrologiczne w języku TIMDR |
+| [astro-map](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/astro-map) | Symboliczna mapa danych astronomicznych |
 | [Boundary-Matter](https://github.com/jbackk-lang/Boundary-Matter) | Silnik decyzyjny generujący sprzeczne tezy rynkowe |
 | [FAI](https://github.com/jbackk-lang/FAI) | Minimalny model AI oparty na stanach λ/τ/ρ |
 | [FIELDCORE](https://github.com/jbackk-lang/FIELDCORE) | Kosmos jako układ dwóch skrętów pola |
@@ -73,24 +73,24 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 | [genertor-fotonow](https://github.com/jbackk-lang/genertor-fotonow) | Koncepcyjny generator fotonów oparty na skręcie pola |
 | [GIA-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR) | Fundament matematyczny/logiczny całego systemu TIMDR — teoria i aksjomaty (Axioms_S/G/K, Chronoproces Ξ); implementacje kodu żyją w repo-siostrach z kategorii „Formalizacje TIMDR" powyżej |
 | [GSF](https://github.com/jbackk-lang/GSF) | Globalny system finansowy jako pole informacji |
-| [J-Photon-Drive](https://github.com/jbackk-lang/J-Photon-Drive) | Operator J w geometrii helisy |
+| [J-Photon-Drive](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/J-Photon-Drive) | Operator J w geometrii helisy |
 | [KHIPU](https://github.com/jbackk-lang/KHIPU) | Koncepcyjna architektura czteroprocesorowa (TETRAGON-4CPU) |
-| [MAGE-EGYPT-OPERATORS](https://github.com/jbackk-lang/MAGE-EGYPT-OPERATORS) | Interpretacja egipskich znaków operacyjnych |
-| [MAPA-PO-HELU-STRUKTURA](https://github.com/jbackk-lang/MAPA-PO-HELU-STRUKTURA) | Układ pierwiastków jako struktura topologiczna |
-| [MOD-DWOISTOSCI-ELEKTRONU](https://github.com/jbackk-lang/MOD-DWOISTOSCI-ELEKTRONU) | Model elektronu jako dwuwarstwowego stanu pola |
+| [MAGE-EGYPT-OPERATORS](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/MAGE-EGYPT-OPERATORS) | Interpretacja egipskich znaków operacyjnych |
+| [MAPA-PO-HELU-STRUKTURA](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/MAPA-PO-HELU-STRUKTURA) | Układ pierwiastków jako struktura topologiczna |
+| [MOD-DWOISTOSCI-ELEKTRONU](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/MOD-DWOISTOSCI-ELEKTRONU) | Model elektronu jako dwuwarstwowego stanu pola |
 | [PC_TIMDR](https://github.com/jbackk-lang/PC_TIMDR) | Koncepcyjny procesor geometryczny F4-RED |
-| [Photo-Hel](https://github.com/jbackk-lang/Photo-Hel) | Interakcja foton–hel jako model koncepcyjny |
+| [Photo-Hel](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/Photo-Hel) | Interakcja foton–hel jako model koncepcyjny |
 | [probabilistic-timdr](https://github.com/jbackk-lang/probabilistic-timdr) | Prawdopodobieństwo i warunki brzegowe w TIMDR |
-| [Spoleczny-Protokol-Informacyjny](https://github.com/jbackk-lang/Spoleczny-Protokol-Informacyjny) | Protokół kodowania komunikatów (TIMDERA) |
+| [Spoleczny-Protokol-Informacyjny](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/Spoleczny-Protokol-Informacyjny) | Protokół kodowania komunikatów (TIMDERA) |
 | [THE_TIMDR_Hyperflow_Engine](https://github.com/jbackk-lang/THE_TIMDR_Hyperflow_Engine) | TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej) |
 | [TIMDR-Multisensory-Meditation-Engine](https://github.com/jbackk-lang/TIMDR-Multisensory-Meditation-Engine) | Multisensoryczna medytacja geometryczna |
-| [TIMDR-Philosophical-Map](https://github.com/jbackk-lang/TIMDR-Philosophical-Map) | Filozoficzno-logiczno-topologiczna mapa zmiany reżimów — cztery triggery (SCALE/STRUCTURE/MODEL_CONFLICT/CONTINUITY) |
-| [TIV](https://github.com/jbackk-lang/TIV) | Koncepcyjna "waluta informacyjna" TIMDR |
-| [Topological-Reduction-Model-TRM](https://github.com/jbackk-lang/Topological-Reduction-Model-TRM) | Fale topologiczne w biosferze, geologii, kosmosie |
-| [topologia-informacji](https://github.com/jbackk-lang/topologia-informacji) | Centralny framework pojęciowy Λ–τ–ρ |
-| [TRM-Geometry-Core](https://github.com/jbackk-lang/TRM-Geometry-Core) | Geometria bazowa modeli TRM/TIMDR |
-| [trm-particle-geometry](https://github.com/jbackk-lang/trm-particle-geometry) | Cząstki jako węzły geometryczne |
-| [WHITE-LASER-MAP](https://github.com/jbackk-lang/WHITE-LASER-MAP) | Model białego lasera bez fosforu |
+| [TIMDR-Philosophical-Map](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TIMDR-Philosophical-Map) | Filozoficzno-logiczno-topologiczna mapa zmiany reżimów — cztery triggery (SCALE/STRUCTURE/MODEL_CONFLICT/CONTINUITY) |
+| [TIV](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TIV) | Koncepcyjna "waluta informacyjna" TIMDR |
+| [Topological-Reduction-Model-TRM](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/Topological-Reduction-Model-TRM) | Fale topologiczne w biosferze, geologii, kosmosie |
+| [topologia-informacji](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/topologia-informacji) | Centralny framework pojęciowy Λ–τ–ρ |
+| [TRM-Geometry-Core](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/TRM-Geometry-Core) | Geometria bazowa modeli TRM/TIMDR |
+| [trm-particle-geometry](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/trm-particle-geometry) | Cząstki jako węzły geometryczne |
+| [WHITE-LASER-MAP](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/WHITE-LASER-MAP) | Model białego lasera bez fosforu |
 ---
 ### 🔗 Powiązania kodu między repozytoriami (pochodzenie wspólnych fragmentów)
 
