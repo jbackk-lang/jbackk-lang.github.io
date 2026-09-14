@@ -223,12 +223,22 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
         
       </div>
       <div class="repo">
-        <a href="https://github.com/jbackk-lang/TIMDR-Battery-Predict" target="_blank">TIMDR-Battery-Predict</a> 
+        <a href="https://github.com/jbackk-lang/TIMDR-Battery-Predict" target="_blank">TIMDR-Battery-Predict</a>
         <div class="repo-desc">Predykcyjne utrzymanie ogniwa/pakietu baterii — fuzja 4 czujników, model degradacji, czas do awarii (TTF), wynik zdrowia</div>
-        
+
       </div>
       <div class="repo">
-        <a href="https://github.com/jbackk-lang/TIMDR-Industrial-Predict" target="_blank">TIMDR-Industrial-Predict</a> 
+        <a href="https://github.com/jbackk-lang/TIMDR-Solar-PV" target="_blank">TIMDR-Solar-PV</a>
+        <div class="repo-desc">Detekcja degradacji/brudu/zacienienia/awarii PV — model fizyczny PVWatts (pvlib) i Performance Ratio jako sygnał stanu, plus rozszerzenie analizy zespolonej PV+bateria. Walidowane na danych syntetycznych fizycznie ugruntowanych, nie na realnych danych NREL PVDAQ</div>
+
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Mold-Risk" target="_blank">TIMDR-Mold-Risk</a>
+        <div class="repo-desc">Wczesne ostrzeganie przed ryzykiem pleśni — model VTT (Hukka &amp; Viitanen) na temperaturze/wilgotności, indeks pleśni M(t) 0-6. Walidowane na danych syntetycznych fizycznie ugruntowanych, nie na realnych danych DALTON (Git LFS niedostępne w środowisku budowy)</div>
+
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Industrial-Predict" target="_blank">TIMDR-Industrial-Predict</a>
         <div class="repo-desc">Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score</div>
         
       </div>
@@ -519,6 +529,7 @@ używa. Tabela dokumentuje pochodzenie/pokrewieństwo kodu, nie zależność uru
         <tr><td>TIMDR-Industrial-Predict</td><td>rdzeń sejsmiczny (flow/trm, domenowo-niezależne)</td><td>TIMDR-Earthquake-Core</td></tr>
         <tr><td>TIMDR-Earthquake-Core</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
         <tr><td>TIMDR-Earthquake-Core</td><td>protokół testu Manna-Whitneya (pipeline.py)</td><td>TIMDR-Math-Formalism</td></tr>
+        <tr><td>TIMDR-Solar-PV</td><td>TIMDRBatteryFusion (dla rozszerzenia sprzężenia PV+bateria, timdr_pv_battery_coupling.py)</td><td>TIMDR-Battery-Predict</td></tr>
         <tr><td>Synoptyk-v3</td><td>rdzeń Λ-τ-ρ-J (MetaState/MetaOperatorM/MetaMap/MetaTrigger)</td><td>TIMDR-META-DYNAMICS</td></tr>
         <tr><td>Analizator_Gieldowy_v3.0</td><td>rdzeń Λ-τ-ρ-J + FieldEvolution/MetaPredict</td><td>TIMDR-META-DYNAMICS</td></tr>
         <tr><td>universal-state-analyzer</td><td>protokół testu Manna-Whitneya (pipeline.py)</td><td>TIMDR-Math-Formalism</td></tr>
@@ -529,8 +540,8 @@ używa. Tabela dokumentuje pochodzenie/pokrewieństwo kodu, nie zależność uru
 
 <footer>
 Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we
-wrześniu 2026 o kategorię „Formalizacje TIMDR", sekcję powiązań kodu (10 września) i konsolidację
-repozytoriów formalizmów/modeli koncepcyjnych (14 września). Pełna, źródłowa wersja tego podziału:
+wrześniu 2026 o kategorię „Formalizacje TIMDR", sekcję powiązań kodu (10 września), konsolidację
+repozytoriów formalizmów/modeli koncepcyjnych oraz TIMDR-Solar-PV i TIMDR-Mold-Risk (14 września). Pełna, źródłowa wersja tego podziału:
 <a href="https://github.com/jbackk-lang/jbackk-lang.github.io/blob/main/KATEGORIE.md" target="_blank">KATEGORIE.md</a>.
 </footer>
 
