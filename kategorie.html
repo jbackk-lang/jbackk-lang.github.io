@@ -163,12 +163,17 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
         
       </div>
       <div class="repo">
-        <a href="https://github.com/jbackk-lang/TIMDR-Earthquake-Core" target="_blank">TIMDR-Earthquake-Core</a> 
+        <a href="https://github.com/jbackk-lang/TIMDR-Earthquake-Core" target="_blank">TIMDR-Earthquake-Core</a>
         <div class="repo-desc">Rdzeń analizy sejsmicznej — detekcja mikro-wstrząsów, picker STA/LTA zweryfikowany 1:1 z ObsPy, tryb katalogowy na żywych danych USGS; test trybu prekursorowego dał wynik negatywny (brak sygnału), udokumentowane wprost w repo</div>
-        
+
       </div>
       <div class="repo">
-        <a href="https://github.com/jbackk-lang/TIMDR-Echosonda-3D" target="_blank">TIMDR-Echosonda-3D</a> 
+        <a href="https://github.com/jbackk-lang/TIMDR-Tornado-NEXRAD" target="_blank">TIMDR-Tornado-NEXRAD</a>
+        <div class="repo-desc">Detekcja tornad z realnych danych radaru Dopplera NEXRAD Level II — azymutalny shear rotacji (ugruntowana metoda NSSL) + niezależna sygnatura szczątków TDS (spadek ρhv); walidacja shear-only na potwierdzonych przez SPC przypadkach EF1+ dała istotną statystycznie różnicę (Mann-Whitney, duży rozmiar efektu) — sama TDS i połączony werdykt jeszcze nie sprawdzone na realnych danych</div>
+
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Echosonda-3D" target="_blank">TIMDR-Echosonda-3D</a>
         <div class="repo-desc">Analiza chmury punktów dna (batymetria) + detekcja celów w toni wodnej (ryby, ławice, obiekty sztuczne) — silnik sonarowy</div>
         
       </div>
@@ -362,7 +367,12 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
       <div class="repo">
         <a href="https://github.com/jbackk-lang/GIA-TIMDR/tree/main/TIMDR-Time-Formalism" target="_blank">TIMDR-Time-Formalism</a> <span class="moved-badge moved-gia">🧮 w GIA-TIMDR</span>
         <div class="repo-desc">Chronoproces Ξ=(T,x,Γ,φ) — orkiestracja trzech gałęzi TIMDR (M/S, G, K) na wspólnym nośniku czasu bez ich utożsamiania, plus most Fouriera M/S↔K oparty na zasadzie nieoznaczoności Gabora; 18/18 testów</div>
-        
+
+      </div>
+      <div class="repo">
+        <a href="https://github.com/jbackk-lang/TIMDR-Sygnalizacja" target="_blank">TIMDR-Sygnalizacja</a>
+        <div class="repo-desc">Formalizm sygnałowy TIMDR (anomalia/defekt/rezonans/skręt) na trzech historycznych metodach sygnalizacji — kod Morse'a dźwiękowy, Morse świetlny (lampa Aldisa), semafor flagowy; dekodery + 4 detektory + kontrole pozytywne/negatywne z testem Manna-Whitneya, panel web z obsługą mikrofonu/kamery. Zwalidowane na sygnałach syntetycznych; funkcje na żywym sprzęcie niezweryfikowane w izolowanym środowisku budowy</div>
+
       </div>
 </div>
 </section>
@@ -541,7 +551,9 @@ używa. Tabela dokumentuje pochodzenie/pokrewieństwo kodu, nie zależność uru
 <footer>
 Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we
 wrześniu 2026 o kategorię „Formalizacje TIMDR", sekcję powiązań kodu (10 września), konsolidację
-repozytoriów formalizmów/modeli koncepcyjnych oraz TIMDR-Solar-PV i TIMDR-Mold-Risk (14 września). Pełna, źródłowa wersja tego podziału:
+repozytoriów formalizmów/modeli koncepcyjnych, TIMDR-Solar-PV i TIMDR-Mold-Risk (14 września), oraz o dwa
+wcześniej pominięte repo, TIMDR-Tornado-NEXRAD i TIMDR-Sygnalizacja (16 września — istniały w profilu,
+ale nie były wpisane do tego indeksu; znalezione przy audycie kompletności). Pełna, źródłowa wersja tego podziału:
 <a href="https://github.com/jbackk-lang/jbackk-lang.github.io/blob/main/KATEGORIE.md" target="_blank">KATEGORIE.md</a>.
 </footer>
 
