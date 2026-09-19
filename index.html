@@ -153,6 +153,9 @@
     }
 
     /* Lista Repozytoriów - przewijalny panel boczny, zeby nie rozciagal calej strony */
+    /* UWAGA: celowo bez position:sticky - psulo to renderowanie w narzedziach
+       do zrzutow calej strony (sticky element "zamrazal" sie w jednym miejscu
+       i nakladal na tresc lewej kolumny przy przewijaniu / stitchowaniu). */
     .repos-panel {
         flex: 1;
         min-width: 0;
@@ -162,13 +165,6 @@
         border: 1px solid #2d3748;
         max-height: 85vh;
         overflow-y: auto;
-    }
-
-    @media (min-width: 1024px) {
-        .repos-panel {
-            position: sticky;
-            top: 20px;
-        }
     }
 
     .repo {
@@ -284,9 +280,25 @@
 
         <!-- DIAGRAM: cztery gałęzie TIMDR (Chronoproces -> M/S, G, K -> META-DYNAMICS), mosty i status -->
         <div class="mermaid-panel">
-        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">Cztery gałęzie TIMDR — mosty i status</p>
-        <img src="timdr-branches-diagram.png" alt="Diagram czterech gałęzi TIMDR: Chronoproces -> M/S, G, K -> META-DYNAMICS, mosty i status" style="max-width:100%;max-height:70vh;width:auto;height:auto;display:block;margin:0 auto;border-radius:6px;">
+        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">Cztery gałęzie TIMDR — mosty i status <span style="color:var(--text-muted);font-weight:400;">(kliknij, aby powiększyć)</span></p>
+        <img id="branchDiagramImg" src="timdr-branches-diagram.png" alt="Diagram czterech gałęzi TIMDR: Chronoproces -> M/S, G, K -> META-DYNAMICS, mosty i status" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:6px;cursor:zoom-in;">
         </div>
+
+        <!-- Lightbox: powiekszony diagram na pelnym ekranie po kliknieciu -->
+        <div id="diagramLightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;">
+            <img src="timdr-branches-diagram.png" alt="Diagram czterech gałęzi TIMDR - powiększenie" style="max-width:95vw;max-height:95vh;width:auto;height:auto;border-radius:8px;">
+        </div>
+        <script>
+        (function(){
+            var thumb = document.getElementById('branchDiagramImg');
+            var box = document.getElementById('diagramLightbox');
+            function open(){ box.style.display = 'flex'; }
+            function close(){ box.style.display = 'none'; }
+            thumb.addEventListener('click', open);
+            box.addEventListener('click', close);
+            document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+        })();
+        </script>
 
         <!-- Cztery sceny 3D (M/S, G, K, Meta-dynamika) - po lewej, 2x2 -->
         <div class="diagram3d-grid">
