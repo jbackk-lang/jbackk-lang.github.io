@@ -228,6 +228,28 @@
         color: #718096;
     }
 
+    /* Siatka 4 scen 3D (M/S, G, K, Meta-dynamika) - teraz po lewej, 2x2 */
+    .diagram3d-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 480px) {
+        .diagram3d-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Panel diagramu Mermaid (cztery gałęzie TIMDR - mosty i status) */
+    .mermaid-panel {
+        background: var(--panel-bg);
+        border: 1px solid #2d3748;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 24px;
+        overflow-x: auto;
+    }
+
     /* Custom scrollbar dla panelu repo */
     .repos-panel::-webkit-scrollbar {
         width: 6px;
@@ -245,29 +267,100 @@
 
 <h1>Zintegrowany Panel Badawczy: jbackk-lang</h1>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:24px;">
+<!-- DIAGRAM: cztery gałęzie TIMDR (Chronoproces -> M/S, G, K -> META-DYNAMICS), mosty i status -->
+<div class="mermaid-panel">
+<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">Cztery gałęzie TIMDR — mosty i status</p>
+<pre class="mermaid">
+flowchart TD
+    CHR["Chronoproces Ξ<br/>wspólny czas T"]
+    MS["M/S — gałąź sygnałowa<br/>anomalia · defekt<br/>rezonans M · skręt"]
+    G["G — gałąź geometrii<br/>Γ(T,s) · Weingarten<br/>krzywizna · G-Rezonans"]
+    K["K — gałąź modalna<br/>częstotliwość · faza<br/>rezonans modalny"]
+    META["META-DYNAMICS<br/>MetaState(Λ, τ, ρ, J)<br/>M = dS/dt"]
 
-<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
-<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">M/S — sygnał w rurze 2σ</p>
-<canvas id="c3dMS" style="width:100%;height:200px;display:block;"></canvas>
-</div>
+    CHR -->|x(T)| MS
+    CHR -->|Γ(T,s)| G
+    CHR -->|φ(T) = (f, φ, A)| K
 
-<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
-<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">G — normalne na sferze, Δp</p>
-<canvas id="c3dG" style="width:100%;height:200px;display:block;"></canvas>
-</div>
+    Z0["Z₀ ↔ Gᵢ<br/>potwierdzony jako diagnostyka<br/>silny: łożyska"]
+    WCP["winding / crossing / phase<br/>82% na łożyskach<br/>eksploracyjny"]
+    MF["Most Fouriera Δt·Δf<br/>tylko idealny impuls gaussowski"]
+    AGW(("agregacja okien"))
+    MOB["Möbius / K↔G<br/>ODRZUCONY: artefakt kratownicy"]
+    HI["Hᵢ + alignment czasu<br/>warunek B4"]
+    AGM(("agregacja modalna"))
 
-<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
-<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">K — dwie spirale fazowe</p>
-<canvas id="c3dK" style="width:100%;height:200px;display:block;"></canvas>
-</div>
+    Z0 --> MS
+    Z0 --> G
+    WCP -.-> MS
+    WCP -.-> G
+    MF --> MS
+    MS --> AGW --> META
+    MOB -.-> G
+    MOB -.-> K
+    G --> HI --> META
+    K --> AGM --> META
 
-<div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
-<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">Meta-dynamika — 4 spirale Λτρj</p>
-<canvas id="c3dMeta" style="width:100%;height:200px;display:block;"></canvas>
+    classDef msNode stroke:#4ea3ff,stroke-width:2px,color:#eee;
+    classDef gNode stroke:#9f7aea,stroke-width:2px,color:#eee;
+    classDef kNode stroke:#ecc94b,stroke-width:2px,color:#eee;
+    classDef metaNode stroke:#48bb78,stroke-width:2px,color:#eee;
+    class MS msNode
+    class G gNode
+    class K kNode
+    class META metaNode
+</pre>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        themeVariables: {
+            darkMode: true,
+            background: '#0d0d11',
+            primaryColor: '#16161f',
+            primaryTextColor: '#eee',
+            primaryBorderColor: '#4ea3ff',
+            lineColor: '#4ea3ff',
+            secondaryColor: '#16161f',
+            tertiaryColor: '#16161f',
+            fontFamily: 'inherit'
+        }
+    });
+</script>
 
-</div>
+
+<div class="dashboard-container">
+
+    <!-- LEWA KOLUMNA: SYMULATOR MATRYCY HELISY (NGC 7075) -->
+    <div class="simulation-panel">
+
+        <!-- Cztery sceny 3D (M/S, G, K, Meta-dynamika) - po lewej, 2x2 -->
+        <div class="diagram3d-grid">
+
+        <div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">M/S — sygnał w rurze 2σ</p>
+        <canvas id="c3dMS" style="width:100%;height:200px;display:block;"></canvas>
+        </div>
+
+        <div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">G — normalne na sferze, Δp</p>
+        <canvas id="c3dG" style="width:100%;height:200px;display:block;"></canvas>
+        </div>
+
+        <div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">K — dwie spirale fazowe</p>
+        <canvas id="c3dK" style="width:100%;height:200px;display:block;"></canvas>
+        </div>
+
+        <div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
+        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 6px;">Meta-dynamika — 4 spirale Λτρj</p>
+        <canvas id="c3dMeta" style="width:100%;height:200px;display:block;"></canvas>
+        </div>
+
+        </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (function(){
@@ -396,11 +489,6 @@
   });
 })();
 </script>
-
-<div class="dashboard-container">
-
-    <!-- LEWA KOLUMNA: SYMULATOR MATRYCY HELISY (NGC 7075) -->
-    <div class="simulation-panel">
 
         <!-- PANEL: HELIX-ASTRO (Układ Słoneczny) — wstawiony nad Matrycą Potrójnej Helisy -->
         <h2>Helix-Astro: Symulator Układu Słonecznego</h2>
