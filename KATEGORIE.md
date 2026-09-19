@@ -19,20 +19,20 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 | [TIMDR-Earthquake-Core](https://github.com/jbackk-lang/TIMDR-Earthquake-Core) | Rdzeń analizy sejsmicznej — detekcja mikro-wstrząsów, picker STA/LTA zweryfikowany 1:1 z ObsPy, tryb katalogowy na żywych danych USGS; test trybu prekursorowego dał wynik negatywny (brak sygnału), udokumentowane wprost w repo |
 | [TIMDR-Tornado-NEXRAD](https://github.com/jbackk-lang/TIMDR-Tornado-NEXRAD) | Detekcja tornad z realnych danych radaru Dopplera NEXRAD Level II — azymutalny shear rotacji (ugruntowana metoda NSSL) + niezależna sygnatura szczątków TDS (spadek ρhv), połączone w jeden werdykt; walidacja shear-only na potwierdzonych przez SPC przypadkach EF1+ dała istotną statystycznie różnicę (Mann-Whitney, duży rozmiar efektu) — sama TDS i połączony werdykt jeszcze nie sprawdzone na realnych danych |
 | [TIMDR-Echosonda-3D](https://github.com/jbackk-lang/TIMDR-Echosonda-3D) | Analiza chmury punktów dna (batymetria) + detekcja celów w toni wodnej (ryby, ławice, obiekty sztuczne) — silnik sonarowy |
-| [TIMDR-Grid-Monitor](https://github.com/jbackk-lang/TIMDR-Grid-Monitor) | Monitoring starzenia kabli energetycznych (model Arrhenius) + alerty przekroczenia reżimu |
+| [TIMDR-Grid-Monitor](https://github.com/jbackk-lang/TIMDR-Grid-Monitor) | Monitoring starzenia kabli energetycznych (model Arrhenius) + alerty przekroczenia reżimu; lokalnie dołączony runtime meta/sejsmiczny, więc repo działa bez repozytoriów-sąsiadów |
 | [TIMDR-DNA](https://github.com/jbackk-lang/TIMDR-DNA) | Detekcja anomalii głębokości pokrycia sekwencjonowania (styl CNV) — narzędzie badawcze, silne zastrzeżenie w repo: to NIE jest diagnostyka medyczna |
 | [TIMDR-Bio-Signals](https://github.com/jbackk-lang/TIMDR-Bio-Signals) | TIMDR dla sygnałów fizjologicznych (EKG/EEG/puls/oddech) — arytmie, anomalie impulsów, zaniki oscylacji (bezdech). To NIE jest wyrób medyczny |
 | [analizator-gieldowy](https://github.com/jbackk-lang/analizator-gieldowy) | Analiza rynku — realne dane giełdowe, SMA/VWAP/OBV |
 | [analizator-gieldowy-2.0](https://github.com/jbackk-lang/analizator-gieldowy-2.0) | Druga generacja analizatora giełdowego (FastAPI + Streamlit) |
-| [Analizator_Gieldowy_v3.0](https://github.com/jbackk-lang/Analizator_Gieldowy_v3.0) | Trzecia generacja — sygnały TIMDR na realnych danych z yfinance. To NIE jest doradztwo inwestycyjne |
+| [Analizator_Gieldowy_v3.0](https://github.com/jbackk-lang/Analizator_Gieldowy_v3.0) | Trzecia generacja — sygnały TIMDR na realnych danych z yfinance oraz lokalny runtime meta-dynamiki. To NIE jest doradztwo inwestycyjne |
 | [deliverable_timdr_finanse](https://github.com/jbackk-lang/deliverable_timdr_finanse) | Rdzeń TIMDR dla danych finansowych + ringdown_resonance() — narzędzie badawczo-edukacyjne, nie doradztwo inwestycyjne |
 | [TIMDR-Crypto-Graph](https://github.com/jbackk-lang/TIMDR-Crypto-Graph) | Graf transakcji (węzły=portfele, krawędzie=transfery) z rdzeniem helisa/rezonans/defekt do detekcji anomalii AML — zweryfikowany ślepy punkt self-eq, poprawka (kalibrowany eq + żywe dane) i peer-group eq po kohortach niezależnych od grafu |
-| [universal-state-analyzer](https://github.com/jbackk-lang/universal-state-analyzer) | Źródłowa implementacja ringdown_resonance() (opis powygaśnięciowego, tłumionego wygaszania oscylacji sygnału po zdarzeniu), zwalidowana na syntetycznym ground truth |
+| [universal-state-analyzer](https://github.com/jbackk-lang/universal-state-analyzer) | Źródłowa implementacja ringdown_resonance() oraz lokalny protokół testów Manna–Whitneya; zwalidowana na syntetycznym ground truth |
 | [TIMDR-META-DYNAMICS](https://github.com/jbackk-lang/TIMDR-META-DYNAMICS) | Symulacja i wizualizacja meta-przepływu (krzywizna/skręt pola, MetaPredict z tłumieniem) |
 | [TIMDR-Battery-Predict](https://github.com/jbackk-lang/TIMDR-Battery-Predict) | Predykcyjne utrzymanie ogniwa/pakietu baterii — fuzja 4 czujników, model degradacji, czas do awarii (TTF), wynik zdrowia |
 | [TIMDR-Solar-PV](https://github.com/jbackk-lang/TIMDR-Solar-PV) | Detekcja degradacji/brudu/zacienienia/awarii instalacji fotowoltaicznej — model fizyczny PVWatts (pvlib) i Performance Ratio jako sygnał stanu, plus rozszerzenie analizy zespolonej PV+bateria (zużycie od kompensacji prądowej, dwa mechanizmy z literatury). Walidowane na danych syntetycznych fizycznie ugruntowanych (pvlib/clearsky), nie na realnych danych NREL PVDAQ (sandbox bez dostępu do bucketu S3) |
 | [TIMDR-Mold-Risk](https://github.com/jbackk-lang/TIMDR-Mold-Risk) | Wczesne ostrzeganie przed ryzykiem pleśni — model VTT (Hukka & Viitanen 1999/Viitanen 2004) na temperaturze/wilgotności, indeks pleśni M(t) 0-6 jako sygnał stanu. Walidowane na danych syntetycznych fizycznie ugruntowanych, nie na realnych danych DALTON (pliki w Git LFS niedostępne w środowisku budowy); udokumentowany i nienaprawiony cichaczem błąd niestabilności współdzielonego `_mad_z` dla sygnałów z długimi płaskimi odcinkami |
-| [TIMDR-Industrial-Predict](https://github.com/jbackk-lang/TIMDR-Industrial-Predict) | Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score |
+| [TIMDR-Industrial-Predict](https://github.com/jbackk-lang/TIMDR-Industrial-Predict) | Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score; demo API obsługuje także lokalne próbki CWRU łożysk |
 | [TIMDR-Security-Module](https://github.com/jbackk-lang/TIMDR-Security-Module) | Detekcja anomalii w ruchu/zdarzeniach sieciowych na bazie sygnału stanu TIMDR |
 | [KHIPU-NEURAL](https://github.com/jbackk-lang/KHIPU-NEURAL) | Test, czy koncepcja State9/GIPU z KHIPU przekłada się na moduł sieci neuronowej — wynik mieszany, jawnie opisany (pomaga przy zadaniach dyskretnych, szkodzi przy ciągłych) |
 | [EasySound](https://github.com/jbackk-lang/EasySound) | Filtrowanie i czyszczenie dźwięku (filtr Butterwortha) |
@@ -110,7 +110,8 @@ siebie na dysku, w konkretnym, jednomaszynowym układzie katalogów). **Od
 został zwendorowany (skopiowany 1:1, z jawnym nagłówkiem "ZWENDOROWANE" w
 każdym pliku) do repo, które go używa, więc każde repo działa samodzielnie
 po sklonowaniu WYŁĄCZNIE siebie, bez wymogu posiadania innych repo obok.
-Poniższa tabela dokumentuje to **pochodzenie/pokrewieństwo kodu**, nie
+Audyt importów lokalnych odświeżono 2026-09-19. Poniższa tabela dokumentuje
+to **pochodzenie/pokrewieństwo kodu**, nie
 zależność uruchomieniową — jeśli źródłowe repo kiedyś zmieni tę logikę,
 kopie NIE zaktualizują się automatycznie (świadomy kompromis, opisany w
 nagłówku każdego zwendorowanego pliku).

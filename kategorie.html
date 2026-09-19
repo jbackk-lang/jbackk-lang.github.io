@@ -179,7 +179,7 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
       </div>
       <div class="repo">
         <a href="https://github.com/jbackk-lang/TIMDR-Grid-Monitor" target="_blank">TIMDR-Grid-Monitor</a> 
-        <div class="repo-desc">Monitoring starzenia kabli energetycznych (model Arrhenius) + alerty przekroczenia reżimu</div>
+        <div class="repo-desc">Monitoring starzenia kabli energetycznych (model Arrhenius) + alerty przekroczenia reżimu; lokalnie dołączony runtime meta/sejsmiczny, więc repo działa bez repozytoriów-sąsiadów</div>
         
       </div>
       <div class="repo">
@@ -204,7 +204,7 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
       </div>
       <div class="repo">
         <a href="https://github.com/jbackk-lang/Analizator_Gieldowy_v3.0" target="_blank">Analizator_Gieldowy_v3.0</a> 
-        <div class="repo-desc">Trzecia generacja — sygnały TIMDR na realnych danych z yfinance. To NIE jest doradztwo inwestycyjne</div>
+        <div class="repo-desc">Trzecia generacja — sygnały TIMDR na realnych danych z yfinance oraz lokalny runtime meta-dynamiki. To NIE jest doradztwo inwestycyjne</div>
         
       </div>
       <div class="repo">
@@ -219,7 +219,7 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
       </div>
       <div class="repo">
         <a href="https://github.com/jbackk-lang/universal-state-analyzer" target="_blank">universal-state-analyzer</a> 
-        <div class="repo-desc">Źródłowa implementacja ringdown_resonance() (opis powygaśnięciowego, tłumionego wygaszania oscylacji sygnału po zdarzeniu), zwalidowana na syntetycznym ground truth</div>
+        <div class="repo-desc">Źródłowa implementacja ringdown_resonance() oraz lokalny protokół testów Manna–Whitneya; zwalidowana na syntetycznym ground truth</div>
         
       </div>
       <div class="repo">
@@ -244,7 +244,7 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
       </div>
       <div class="repo">
         <a href="https://github.com/jbackk-lang/TIMDR-Industrial-Predict" target="_blank">TIMDR-Industrial-Predict</a>
-        <div class="repo-desc">Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score</div>
+        <div class="repo-desc">Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score; demo API obsługuje także lokalne próbki CWRU łożysk</div>
         
       </div>
       <div class="repo">
@@ -529,7 +529,7 @@ oba razy przez <code>git subtree</code> z zachowaniem pełnej historii commitów
 Kilka repozytoriów z kategorii „Narzędzia inżynierskie" powstało przez wielokrotne użycie tego samego,
 raz napisanego i przetestowanego kodu. Od 2026-09-10 każde z poniższych repo jest niezależne — kod
 współdzielony został zwendorowany (skopiowany 1:1, z jawnym nagłówkiem „ZWENDOROWANE") do repo, które go
-używa. Tabela dokumentuje pochodzenie/pokrewieństwo kodu, nie zależność uruchomieniową.
+używa. Audyt importów lokalnych odświeżono 2026-09-19. Tabela dokumentuje pochodzenie/pokrewieństwo kodu, nie zależność uruchomieniową.
 </p>
 <table class="lineage">
 <tr><th>Repo (używa kopii)</th><th>Zwendorowany fragment</th><th>Pochodzenie (oryginał)</th></tr>
