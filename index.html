@@ -270,65 +270,8 @@
 <!-- DIAGRAM: cztery gałęzie TIMDR (Chronoproces -> M/S, G, K -> META-DYNAMICS), mosty i status -->
 <div class="mermaid-panel">
 <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">Cztery gałęzie TIMDR — mosty i status</p>
-<pre class="mermaid">
-flowchart TD
-    CHR["Chronoproces Ξ<br/>wspólny czas T"]
-    MS["M/S — gałąź sygnałowa<br/>anomalia · defekt<br/>rezonans M · skręt"]
-    G["G — gałąź geometrii<br/>Γ(T,s) · Weingarten<br/>krzywizna · G-Rezonans"]
-    K["K — gałąź modalna<br/>częstotliwość · faza<br/>rezonans modalny"]
-    META["META-DYNAMICS<br/>MetaState(Λ, τ, ρ, J)<br/>M = dS/dt"]
-
-    CHR -->|x(T)| MS
-    CHR -->|Γ(T,s)| G
-    CHR -->|φ(T) = (f, φ, A)| K
-
-    Z0["Z₀ ↔ Gᵢ<br/>potwierdzony jako diagnostyka<br/>silny: łożyska"]
-    WCP["winding / crossing / phase<br/>82% na łożyskach<br/>eksploracyjny"]
-    MF["Most Fouriera Δt·Δf<br/>tylko idealny impuls gaussowski"]
-    AGW(("agregacja okien"))
-    MOB["Möbius / K↔G<br/>ODRZUCONY: artefakt kratownicy"]
-    HI["Hᵢ + alignment czasu<br/>warunek B4"]
-    AGM(("agregacja modalna"))
-
-    Z0 --> MS
-    Z0 --> G
-    WCP -.-> MS
-    WCP -.-> G
-    MF --> MS
-    MS --> AGW --> META
-    MOB -.-> G
-    MOB -.-> K
-    G --> HI --> META
-    K --> AGM --> META
-
-    classDef msNode stroke:#4ea3ff,stroke-width:2px,color:#eee;
-    classDef gNode stroke:#9f7aea,stroke-width:2px,color:#eee;
-    classDef kNode stroke:#ecc94b,stroke-width:2px,color:#eee;
-    classDef metaNode stroke:#48bb78,stroke-width:2px,color:#eee;
-    class MS msNode
-    class G gNode
-    class K kNode
-    class META metaNode
-</pre>
+<img src="timdr-branches-diagram.png" alt="Diagram czterech gałęzi TIMDR: Chronoproces -> M/S, G, K -> META-DYNAMICS, mosty i status" style="width:100%;max-width:780px;height:auto;display:block;margin:0 auto;border-radius:6px;">
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
-<script>
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        themeVariables: {
-            darkMode: true,
-            background: '#0d0d11',
-            primaryColor: '#16161f',
-            primaryTextColor: '#eee',
-            primaryBorderColor: '#4ea3ff',
-            lineColor: '#4ea3ff',
-            secondaryColor: '#16161f',
-            tertiaryColor: '#16161f',
-            fontFamily: 'inherit'
-        }
-    });
-</script>
 
 
 <div class="dashboard-container">
