@@ -550,10 +550,16 @@ używa. Audyt importów lokalnych odświeżono 2026-09-19. Tabela dokumentuje po
 
 <footer>
 Podział sporządzony na podstawie przeglądu kodu (nie tylko README) w sierpniu 2026, zaktualizowany we
-wrześniu 2026 o kategorię „Formalizacje TIMDR", sekcję powiązań kodu (10 września), konsolidację
-repozytoriów formalizmów/modeli koncepcyjnych, TIMDR-Solar-PV i TIMDR-Mold-Risk (14 września), oraz o dwa
-wcześniej pominięte repo, TIMDR-Tornado-NEXRAD i TIMDR-Sygnalizacja (16 września — istniały w profilu,
-ale nie były wpisane do tego indeksu; znalezione przy audycie kompletności). Pełna, źródłowa wersja tego podziału:
+wrześniu 2026 o kategorię „Formalizacje TIMDR", sekcję powiązań kodu (10 września — <strong>zamiana
+mechanizmu współdzielenia kodu</strong>: stary wzorzec sibling-import przez <code>sys.path.insert()</code>,
+działający tylko przy konkretnym układzie folderów na jednym dysku, zastąpiono wendoringiem — kopią 1:1 z
+jawnym nagłówkiem „ZWENDOROWANE" w pliku, tak żeby każde repo działało samodzielnie po sklonowaniu tylko
+jego jednego), konsolidację repozytoriów formalizmów/modeli koncepcyjnych, TIMDR-Solar-PV i TIMDR-Mold-Risk
+(14 września), dwa wcześniej pominięte repo, TIMDR-Tornado-NEXRAD i TIMDR-Sygnalizacja (16 września —
+istniały w profilu, ale nie były wpisane do tego indeksu; znalezione przy audycie kompletności), oraz o
+pełny audyt tej zamiany na wszystkich 13 wpisach tabeli powyżej (19 września — potwierdzono brak żywych
+importów międzyrepozytoryjnych, każde repo z tabeli działa samodzielnie po sklonowaniu tylko siebie).
+Pełna, źródłowa wersja tego podziału:
 <a href="https://github.com/jbackk-lang/jbackk-lang.github.io/blob/main/KATEGORIE.md" target="_blank">KATEGORIE.md</a>.
 </footer>
 
