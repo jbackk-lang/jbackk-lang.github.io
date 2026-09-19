@@ -38,24 +38,24 @@
     a { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
     a:hover { color: #fff; }
 
-    /* Układ dwukolumnowy dla dużych ekranów */
+    /* Na ekranie laptopa i większym: szerokie diagramy po lewej,
+       przewijalna lista repozytoriów po prawej. */
     .dashboard-container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 25px;
         margin-top: 20px;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 860px) {
         .dashboard-container {
-            flex-direction: row;
+            grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.8fr);
             align-items: flex-start;
         }
     }
 
     /* Panel Symulacji */
     .simulation-panel {
-        flex: 1.4;
         min-width: 0;
         background: var(--panel-bg);
         padding: 20px;
@@ -157,7 +157,6 @@
        do zrzutow calej strony (sticky element "zamrazal" sie w jednym miejscu
        i nakladal na tresc lewej kolumny przy przewijaniu / stitchowaniu). */
     .repos-panel {
-        flex: 1;
         min-width: 0;
         background: var(--panel-bg);
         padding: 20px;
