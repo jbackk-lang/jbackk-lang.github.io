@@ -152,7 +152,7 @@
         margin-top: 2px;
     }
 
-    /* Lista Repozytoriów */
+    /* Lista Repozytoriów - przewijalny panel boczny, zeby nie rozciagal calej strony */
     .repos-panel {
         flex: 1;
         min-width: 0;
@@ -160,7 +160,15 @@
         padding: 20px;
         border-radius: 8px;
         border: 1px solid #2d3748;
-        max-height: none;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    @media (min-width: 1024px) {
+        .repos-panel {
+            position: sticky;
+            top: 20px;
+        }
     }
 
     .repo {
@@ -269,17 +277,16 @@
 
 <h1>Zintegrowany Panel Badawczy: jbackk-lang</h1>
 
-<!-- DIAGRAM: cztery gałęzie TIMDR (Chronoproces -> M/S, G, K -> META-DYNAMICS), mosty i status -->
-<div class="mermaid-panel">
-<p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">Cztery gałęzie TIMDR — mosty i status</p>
-<img src="timdr-branches-diagram.png" alt="Diagram czterech gałęzi TIMDR: Chronoproces -> M/S, G, K -> META-DYNAMICS, mosty i status" style="max-width:100%;max-height:70vh;width:auto;height:auto;display:block;margin:0 auto;border-radius:6px;">
-</div>
-
-
 <div class="dashboard-container">
 
-    <!-- LEWA KOLUMNA: SYMULATOR MATRYCY HELISY (NGC 7075) -->
+    <!-- LEWA KOLUMNA: DIAGRAM + WSZYSTKIE ANIMACJE (3D, Helix-Astro, Potrójna Helisa) -->
     <div class="simulation-panel">
+
+        <!-- DIAGRAM: cztery gałęzie TIMDR (Chronoproces -> M/S, G, K -> META-DYNAMICS), mosty i status -->
+        <div class="mermaid-panel">
+        <p style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">Cztery gałęzie TIMDR — mosty i status</p>
+        <img src="timdr-branches-diagram.png" alt="Diagram czterech gałęzi TIMDR: Chronoproces -> M/S, G, K -> META-DYNAMICS, mosty i status" style="max-width:100%;max-height:70vh;width:auto;height:auto;display:block;margin:0 auto;border-radius:6px;">
+        </div>
 
         <!-- Cztery sceny 3D (M/S, G, K, Meta-dynamika) - po lewej, 2x2 -->
         <div class="diagram3d-grid">
