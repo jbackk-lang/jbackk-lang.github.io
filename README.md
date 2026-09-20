@@ -1,4 +1,4 @@
-## <https://jbackk-lang.github.io/>
+﻿## <https://jbackk-lang.github.io/>
 
 # 🔷 Topologia Informacji — Mapa Skrętu
 Strona prezentuje **koncepcyjne modele, wizualizacje i struktury**  
@@ -85,9 +85,9 @@ Lista projektów, kodów i implementacji opartych na frameworku Λ–τ–ρ:
 | [AstroCycles-TIMDR](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/AstroCycles-TIMDR) | Cykle astrologiczne w języku TIMDR |
 | [astro-map](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/astro-map) | Symboliczna mapa danych astronomicznych |
 | [Boundary-Matter](https://github.com/jbackk-lang/Boundary-Matter) | Silnik decyzyjny generujący sprzeczne tezy rynkowe |
-| [FAI](https://github.com/jbackk-lang/FAI) | Minimalny model AI oparty na stanach λ/τ/ρ |
+| [FAI](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/FAI) | Minimalny model AI oparty na stanach λ/τ/ρ |
 | [FIELDCORE](https://github.com/jbackk-lang/FIELDCORE) | Kosmos jako układ dwóch skrętów pola |
-| [FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main](https://github.com/jbackk-lang/FUNDAMENTAL-AI-MODEL-WERSJA-PRO-main) | Architektura AI oparta na Λ–τ–ρ |
+| [FUNDAMENTAL-AI-MODEL-WERSJA-PRO](https://github.com/jbackk-lang/TIMDR-Concept-Archive/tree/main/FUNDAMENTAL-AI-MODEL-WERSJA-PRO) | Architektura AI oparta na Λ–τ–ρ |
 | [genertor-fotonow](https://github.com/jbackk-lang/genertor-fotonow) | Koncepcyjny generator fotonów oparty na skręcie pola |
 | [GIA-TIMDR](https://github.com/jbackk-lang/GIA-TIMDR) | Fundament matematyczny/logiczny całego systemu TIMDR |
 | [GSF](https://github.com/jbackk-lang/GSF) | Globalny system finansowy jako pole informacji |
