@@ -38,8 +38,8 @@
     a { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
     a:hover { color: #fff; }
 
-    /* Na ekranie laptopa i większym: szerokie diagramy po lewej,
-       przewijalna lista repozytoriów po prawej. */
+    /* Na ekranie laptopa i większym: stały podział na dwie kolumny.
+       Lewa zachowuje wszystkie wizualizacje, prawa pokazuje pełną listę repo. */
     .dashboard-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -49,7 +49,7 @@
 
     @media (min-width: 860px) {
         .dashboard-container {
-            grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.8fr);
+            grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
             align-items: flex-start;
         }
     }
@@ -152,18 +152,15 @@
         margin-top: 2px;
     }
 
-    /* Lista Repozytoriów - przewijalny panel boczny, zeby nie rozciagal calej strony */
-    /* UWAGA: celowo bez position:sticky - psulo to renderowanie w narzedziach
-       do zrzutow calej strony (sticky element "zamrazal" sie w jednym miejscu
-       i nakladal na tresc lewej kolumny przy przewijaniu / stitchowaniu). */
+    /* Lista repozytoriów: pełna wysokość strony, bez wewnętrznego scrolla.
+       Dzięki temu prawa kolumna jest rozwinięta razem z menu. */
     .repos-panel {
         min-width: 0;
         background: var(--panel-bg);
         padding: 20px;
         border-radius: 8px;
         border: 1px solid #2d3748;
-        max-height: 85vh;
-        overflow-y: auto;
+        align-self: stretch;
     }
 
     .repo {
@@ -186,6 +183,8 @@
         border: 1px solid var(--accent-purple);
         border-radius: 10px;
         transition: transform 0.2s, background 0.2s, border-color 0.2s;
+        color: var(--text-color);
+        text-decoration: none;
     }
 
     .category-box:hover {
@@ -200,7 +199,7 @@
         flex-shrink: 0;
     }
 
-    .category-box-text a {
+    .category-box-title {
         display: block;
         font-size: 17px;
         font-weight: 600;
@@ -208,7 +207,7 @@
         margin-bottom: 4px;
     }
 
-    .category-box-text a:hover {
+    .category-box:hover .category-box-title {
         color: var(--accent-blue);
     }
 
@@ -233,16 +232,13 @@
         color: #718096;
     }
 
-    /* Siatka 4 scen 3D (M/S, G, K, Meta-dynamika) - teraz po lewej, 2x2 */
+    /* Cztery sceny 3D w jednej pionowej kolumnie: każda korzysta
+       z pełnej szerokości lewej części panelu. */
     .diagram3d-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 16px;
         margin-bottom: 24px;
-    }
-
-    @media (max-width: 480px) {
-        .diagram3d-grid { grid-template-columns: 1fr; }
     }
 
     /* Panel diagramu Mermaid (cztery gałęzie TIMDR - mosty i status) */
@@ -255,17 +251,6 @@
         overflow-x: auto;
     }
 
-    /* Custom scrollbar dla panelu repo */
-    .repos-panel::-webkit-scrollbar {
-        width: 6px;
-    }
-    .repos-panel::-webkit-scrollbar-track {
-        background: var(--panel-bg);
-    }
-    .repos-panel::-webkit-scrollbar-thumb {
-        background: #2d3748;
-        border-radius: 3px;
-    }
 </style>
 </head>
 <body>
@@ -299,7 +284,7 @@
         })();
         </script>
 
-        <!-- Cztery sceny 3D (M/S, G, K, Meta-dynamika) - po lewej, 2x2 -->
+        <!-- Cztery sceny 3D (M/S, G, K, Meta-dynamika) — pionowo, w lewej kolumnie -->
         <div class="diagram3d-grid">
 
         <div style="background:var(--panel-bg);border:1px solid #2d3748;border-radius:8px;padding:14px 18px;">
@@ -539,15 +524,13 @@
     <!-- PRAWA KOLUMNA: REPOZYTORIA GIT -->
     <div class="repos-panel">
         <h2>Repozytoria Git</h2>
-        <div class="category-box">
+        <a class="category-box" href="kategorie.html" aria-label="Otwórz katalog kategorii repozytoriów">
             <span class="category-box-icon">📂</span>
             <div class="category-box-text">
-                <a href="kategorie.html">
-                    Podział repozytoriów: narzędzia inżynierskie vs. modele koncepcyjne
-                </a>
+                <span class="category-box-title">Katalog kategorii repozytoriów</span>
                 <span class="category-box-sub">Pełna lista z opisem każdego repo, wg kategorii, z odznakami pokazującymi co gdzie się przeniosło — kliknij, aby zobaczyć.</span>
             </div>
-        </div>
+        </a>
         <div id="repos">Ładowanie repozytoriów z serwerów GitHub...</div>
     </div>
 
