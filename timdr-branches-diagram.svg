@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1430" viewBox="0 0 1600 1430" role="img" aria-labelledby="title desc">
+  <title id="title">TIMDR — aktualna mapa gałęzi, mostów i dowodów</title>
+  <desc id="desc">Schemat czterech odrębnych warstw TIMDR, Chronoprocesu, mostów, bramki B4 oraz aktualnych wyników.</desc>
+  <defs>
+    <style>
+      .bg{fill:#11131c}.panel{fill:#181d2b;stroke:#34415b;stroke-width:2}.formal{fill:#202a3e;stroke:#8194b7;stroke-width:3}.ms{fill:#123344;stroke:#22b9e8;stroke-width:3}.g{fill:#2c1d46;stroke:#b175f5;stroke-width:3}.k{fill:#3c2d10;stroke:#e3ad21;stroke-width:3}.meta{fill:#143e2d;stroke:#55ca86;stroke-width:3}.support{fill:#143e2d;stroke:#55ca86;stroke-width:3}.partial{fill:#3c2d10;stroke:#e3ad21;stroke-width:3}.reject{fill:#4b2531;stroke:#ec687a;stroke-width:3}.muted{fill:#202a3e;stroke:#8194b7;stroke-width:3}.line{fill:none;stroke:#7184a4;stroke-width:4}.dash{fill:none;stroke:#7184a4;stroke-width:3;stroke-dasharray:12 12}.line-ms-g{fill:none;stroke:#55ca86;stroke-width:4}.line-ms-k{fill:none;stroke:#e3ad21;stroke-width:4}.line-k-g{fill:none;stroke:#ec687a;stroke-width:4}.small{font:18px Arial,sans-serif;fill:#c9d3e7}.note{font:16px Arial,sans-serif;fill:#b5c1d7}.h{font:700 28px Arial,sans-serif;fill:#fff}.sh{font:700 22px Arial,sans-serif;fill:#fff}.tiny{font:15px Arial,sans-serif;fill:#b5c1d7}.label{font:700 16px Arial,sans-serif;fill:#dce6f8}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#7184a4"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="1430" rx="28"/>
+  <text x="75" y="82" class="h" font-size="32">TIMDR — cztery odrębne gałęzie, mosty i bramka empiryczna</text>
+  <text x="75" y="116" class="small">Stan repozytorium GIA-TIMDR: 22 września 2026. Linie oznaczają zależność lub kandydacki most, nie automatyczną identyfikację obiektów.</text>
+
+  <!-- chronoprocess -->
+  <rect x="540" y="155" width="520" height="118" rx="22" class="formal"/>
+  <text x="800" y="201" text-anchor="middle" class="h">Chronoproces Ξ = (T, x, Γ, φ)</text>
+  <text x="800" y="234" text-anchor="middle" class="small">wspólny nośnik czasu • niezależne rzuty • bez mieszania gałęzi</text>
+  <path d="M630 273 V322 H220 V370" class="line" marker-end="url(#arrow)"/>
+  <path d="M800 273 V370" class="line" marker-end="url(#arrow)"/>
+  <path d="M970 273 V322 H1130 V370" class="line" marker-end="url(#arrow)"/>
+  <path d="M1010 273 V322 H1410 V665" class="dash" marker-end="url(#arrow)"/>
+  <text x="1260" y="313" class="tiny">współdzielony czas T</text>
+
+  <!-- core branches -->
+  <rect x="70" y="370" width="330" height="190" rx="24" class="ms"/>
+  <text x="235" y="420" text-anchor="middle" class="h">M/S — sygnał</text>
+  <text x="235" y="457" text-anchor="middle" class="small">anomalia • defekt</text>
+  <text x="235" y="485" text-anchor="middle" class="small">rezonans M • skręt sygnałowy</text>
+  <text x="235" y="525" text-anchor="middle" class="note">obiekt: x : T → ℝᵈ</text>
+
+  <rect x="635" y="370" width="330" height="190" rx="24" class="g"/>
+  <text x="800" y="420" text-anchor="middle" class="h">G — geometria</text>
+  <text x="800" y="457" text-anchor="middle" class="small">Weingarten • krzywizna</text>
+  <text x="800" y="485" text-anchor="middle" class="small">G-Rezonans • skręt powierzchniowy</text>
+  <text x="800" y="525" text-anchor="middle" class="note">obiekt: Γ : T × I → ℝ³</text>
+
+  <rect x="1060" y="370" width="330" height="190" rx="24" class="k"/>
+  <text x="1225" y="420" text-anchor="middle" class="h">K — modalność</text>
+  <text x="1225" y="457" text-anchor="middle" class="small">częstotliwość • faza • amplituda</text>
+  <text x="1225" y="485" text-anchor="middle" class="small">rezonans modalny</text>
+  <text x="1225" y="525" text-anchor="middle" class="note">obiekt: φ : T → (f, φ, A)</text>
+
+  <rect x="1240" y="665" width="290" height="180" rx="24" class="meta"/>
+  <text x="1385" y="713" text-anchor="middle" class="h" font-size="24">META-DYNAMICS</text>
+  <text x="1385" y="751" text-anchor="middle" class="small">MetaState(Λ, τ, ρ, J)</text>
+  <text x="1385" y="780" text-anchor="middle" class="small">M = dS/dt</text>
+  <text x="1385" y="818" text-anchor="middle" class="note">równoległa warstwa agregatu</text>
+
+  <!-- established / limited bridges -->
+  <path d="M400 470 H635" class="line-ms-g"/>
+  <path d="M965 470 H1060" class="line-k-g"/>
+  <path d="M400 515 C565 635 895 655 1060 515" class="line-ms-k"/>
+
+  <rect x="385" y="600" width="390" height="140" rx="21" class="support"/>
+  <text x="580" y="645" text-anchor="middle" class="sh">MC M/S↔G #1 — USTALONY</text>
+  <text x="580" y="676" text-anchor="middle" class="small">diagnostyka, nie selektor • Z0 ↔ Gᵢ</text>
+  <text x="580" y="710" text-anchor="middle" class="note">140/240: łożyska silny • sejsmika częściowy • BTC brak</text>
+  <path d="M485 600 V560" class="line-ms-g"/>
+  <path d="M675 600 V560" class="line-ms-g"/>
+
+  <rect x="875" y="600" width="350" height="140" rx="21" class="reject"/>
+  <text x="1050" y="645" text-anchor="middle" class="sh">MC K↔G — ODRZUCONY</text>
+  <text x="1050" y="676" text-anchor="middle" class="small">widmo Möbiusa jako selekcja ω1</text>
+  <text x="1050" y="710" text-anchor="middle" class="note">artefakt gęstości kratownicy, nie sygnał</text>
+  <path d="M980 600 V560" class="line-k-g"/>
+  <path d="M1120 600 V560" class="line-k-g"/>
+
+  <rect x="690" y="770" width="415" height="105" rx="21" class="partial"/>
+  <text x="897" y="813" text-anchor="middle" class="sh">M/S↔K #2 — Z0 ↔ ω1</text>
+  <text x="897" y="847" text-anchor="middle" class="small">częściowo ustalony • 43/60 i 38/60</text>
+  <path d="M940 770 V740" class="line-ms-k"/>
+
+  <rect x="70" y="770" width="470" height="105" rx="21" class="muted"/>
+  <text x="305" y="813" text-anchor="middle" class="sh">Most Fouriera M/S↔K — ograniczony</text>
+  <text x="305" y="847" text-anchor="middle" class="small">Δt · Δf = 1/(4π) tylko dla pojedynczego impulsu gaussowskiego</text>
+
+  <!-- new chronoprocess candidates -->
+  <rect x="70" y="925" width="1460" height="220" rx="24" class="panel"/>
+  <text x="105" y="970" class="sh">Nowe mosty Chronoprocesu — status po kontrolach</text>
+  <rect x="105" y="998" width="420" height="112" rx="18" class="partial"/>
+  <text x="315" y="1035" text-anchor="middle" class="sh">chrono_membrane M/S↔G</text>
+  <text x="315" y="1064" text-anchor="middle" class="small">1730/1750 RPM: częściowo SUPPORTED</text>
+  <text x="315" y="1092" text-anchor="middle" class="note">kierunek + we wszystkich oknach; 2/3 pełne</text>
+  <rect x="590" y="998" width="390" height="112" rx="18" class="reject"/>
+  <text x="785" y="1035" text-anchor="middle" class="sh">chrono_sphere M/S↔G</text>
+  <text x="785" y="1064" text-anchor="middle" class="small">S² z 3 kanałów</text>
+  <text x="785" y="1092" text-anchor="middle" class="note">odrzucony na kontroli</text>
+  <rect x="1045" y="998" width="450" height="112" rx="18" class="reject"/>
+  <text x="1270" y="1035" text-anchor="middle" class="sh">chrono_modal_geometry K↔G</text>
+  <text x="1270" y="1064" text-anchor="middle" class="small">Frenet–Serret obwiedni BPFO/BPFI/BSF</text>
+  <text x="1270" y="1092" text-anchor="middle" class="note">niestabilny — zatrzymany na kontroli</text>
+
+  <!-- B4 -->
+  <path d="M800 875 V1190" class="line" marker-end="url(#arrow)"/>
+  <text x="830" y="913" class="tiny">dane + alignment → prerejestracja → kontrole +/- → test</text>
+  <rect x="300" y="1190" width="1000" height="155" rx="24" class="panel"/>
+  <text x="800" y="1235" text-anchor="middle" class="h">Bramka empiryczna B4 — osobna od diagramu teorii</text>
+  <rect x="337" y="1260" width="395" height="55" rx="15" class="reject"/>
+  <text x="535" y="1295" text-anchor="middle" class="small">B4-Bearing: brak alignmentu → INCONCLUSIVE</text>
+  <rect x="868" y="1260" width="395" height="55" rx="15" class="support"/>
+  <text x="1065" y="1288" text-anchor="middle" class="small">B4-Kitchen: SUPPORTED wewnątrzosobniczo</text>
+  <text x="1065" y="1309" text-anchor="middle" class="tiny">S13 Brownie + Eggs: 2/2 • nie międzyosobniczo</text>
+
+  <!-- legend -->
+  <circle cx="95" cy="1385" r="11" fill="#55ca86"/><text x="118" y="1391" class="note">wspierający / ustalony w ograniczonym zakresie</text>
+  <circle cx="555" cy="1385" r="11" fill="#e3ad21"/><text x="578" y="1391" class="note">częściowy / ograniczony</text>
+  <circle cx="865" cy="1385" r="11" fill="#ec687a"/><text x="888" y="1391" class="note">odrzucony / zatrzymany na kontroli</text>
+  <circle cx="1245" cy="1385" r="11" fill="#8194b7"/><text x="1268" y="1391" class="note">formalny komponent</text>
+</svg>
