@@ -67,7 +67,7 @@
 <text x="237.5" y="794" text-anchor="middle" class="sh">Konstrukcje: kotwica modalna</text>
 <text x="237.5" y="824" text-anchor="middle" class="pos">most KW51 ✓ • rama LANL ✓</text>
 <text x="237.5" y="847" text-anchor="middle" class="pos">śruba ORION-AE ✓ (trend)</text>
-<text x="237.5" y="870" text-anchor="middle" class="neg">most Hell Bridge ✕ (AR lepszy)</text>
+<text x="237.5" y="870" text-anchor="middle" class="neg">Hell Bridge: sama kotwica ✕</text>
 <rect x="437" y="760" width="355" height="140" rx="20" class="partial"/>
 <text x="614.5" y="794" text-anchor="middle" class="sh">Zwinięcie pola w rurę</text>
 <text x="614.5" y="824" text-anchor="middle" class="mid">rura niesie informację</text>
@@ -79,9 +79,9 @@
 <text x="991.5" y="847" text-anchor="middle" class="note">brak kotwicy (rytm zgadywany)</text>
 <text x="991.5" y="870" text-anchor="middle" class="note">okno 30 ms za krótkie na łopaty</text>
 <rect x="1191" y="760" width="355" height="140" rx="20" class="partial"/>
-<text x="1368.5" y="794" text-anchor="middle" class="sh">Most K↔G: faza → kształt modu</text>
-<text x="1368.5" y="824" text-anchor="middle" class="mid">most HBTA: z fazą 0,78 ≈ AR 0,80</text>
-<text x="1368.5" y="847" text-anchor="middle" class="note">(bez fazy 0,65; krzywizna 0,72)</text>
+<text x="1368.5" y="794" text-anchor="middle" class="sh">K → G → M/S: przerwa ciągłości</text>
+<text x="1368.5" y="824" text-anchor="middle" class="pos">HBTA pionowe 0,93–0,94 ≥ AR</text>
+<text x="1368.5" y="847" text-anchor="middle" class="mid">średnio remis z AR 0,80 (stężenia)</text>
 <text x="1368.5" y="870" text-anchor="middle" class="neg">Möbius K↔G odrzucony (artefakt)</text>
 <rect x="60" y="945" width="1486" height="140" rx="20" class="formal"/>
 <text x="803.0" y="979" text-anchor="middle" class="sh">Parametry przejść — reguła wykonalności liczona PRZED testem</text>

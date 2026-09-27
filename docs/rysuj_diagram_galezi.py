@@ -62,10 +62,10 @@ for (x, t, s, r1, r2), (a, b) in zip(mosty, [(0, 1), (1, 2), (2, 3)]):
 
 # wyniki dziedzinowe
 RY = 760; RW, RH = 355, 140
-wyniki = [(60, "partial", "Konstrukcje: kotwica modalna", ("most KW51 ✓ • rama LANL ✓", "pos"), ("śruba ORION-AE ✓ (trend)", "pos"), ("most Hell Bridge ✕ (AR lepszy)", "neg")),
+wyniki = [(60, "partial", "Konstrukcje: kotwica modalna", ("most KW51 ✓ • rama LANL ✓", "pos"), ("śruba ORION-AE ✓ (trend)", "pos"), ("Hell Bridge: sama kotwica ✕", "neg")),
           (437, "partial", "Zwinięcie pola w rurę", ("rura niesie informację", "mid"), ("radar: 0,76 — tyle co sito", "note"), ("bez zysku ponad klasykę", "neg")),
           (814, "reject", "Radar mikro-Doppler", ("NOT SUPPORTED", "neg"), ("brak kotwicy (rytm zgadywany)", "note"), ("okno 30 ms za krótkie na łopaty", "note")),
-          (1191, "partial", "Most K↔G: faza → kształt modu", ("most HBTA: z fazą 0,78 ≈ AR 0,80", "mid"), ("(bez fazy 0,65; krzywizna 0,72)", "note"), ("Möbius K↔G odrzucony (artefakt)", "neg"))]
+          (1191, "partial", "K → G → M/S: przerwa ciągłości", ("HBTA pionowe 0,93–0,94 ≥ AR", "pos"), ("średnio remis z AR 0,80 (stężenia)", "mid"), ("Möbius K↔G odrzucony (artefakt)", "neg"))]
 for x, c, t, *ls in wyniki:
     box(x, RY, RW, RH, c, [(t, "sh")] + list(ls))
 
