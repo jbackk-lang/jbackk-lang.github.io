@@ -65,9 +65,9 @@
 <path d="M1370.0,465 L1280,536" class="gline" marker-end="url(#arrow)"/>
 <rect x="60" y="760" width="355" height="140" rx="20" class="partial"/>
 <text x="237.5" y="794" text-anchor="middle" class="sh">Konstrukcje: kotwica modalna</text>
-<text x="237.5" y="824" text-anchor="middle" class="pos">most KW51 ✓ • rama LANL ✓</text>
-<text x="237.5" y="847" text-anchor="middle" class="pos">śruba ORION-AE ✓ (trend)</text>
-<text x="237.5" y="870" text-anchor="middle" class="neg">Hell Bridge: sama kotwica ✕</text>
+<text x="237.5" y="824" text-anchor="middle" class="pos">tak: most KW51 • rama LANL</text>
+<text x="237.5" y="847" text-anchor="middle" class="pos">tak: śruba ORION-AE (trend)</text>
+<text x="237.5" y="870" text-anchor="middle" class="neg">nie: Hell Bridge, sama kotwica</text>
 <rect x="437" y="760" width="355" height="140" rx="20" class="partial"/>
 <text x="614.5" y="794" text-anchor="middle" class="sh">Zwinięcie pola w rurę</text>
 <text x="614.5" y="824" text-anchor="middle" class="mid">rura niesie informację</text>

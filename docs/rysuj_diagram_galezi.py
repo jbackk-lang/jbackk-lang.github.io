@@ -1,5 +1,6 @@
-"""Generuje timdr-branches-diagram.svg (mapa galezi, mostow i wynikow TIMDR). Stan: 27 wrzesnia 2026.
-Uzycie: python docs/rysuj_diagram_galezi.py  (zapisuje plik w katalogu glownym strony)."""
+"""Generuje timdr-branches-diagram.svg i .png (mapa galezi, mostow i wynikow TIMDR). Stan: 27 wrzesnia 2026.
+Uzycie: python docs/rysuj_diagram_galezi.py  (zapisuje pliki w katalogu glownym strony).
+PNG powstaje przez cairosvg (pip install cairosvg; na Windows wymaga biblioteki Cairo) -- gdy jej brak, powstaje tylko SVG."""
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -62,7 +63,7 @@ for (x, t, s, r1, r2), (a, b) in zip(mosty, [(0, 1), (1, 2), (2, 3)]):
 
 # wyniki dziedzinowe
 RY = 760; RW, RH = 355, 140
-wyniki = [(60, "partial", "Konstrukcje: kotwica modalna", ("most KW51 ✓ • rama LANL ✓", "pos"), ("śruba ORION-AE ✓ (trend)", "pos"), ("Hell Bridge: sama kotwica ✕", "neg")),
+wyniki = [(60, "partial", "Konstrukcje: kotwica modalna", ("tak: most KW51 • rama LANL", "pos"), ("tak: śruba ORION-AE (trend)", "pos"), ("nie: Hell Bridge, sama kotwica", "neg")),
           (437, "partial", "Zwinięcie pola w rurę", ("rura niesie informację", "mid"), ("radar: 0,76 — tyle co sito", "note"), ("bez zysku ponad klasykę", "neg")),
           (814, "reject", "Radar mikro-Doppler", ("NOT SUPPORTED", "neg"), ("brak kotwicy (rytm zgadywany)", "note"), ("okno 30 ms za krótkie na łopaty", "note")),
           (1191, "partial", "K → G → M/S: przerwa ciągłości", ("HBTA pionowe 0,93–0,94 ≥ AR", "pos"), ("średnio remis z AR 0,80 (stężenia)", "mid"), ("Möbius K↔G odrzucony (artefakt)", "neg"))]
@@ -84,5 +85,13 @@ for i, (c, t) in enumerate([("support", "potwierdzony (pre-rejestracja)"), ("par
 A('<text x="800" y="1240" text-anchor="middle" class="note">Szczegóły i liczby: README GIA-TIMDR (tabela wyników), docs/geometry/RESULT_*.md; narzędzia: TIMDR-Industrial-Predict, TIMDR-Structural-Health.</text>')
 A('<text x="800" y="1270" text-anchor="middle" class="note">TIMDR to model do budowania programów analizujących sygnały — rama, drogowskazy i protokół, nie gotowy detektor.</text>')
 A("</svg>")
-Path(__file__).resolve().parent.parent.joinpath("timdr-branches-diagram.svg").write_text("\n".join(out), encoding="utf-8")
-print("zapisano timdr-branches-diagram.svg")
+root = Path(__file__).resolve().parent.parent
+svg = root / "timdr-branches-diagram.svg"
+svg.write_text("\n".join(out), encoding="utf-8")
+print("zapisano", svg.name)
+try:
+    import cairosvg
+    cairosvg.svg2png(url=str(svg), write_to=str(root / "timdr-branches-diagram.png"), output_width=W)
+    print("zapisano timdr-branches-diagram.png")
+except Exception as e:                      # brak cairosvg/Cairo: PNG pominiety, SVG wystarcza stronie
+    print("PNG pominiety:", type(e).__name__, e)
