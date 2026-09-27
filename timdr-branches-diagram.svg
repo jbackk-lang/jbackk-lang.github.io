@@ -78,11 +78,11 @@
 <text x="991.5" y="824" text-anchor="middle" class="neg">NOT SUPPORTED</text>
 <text x="991.5" y="847" text-anchor="middle" class="note">brak kotwicy (rytm zgadywany)</text>
 <text x="991.5" y="870" text-anchor="middle" class="note">okno 30 ms za krótkie na łopaty</text>
-<rect x="1191" y="760" width="355" height="140" rx="20" class="reject"/>
-<text x="1368.5" y="794" text-anchor="middle" class="sh">MC K↔G (Möbius) • Fourier</text>
-<text x="1368.5" y="824" text-anchor="middle" class="neg">K↔G odrzucony: artefakt kratownicy</text>
-<text x="1368.5" y="847" text-anchor="middle" class="note">Fourier M/S↔K: tylko impuls</text>
-<text x="1368.5" y="870" text-anchor="middle" class="note">gaussowski (ograniczony)</text>
+<rect x="1191" y="760" width="355" height="140" rx="20" class="partial"/>
+<text x="1368.5" y="794" text-anchor="middle" class="sh">Most K↔G: faza → kształt modu</text>
+<text x="1368.5" y="824" text-anchor="middle" class="mid">most HBTA: z fazą 0,78 ≈ AR 0,80</text>
+<text x="1368.5" y="847" text-anchor="middle" class="note">(bez fazy 0,65; krzywizna 0,72)</text>
+<text x="1368.5" y="870" text-anchor="middle" class="neg">Möbius K↔G odrzucony (artefakt)</text>
 <rect x="60" y="945" width="1486" height="140" rx="20" class="formal"/>
 <text x="803.0" y="979" text-anchor="middle" class="sh">Parametry przejść — reguła wykonalności liczona PRZED testem</text>
 <text x="803.0" y="1009" text-anchor="middle" class="small">N_cyk (cykle rytmu w oknie) • kotwica (stała / śledzona / wolna) • D = f·τ (reżim) • L_koh (koherencja → zegar) • środek oczek (lokalizacja)</text>
