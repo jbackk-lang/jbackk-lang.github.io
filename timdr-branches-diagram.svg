@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1310" viewBox="0 0 1600 1310" role="img" aria-labelledby="title desc">
-<title id="title">TIMDR — gałęzie, mosty i wyniki (27 września 2026)</title>
-<desc id="desc">Chronoproces i cztery gałęzie TIMDR; gałęzie użyte same dają wyniki negatywne, mosty między nimi — pozytywne; parametry przejść i reguła wykonalności; wyniki na łożyskach, turbinie, konstrukcjach i radarze.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1480" viewBox="0 0 1600 1480" role="img" aria-labelledby="title desc">
+<title id="title">TIMDR — gałęzie, mosty i wyniki (28 września 2026)</title>
+<desc id="desc">Chronoproces i cztery gałęzie TIMDR; gałęzie użyte same dają wyniki negatywne, mosty między nimi — pozytywne; zasada odniesienia z tego samego ośrodka; parametry przejść i reguła wykonalności; wyniki na łożyskach, turbinie, konstrukcjach i radarze.</desc>
 <defs><style>
 .bg{fill:#11131c}.formal{fill:#202a3e;stroke:#8194b7;stroke-width:3}.ms{fill:#123344;stroke:#22b9e8;stroke-width:3}
 .g{fill:#2c1d46;stroke:#b175f5;stroke-width:3}.k{fill:#3c2d10;stroke:#e3ad21;stroke-width:3}.meta{fill:#12343a;stroke:#4fb3a8;stroke-width:3}
@@ -11,9 +11,9 @@
 .mid{font:700 17px Arial,sans-serif;fill:#f2cf6b}.label{font:700 16px Arial,sans-serif;fill:#dce6f8}
 </style>
 <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#7184a4"/></marker></defs>
-<rect class="bg" width="1600" height="1310" rx="28"/>
+<rect class="bg" width="1600" height="1480" rx="28"/>
 <text x="800" y="62" text-anchor="middle" class="h">TIMDR — gałęzie, mosty i wyniki</text>
-<text x="800" y="96" text-anchor="middle" class="note">Stan GIA-TIMDR: 27 września 2026. Wszystkie wyniki pre-rejestrowane, jedno uruchomienie, także negatywne.</text>
+<text x="800" y="96" text-anchor="middle" class="note">Stan GIA-TIMDR: 28 września 2026. Wszystkie wyniki pre-rejestrowane, jedno uruchomienie, także negatywne.</text>
 <rect x="480" y="125" width="640" height="125" rx="20" class="formal"/>
 <text x="800.0" y="159" text-anchor="middle" class="sh">Chronoproces Ξ = (T, x, Γ, φ)</text>
 <text x="800.0" y="189" text-anchor="middle" class="small">pierwszy trybik: wybór zegara — czas • kąt obrotu • zdarzenie</text>
@@ -73,30 +73,40 @@
 <text x="614.5" y="824" text-anchor="middle" class="mid">rura niesie informację</text>
 <text x="614.5" y="847" text-anchor="middle" class="note">radar: 0,76 — tyle co sito</text>
 <text x="614.5" y="870" text-anchor="middle" class="neg">bez zysku ponad klasykę</text>
-<rect x="814" y="760" width="355" height="140" rx="20" class="reject"/>
-<text x="991.5" y="794" text-anchor="middle" class="sh">Radar mikro-Doppler</text>
-<text x="991.5" y="824" text-anchor="middle" class="neg">NOT SUPPORTED</text>
-<text x="991.5" y="847" text-anchor="middle" class="note">brak kotwicy (rytm zgadywany)</text>
-<text x="991.5" y="870" text-anchor="middle" class="note">okno 30 ms za krótkie na łopaty</text>
+<rect x="814" y="760" width="355" height="140" rx="20" class="partial"/>
+<text x="991.5" y="794" text-anchor="middle" class="sh">Radar: lustro i cień</text>
+<text x="991.5" y="824" text-anchor="middle" class="pos">mmWave 16 s: stereoskopia 3/3</text>
+<text x="991.5" y="847" text-anchor="middle" class="mid">lustro 0,89 vs klasyka 0,81 (most MIXED)</text>
+<text x="991.5" y="870" text-anchor="middle" class="neg">nie: Open Radar — za krótkie ślady</text>
 <rect x="1191" y="760" width="355" height="140" rx="20" class="partial"/>
 <text x="1368.5" y="794" text-anchor="middle" class="sh">K → G → M/S: przerwa ciągłości</text>
 <text x="1368.5" y="824" text-anchor="middle" class="pos">HBTA pionowe 0,93–0,94 ≥ AR</text>
 <text x="1368.5" y="847" text-anchor="middle" class="mid">średnio remis z AR 0,80 (stężenia)</text>
-<text x="1368.5" y="870" text-anchor="middle" class="neg">Möbius K↔G odrzucony (artefakt)</text>
-<rect x="60" y="945" width="1486" height="140" rx="20" class="formal"/>
-<text x="803.0" y="979" text-anchor="middle" class="sh">Parametry przejść — reguła wykonalności liczona PRZED testem</text>
-<text x="803.0" y="1009" text-anchor="middle" class="small">N_cyk (cykle rytmu w oknie) • kotwica (stała / śledzona / wolna) • D = f·τ (reżim) • L_koh (koherencja → zegar) • środek oczek (lokalizacja)</text>
-<text x="803.0" y="1032" text-anchor="middle" class="note">Trafne przewidywania: słabe sito na PRONOSTIA (okno 0,1 s, N_cyk ≈ 15); wolna kotwica = porażka (radar); reżim fali → linie K (budynek)</text>
-<text x="803.0" y="1055" text-anchor="middle" class="note">Każdy krok porównywany ze znanym odpowiednikiem: widmo obwiedni, kurtogram, order tracking, OMA/SSI, AR, wskaźnik harmonicznych</text>
-<text x="800" y="1125" text-anchor="middle" class="label">Obserwacja: gałąź użyta sama daje wynik negatywny, most między gałęziami — pozytywny; o powodzeniu łańcucha decyduje pierwszy trybik (zegar).</text>
-<rect x="150" y="1165" width="34" height="22" rx="5" class="support"/>
-<text x="196" y="1182" class="small">potwierdzony (pre-rejestracja)</text>
-<rect x="490" y="1165" width="34" height="22" rx="5" class="partial"/>
-<text x="536" y="1182" class="small">częściowy / mieszany</text>
-<rect x="830" y="1165" width="34" height="22" rx="5" class="reject"/>
-<text x="876" y="1182" class="small">odrzucony</text>
-<rect x="1170" y="1165" width="34" height="22" rx="5" class="formal"/>
-<text x="1216" y="1182" class="small">komponent formalny</text>
-<text x="800" y="1240" text-anchor="middle" class="note">Szczegóły i liczby: README GIA-TIMDR (tabela wyników), docs/geometry/RESULT_*.md; narzędzia: TIMDR-Industrial-Predict, TIMDR-Structural-Health.</text>
-<text x="800" y="1270" text-anchor="middle" class="note">TIMDR to model do budowania programów analizujących sygnały — rama, drogowskazy i protokół, nie gotowy detektor.</text>
+<text x="1368.5" y="870" text-anchor="middle" class="neg">nie: antyrezonanse surowe, Möbius</text>
+<rect x="60" y="920" width="880" height="150" rx="20" class="formal"/>
+<text x="500.0" y="954" text-anchor="middle" class="sh">Zasada odniesienia — wzór wszystkich udanych mostów</text>
+<text x="500.0" y="984" text-anchor="middle" class="small">nałóż sygnał na odniesienie z tego samego ośrodka, znieś to, co wspólne, czytaj resztę</text>
+<text x="500.0" y="1007" text-anchor="middle" class="note">sito • zegar kątowy • kotwica • faza wzbudnika • lustro (cień) • stosunki częstotliwości</text>
+<text x="500.0" y="1030" text-anchor="middle" class="note">porażka = zakłócenie bez odniesienia (temperatura, za krótkie okno, nierówne skalowanie)</text>
+<rect x="960" y="920" width="586" height="150" rx="20" class="partial"/>
+<text x="1253.0" y="954" text-anchor="middle" class="sh">Stosunki częstotliwości (odniesienie ze stali)</text>
+<text x="1253.0" y="984" text-anchor="middle" class="pos">tak: KW51, 15 miesięcy — lepiej niż termometr (5/6)</text>
+<text x="1253.0" y="1007" text-anchor="middle" class="pos">tak: Hell Bridge P1 — antyrezonanse 0/8 → 7/8</text>
+<text x="1253.0" y="1030" text-anchor="middle" class="neg">nie: LUMO, Hell Bridge P2 — nierówne skalowanie</text>
+<rect x="60" y="1105" width="1486" height="140" rx="20" class="formal"/>
+<text x="803.0" y="1139" text-anchor="middle" class="sh">Parametry przejść — reguła wykonalności liczona PRZED testem</text>
+<text x="803.0" y="1169" text-anchor="middle" class="small">N_cyk ≥ 10 (także na danych testowych) • kotwica (stała / śledzona / wolna) • D = f·τ • L_koh • koherencja γ² ≥ 0,8 • znaki ρ(f, T) przed stosunkami</text>
+<text x="803.0" y="1192" text-anchor="middle" class="note">Trafne przewidywania: słabe sito na PRONOSTIA; wolna kotwica = porażka (radar); reżim fali → linie K; LUMO: różne znaki ρ → stosunki nie pomogą</text>
+<text x="803.0" y="1215" text-anchor="middle" class="note">Każdy krok porównywany ze znanym odpowiednikiem: widmo obwiedni, kurtogram, order tracking, OMA/SSI, AR, CVD, regresja temperaturowa</text>
+<text x="800" y="1285" text-anchor="middle" class="label">Obserwacja: gałąź sama — wynik negatywny; most — pozytywny, gdy pierwszy trybik (rytm w oknie) jest spełniony, a zakłócenie ma odniesienie.</text>
+<rect x="150" y="1320" width="34" height="22" rx="5" class="support"/>
+<text x="196" y="1337" class="small">potwierdzony (pre-rejestracja)</text>
+<rect x="490" y="1320" width="34" height="22" rx="5" class="partial"/>
+<text x="536" y="1337" class="small">częściowy / mieszany</text>
+<rect x="830" y="1320" width="34" height="22" rx="5" class="reject"/>
+<text x="876" y="1337" class="small">odrzucony</text>
+<rect x="1170" y="1320" width="34" height="22" rx="5" class="formal"/>
+<text x="1216" y="1337" class="small">komponent formalny</text>
+<text x="800" y="1395" text-anchor="middle" class="note">Szczegóły i liczby: README GIA-TIMDR (tabela wyników), docs/geometry/RESULT_*.md; narzędzia: Industrial-Predict, Structural-Health, Modal-Formalism, META-DYNAMICS.</text>
+<text x="800" y="1425" text-anchor="middle" class="note">TIMDR to model do budowania programów analizujących sygnały — rama, drogowskazy i protokół, nie gotowy detektor.</text>
 </svg>
