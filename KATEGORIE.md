@@ -8,6 +8,8 @@ Repozytoria w tym profilu dzielą się na trzy wyraźnie różne kategorie. Rozr
 *Zweryfikowany kod, realne dane, testy.*
 | Repo | Co robi |
 |---|---|
+| [TIMDR-orbital-tracker](https://github.com/jbackk-lang/TIMDR-orbital-tracker) | **Astronomia / śledzenie — prototyp.** SGP4/Skyfield na publicznych elementach orbitalnych, kojarzenie pomiarów, CSV/HTTP i adapter LX200. Testy syntetyczne; brak niezależnej walidacji rzeczywistych pomiarów pozycji. TIMDR jako rama konstrukcji, nie autor SGP4. |
+| [TIMDR-lightcurve-fewshot](https://github.com/jbackk-lang/TIMDR-lightcurve-fewshot) | **Astronomia / fotometria i klasyfikacja — prototyp badawczy.** OGLE, pilot ATLAS, kontrola jakości i zdjęcia FITS → krzywa. ATLAS macro-F1: TIMDR 84,82%, bez sita 85,78%, RF 91,35%; przewaga sita niepotwierdzona. Fotometria zwalidowana syntetycznie. [Podsumowanie i kopie kodu w GIA](https://github.com/jbackk-lang/GIA-TIMDR/blob/main/docs/astronomy/ASTRONOMIA_2026-09-30.md). |
 | [math-validator-v2.0](https://github.com/jbackk-lang/math-validator-v2.0) | Druga generacja walidatora, wykrywanie problemów mylnych |
 | [math-validator-3.0](https://github.com/jbackk-lang/math-validator-3.0) | Trzecia generacja — SymPy, algebra liniowa, logika zdaniowa |
 | [synoptyk-v2.0](https://github.com/jbackk-lang/synoptyk-v2.0) | Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4 |
