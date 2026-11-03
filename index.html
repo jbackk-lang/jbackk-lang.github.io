@@ -268,6 +268,15 @@
         <img id="branchDiagramImg" src="timdr-branches-diagram.svg" alt="Mapa TIMDR (28.09.2026): Chronoproces, cztery gałęzie, mosty z wynikami, zasada odniesienia, stosunki częstotliwości, lustro i cień, parametry przejść i reguła wykonalności" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:6px;cursor:zoom-in;">
         </div>
 
+        <!-- TSI: mapa rdzenia i modułów, bezpośrednio pod gałęziami TIMDR -->
+        <section class="mermaid-panel" aria-labelledby="tsiDiagramTitle">
+            <h2 id="tsiDiagramTitle" style="font-size:13px;font-weight:600;color:var(--text-color);margin:0 0 10px;">TSI — rdzeń i moduły <span style="color:var(--text-muted);font-weight:400;">(kliknij, aby powiększyć)</span></h2>
+            <button id="tsiDiagramButton" type="button" aria-label="Powiększ diagram rdzenia i modułów TSI" style="display:block;width:100%;padding:0;border:0;border-radius:8px;background:transparent;cursor:zoom-in;">
+                <img id="tsiDiagramImg" src="tsi-moduly.svg" alt="TSI w układzie kwiatu: rdzeń w środku, wokół język, pamięć, logika, matematyka, dokumenty, źródła, aplikacje oraz osobno trenowana analiza sygnałów" width="1200" height="1140" loading="lazy" style="display:block;width:100%;height:auto;border-radius:8px;">
+            </button>
+            <p style="font-size:12px;line-height:1.6;color:var(--text-muted);margin:12px 0 0;">Mapa funkcji lokalnego systemu TSI. <a href="https://github.com/jbackk-lang/AI-SI-TSI" style="color:var(--text-color);text-decoration:underline;">Możliwości i aktualny stan projektu →</a></p>
+        </section>
+
         <!-- Lightbox: powiekszony diagram na pelnym ekranie po kliknieciu -->
         <div id="diagramLightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;">
             <img src="timdr-branches-diagram.svg" alt="Aktualna mapa gałęzi TIMDR — powiększenie" style="max-width:95vw;max-height:95vh;width:auto;height:auto;border-radius:8px;">
@@ -276,9 +285,18 @@
         (function(){
             var thumb = document.getElementById('branchDiagramImg');
             var box = document.getElementById('diagramLightbox');
-            function open(){ box.style.display = 'flex'; }
+            function showDiagram(image){
+                var enlarged = box.querySelector('img');
+                enlarged.src = image.src;
+                enlarged.alt = image.alt;
+                box.style.display = 'flex';
+            }
+            function open(){ showDiagram(thumb); }
             function close(){ box.style.display = 'none'; }
             thumb.addEventListener('click', open);
+            document.getElementById('tsiDiagramButton').addEventListener('click', function(){
+                showDiagram(document.getElementById('tsiDiagramImg'));
+            });
             box.addEventListener('click', close);
             document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
         })();
