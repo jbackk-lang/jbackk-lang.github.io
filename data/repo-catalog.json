@@ -1,0 +1,498 @@
+{
+  "updated": "2026-11-03",
+  "source": "https://api.github.com/users/jbackk-lang/repos",
+  "public_repositories": 69,
+  "categories": {
+    "tsi": "TSI — system i aplikacje",
+    "engineering": "Narzędzia i zastosowania",
+    "formalism": "Formalizmy i rama TIMDR",
+    "concept": "Modele koncepcyjne",
+    "documentation": "Dokumentacja i archiwa",
+    "other": "Pozostałe projekty"
+  },
+  "repositories": [
+    {
+      "name": "AI-SI-TSI",
+      "url": "https://github.com/jbackk-lang/AI-SI-TSI",
+      "category": "tsi",
+      "description": "Dokumentacja lokalnego systemu TSI: własna sieć językowa, pamięć, słowniki i narzędzia. Swobodna rozmowa w rozwoju; aktualny kod i wagi pozostają lokalne.",
+      "archived": false
+    },
+    {
+      "name": "analizator-gieldowy",
+      "url": "https://github.com/jbackk-lang/analizator-gieldowy",
+      "category": "engineering",
+      "description": "Analiza rynku — realne dane giełdowe, SMA/VWAP/OBV",
+      "archived": false
+    },
+    {
+      "name": "analizator-gieldowy-2.0",
+      "url": "https://github.com/jbackk-lang/analizator-gieldowy-2.0",
+      "category": "engineering",
+      "description": "Druga generacja analizatora giełdowego (FastAPI + Streamlit)",
+      "archived": false
+    },
+    {
+      "name": "Analizator_Gieldowy_v3.0",
+      "url": "https://github.com/jbackk-lang/Analizator_Gieldowy_v3.0",
+      "category": "engineering",
+      "description": "Trzecia generacja — sygnały TIMDR na realnych danych z yfinance oraz lokalny runtime meta-dynamiki. To NIE jest doradztwo inwestycyjne",
+      "archived": false
+    },
+    {
+      "name": "Architektura-Mapowania-Zmyslowego-TIMDR",
+      "url": "https://github.com/jbackk-lang/Architektura-Mapowania-Zmyslowego-TIMDR",
+      "category": "concept",
+      "description": "Sensoryczna brama do modelu pola",
+      "archived": false
+    },
+    {
+      "name": "Boundary-Matter",
+      "url": "https://github.com/jbackk-lang/Boundary-Matter",
+      "category": "concept",
+      "description": "Silnik decyzyjny generujący sprzeczne tezy rynkowe",
+      "archived": false
+    },
+    {
+      "name": "deliverable_timdr_finanse",
+      "url": "https://github.com/jbackk-lang/deliverable_timdr_finanse",
+      "category": "engineering",
+      "description": "Rdzeń TIMDR dla danych finansowych + ringdown_resonance() — narzędzie badawczo-edukacyjne, nie doradztwo inwestycyjne",
+      "archived": false
+    },
+    {
+      "name": "EasySound",
+      "url": "https://github.com/jbackk-lang/EasySound",
+      "category": "engineering",
+      "description": "Filtrowanie i czyszczenie dźwięku (filtr Butterwortha)",
+      "archived": false
+    },
+    {
+      "name": "FIELDCORE",
+      "url": "https://github.com/jbackk-lang/FIELDCORE",
+      "category": "concept",
+      "description": "Kosmos jako układ dwóch skrętów pola",
+      "archived": false
+    },
+    {
+      "name": "FLIGHT-TRACKING-TIMDR",
+      "url": "https://github.com/jbackk-lang/FLIGHT-TRACKING-TIMDR",
+      "category": "engineering",
+      "description": "Śledzenie trajektorii 3D dla modeli latających (drony, RC) — filtr Kalmana, detekcja manewrów, fuzja radar+IMU; walidowane na danych syntetycznych, nie na realnych lotach",
+      "archived": false
+    },
+    {
+      "name": "genertor-fotonow",
+      "url": "https://github.com/jbackk-lang/genertor-fotonow",
+      "category": "concept",
+      "description": "Koncepcyjny generator fotonów oparty na skręcie pola",
+      "archived": false
+    },
+    {
+      "name": "GIA-TIMDR",
+      "url": "https://github.com/jbackk-lang/GIA-TIMDR",
+      "category": "formalism",
+      "description": "Rama badawcza TIMDR: gałęzie M/S, G, K i META-DYNAMICS, Chronoproces, aksjomaty, implementacje i wyniki badań.",
+      "archived": false
+    },
+    {
+      "name": "GSF",
+      "url": "https://github.com/jbackk-lang/GSF",
+      "category": "concept",
+      "description": "Globalny system finansowy jako pole informacji",
+      "archived": false
+    },
+    {
+      "name": "Helix-Astro",
+      "url": "https://github.com/jbackk-lang/Helix-Astro",
+      "category": "engineering",
+      "description": "Analiza widm astronomicznych — normalizacja, filtracja, korelacja",
+      "archived": false
+    },
+    {
+      "name": "Helix-Lock",
+      "url": "https://github.com/jbackk-lang/Helix-Lock",
+      "category": "engineering",
+      "description": "Szyfrator plików z HMAC i licznikiem odczytów",
+      "archived": false
+    },
+    {
+      "name": "jbackk-lang.github.io",
+      "url": "https://github.com/jbackk-lang/jbackk-lang.github.io",
+      "category": "documentation",
+      "description": "Strona projektów, wizualizacje TIMDR i TSI oraz katalog publicznych repozytoriów.",
+      "archived": false
+    },
+    {
+      "name": "KHIPU",
+      "url": "https://github.com/jbackk-lang/KHIPU",
+      "category": "concept",
+      "description": "Koncepcyjna architektura czteroprocesorowa (TETRAGON-4CPU)",
+      "archived": false
+    },
+    {
+      "name": "KHIPU-NEURAL",
+      "url": "https://github.com/jbackk-lang/KHIPU-NEURAL",
+      "category": "engineering",
+      "description": "Test, czy koncepcja State9/GIPU z KHIPU przekłada się na moduł sieci neuronowej — wynik mieszany, jawnie opisany (pomaga przy zadaniach dyskretnych, szkodzi przy ciągłych)",
+      "archived": false
+    },
+    {
+      "name": "MAGE-IN-IMAGE-DECODER",
+      "url": "https://github.com/jbackk-lang/MAGE-IN-IMAGE-DECODER",
+      "category": "engineering",
+      "description": "Modularna analiza obrazu — FFT, HSV, detekcja ruchu",
+      "archived": false
+    },
+    {
+      "name": "math-validator-3.0",
+      "url": "https://github.com/jbackk-lang/math-validator-3.0",
+      "category": "engineering",
+      "description": "Trzecia generacja — SymPy, algebra liniowa, logika zdaniowa",
+      "archived": false
+    },
+    {
+      "name": "math-validator-v2.0",
+      "url": "https://github.com/jbackk-lang/math-validator-v2.0",
+      "category": "engineering",
+      "description": "Druga generacja walidatora, wykrywanie problemów mylnych",
+      "archived": false
+    },
+    {
+      "name": "PC_TIMDR",
+      "url": "https://github.com/jbackk-lang/PC_TIMDR",
+      "category": "concept",
+      "description": "Koncepcyjny procesor geometryczny F4-RED",
+      "archived": false
+    },
+    {
+      "name": "phi-fiber-dsp",
+      "url": "https://github.com/jbackk-lang/phi-fiber-dsp",
+      "category": "engineering",
+      "description": "Filtr DSP dla sygnałów światłowodowych",
+      "archived": false
+    },
+    {
+      "name": "phi-topology-filter",
+      "url": "https://github.com/jbackk-lang/phi-topology-filter",
+      "category": "engineering",
+      "description": "Filtr obrazu oparty na operatorach Laplace/Sobel/curl",
+      "archived": false
+    },
+    {
+      "name": "probabilistic-timdr",
+      "url": "https://github.com/jbackk-lang/probabilistic-timdr",
+      "category": "concept",
+      "description": "Prawdopodobieństwo i warunki brzegowe w TIMDR",
+      "archived": false
+    },
+    {
+      "name": "RADAR-TRACKING",
+      "url": "https://github.com/jbackk-lang/RADAR-TRACKING",
+      "category": "engineering",
+      "description": "Wcześniejsza, bazowa wersja toru radarowego (TRM/GIA/TIMDR, klastrowanie przez KD-tree, asocjacja węgierska) — zobacz też RADAR-TRACKING-TIMDR (rozszerzona wersja)",
+      "archived": false
+    },
+    {
+      "name": "RADAR-TRACKING-TIMDR",
+      "url": "https://github.com/jbackk-lang/RADAR-TRACKING-TIMDR",
+      "category": "engineering",
+      "description": "Tor radarowy 1D (filtr Kalmana / cząsteczkowy) z adaptacyjną regulacją szumu (JRegulator), walidowany na realnych trasach GPS",
+      "archived": false
+    },
+    {
+      "name": "Senscore",
+      "url": "https://github.com/jbackk-lang/Senscore",
+      "category": "engineering",
+      "description": "Pipeline filtracji sygnałów z detektorów (5-etapowy, PCA, clustering)",
+      "archived": false
+    },
+    {
+      "name": "SYNOPTYK-ARCTIC",
+      "url": "https://github.com/jbackk-lang/SYNOPTYK-ARCTIC",
+      "category": "engineering",
+      "description": "Wariant Synoptyka dla stacji arktycznej (Longyearbyen) — realny, zmierzony bias/MAE prognozy vs archiwum Open-Meteo (backtest 90 dni), dashboard www",
+      "archived": false
+    },
+    {
+      "name": "synoptyk-v2.0",
+      "url": "https://github.com/jbackk-lang/synoptyk-v2.0",
+      "category": "engineering",
+      "description": "Prognoza pogody — realne dane Open-Meteo, filtr falkowy DWT db4",
+      "archived": false
+    },
+    {
+      "name": "Synoptyk-v3",
+      "url": "https://github.com/jbackk-lang/Synoptyk-v3",
+      "category": "engineering",
+      "description": "Trzecie podejście do prognozy pogody w tym ekosystemie — pogoda jako pole na siatce geograficznej (\"membrana\", nie niezależne szeregi czasowe per stacja), analiza widmowa/geometria różniczkowa (fronty, wiry, rezonans międzypolowy), realne dane Open-Meteo (live + archiwum, 10-dniowy backtest trafności)",
+      "archived": false
+    },
+    {
+      "name": "THE_TIMDR_Hyperflow_Engine",
+      "url": "https://github.com/jbackk-lang/THE_TIMDR_Hyperflow_Engine",
+      "category": "concept",
+      "description": "TIMDR Hyperflow Engine — koncepcyjna pętla percepcyjna (strumień/topologia/przepływ/stabilność); zawiera też zwalidowany numerycznie moduł geometrii trajektorii (krzywizna/skręt na helisie analitycznej)",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-AI-Core",
+      "url": "https://github.com/jbackk-lang/TIMDR-AI-Core",
+      "category": "engineering",
+      "description": "Rdzeń protokołu TIMDR i silnik audytu twierdzeń claim_audit.py — karty dowodowe przeliczają liczby z README z surowych danych, sprawdzają kotwice pre-rejestracji i sformułowania; użyty do audytu MAST, Modal-Formalism, Aviation, Bio-Signals i MAGE (znalezione i poprawione realne błędy). Linie eksperymentów aktywacji zamknięte bez przyrostu nad baseline'em",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Aviation-Diagnostics",
+      "url": "https://github.com/jbackk-lang/TIMDR-Aviation-Diagnostics",
+      "category": "engineering",
+      "description": "Transfer TIMDR-Core (1:1 z TIMDR-Earthquake-Core) do diagnostyki silników lotniczych — test na realnych danych degradacji silnika turbowentylatorowego, z jawnym opisem ograniczeń środowiska testowego",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Battery-Predict",
+      "url": "https://github.com/jbackk-lang/TIMDR-Battery-Predict",
+      "category": "engineering",
+      "description": "Predykcyjne utrzymanie ogniwa/pakietu baterii — fuzja 4 czujników, model degradacji, czas do awarii (TTF), wynik zdrowia",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Bio-Signals",
+      "url": "https://github.com/jbackk-lang/TIMDR-Bio-Signals",
+      "category": "engineering",
+      "description": "TIMDR dla sygnałów fizjologicznych (EKG/EEG/puls/oddech) — arytmie, anomalie impulsów, zaniki oscylacji (bezdech). To NIE jest wyrób medyczny",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Concept-Archive",
+      "url": "https://github.com/jbackk-lang/TIMDR-Concept-Archive",
+      "category": "documentation",
+      "description": "Archiwum dawnych projektów koncepcyjnych i ich historii. Podkatalogi nie są liczone jako osobne aktywne repozytoria.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Cosmology-Filters",
+      "url": "https://github.com/jbackk-lang/TIMDR-Cosmology-Filters",
+      "category": "engineering",
+      "description": "3 filtry anomalii dla danych kosmologicznych zbudowane od zera (odstępy pików akustycznych CMB, precesja peryhelium Merkurego, napięcie Hubble'a) — realne, cytowane dane (Planck 2018, MESSENGER, SH0ES) z propagacją niepewności",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Crypto-Graph",
+      "url": "https://github.com/jbackk-lang/TIMDR-Crypto-Graph",
+      "category": "engineering",
+      "description": "Graf transakcji (węzły=portfele, krawędzie=transfery) z rdzeniem helisa/rezonans/defekt do detekcji anomalii AML — zweryfikowany ślepy punkt self-eq, poprawka (kalibrowany eq + żywe dane) i peer-group eq po kohortach niezależnych od grafu",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Cyclone-RI",
+      "url": "https://github.com/jbackk-lang/TIMDR-Cyclone-RI",
+      "category": "engineering",
+      "description": "Cztery cechy burzy poprzedzające wyrównanie pionowe i gwałtowną intensyfikację cyklonu tropikalnego (Alvey i in. 2026, JGR-Atmospheres) — etykietowanie intensyfikacji zwalidowane na realnych danych, operatory przechylenia i środowiska tylko na kontrolach syntetycznych (brak dostępu do TC-RADAR), opisane wprost w repo",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-DNA",
+      "url": "https://github.com/jbackk-lang/TIMDR-DNA",
+      "category": "engineering",
+      "description": "Detekcja anomalii głębokości pokrycia sekwencjonowania (styl CNV) — narzędzie badawcze, silne zastrzeżenie w repo: to NIE jest diagnostyka medyczna",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Earthquake-Core",
+      "url": "https://github.com/jbackk-lang/TIMDR-Earthquake-Core",
+      "category": "engineering",
+      "description": "Rdzeń analizy sejsmicznej — detekcja mikro-wstrząsów, picker STA/LTA zweryfikowany 1:1 z ObsPy, tryb katalogowy na żywych danych USGS; test trybu prekursorowego dał wynik negatywny (brak sygnału), udokumentowane wprost w repo",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Echosonda-3D",
+      "url": "https://github.com/jbackk-lang/TIMDR-Echosonda-3D",
+      "category": "engineering",
+      "description": "Analiza chmury punktów dna (batymetria) + detekcja celów w toni wodnej (ryby, ławice, obiekty sztuczne) — silnik sonarowy",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-EV-Predict",
+      "url": "https://github.com/jbackk-lang/TIMDR-EV-Predict",
+      "category": "engineering",
+      "description": "Fuzja 3 podsystemów pojazdu elektrycznego (bateria + silnik elektryczny + ładowanie/sieć) w jeden wynik zdrowia i TTF pojazdu, zasada najsłabszego ogniwa — realne dane starzenia baterii NASA PCoE, most do CAN/OBD-II",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-fusion-tools",
+      "url": "https://github.com/jbackk-lang/TIMDR-fusion-tools",
+      "category": "engineering",
+      "description": "Narzędzia do danych z diagnostyki plazmy (W7-X, JET, DIII-D, EAST) — detekcja punktów skrętu, redukcja szumu",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Geometry-Formalism",
+      "url": "https://github.com/jbackk-lang/TIMDR-Geometry-Formalism",
+      "category": "formalism",
+      "description": "Gałąź geometryczna G: operator kształtu, krzywizny, skręt i testy powierzchni o znanej geometrii.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Grid-Monitor",
+      "url": "https://github.com/jbackk-lang/TIMDR-Grid-Monitor",
+      "category": "engineering",
+      "description": "Monitoring starzenia kabli energetycznych (model Arrhenius) + alerty przekroczenia reżimu; lokalnie dołączony runtime meta/sejsmiczny, więc repo działa bez repozytoriów-sąsiadów",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Industrial-Predict",
+      "url": "https://github.com/jbackk-lang/TIMDR-Industrial-Predict",
+      "category": "engineering",
+      "description": "Predictive maintenance dla maszyn przemysłowych — fuzja czujników w sygnał energii stanu E(t), predykcja czasu do awarii i health-score; demo API obsługuje także lokalne próbki CWRU łożysk",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-lightcurve-fewshot",
+      "url": "https://github.com/jbackk-lang/TIMDR-lightcurve-fewshot",
+      "category": "engineering",
+      "description": "Eksperymentalna klasyfikacja rzeczywistych krzywych blasku OGLE, badania fotometrii i kontroli jakości.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Materials-Design",
+      "url": "https://github.com/jbackk-lang/TIMDR-Materials-Design",
+      "category": "engineering",
+      "description": "8-krokowa procedura projektowania materiału od zera metodą TIMDR (anomalia/defekt/skręt/rezonans) — każdy krok to osobny, przetestowany moduł kodu",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Math-Formalism",
+      "url": "https://github.com/jbackk-lang/TIMDR-Math-Formalism",
+      "category": "formalism",
+      "description": "Implementacja gałęzi sygnałowej M/S: operatory, kontrola matematyczna, testy i protokół oceny.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-META-DYNAMICS",
+      "url": "https://github.com/jbackk-lang/TIMDR-META-DYNAMICS",
+      "category": "engineering",
+      "description": "Symulacja i wizualizacja meta-przepływu (krzywizna/skręt pola, MetaPredict z tłumieniem)",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Modal-Formalism",
+      "url": "https://github.com/jbackk-lang/TIMDR-Modal-Formalism",
+      "category": "formalism",
+      "description": "Implementacja gałęzi modalnej K: interferencja, rezonans i synchronizacja faz.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Mold-Risk",
+      "url": "https://github.com/jbackk-lang/TIMDR-Mold-Risk",
+      "category": "engineering",
+      "description": "Wczesne ostrzeganie przed ryzykiem pleśni — model VTT (Hukka & Viitanen) na temperaturze/wilgotności, indeks pleśni M(t) 0-6. Walidowane na danych syntetycznych fizycznie ugruntowanych, nie na realnych danych DALTON (Git LFS niedostępne w środowisku budowy)",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Multisensory-Meditation-Engine",
+      "url": "https://github.com/jbackk-lang/TIMDR-Multisensory-Meditation-Engine",
+      "category": "concept",
+      "description": "Multisensoryczna medytacja geometryczna",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-orbital-tracker",
+      "url": "https://github.com/jbackk-lang/TIMDR-orbital-tracker",
+      "category": "engineering",
+      "description": "Śledzenie katalogowych obiektów orbitalnych: propagacja orbit, kojarzenie pomiarów i lokalne narzędzia analizy.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Radar-Module",
+      "url": "https://github.com/jbackk-lang/TIMDR-Radar-Module",
+      "category": "engineering",
+      "description": "Moduł RCS (rezonans w reżimie Mie) dla sygnałów radarowych",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Robot",
+      "url": "https://github.com/jbackk-lang/TIMDR-Robot",
+      "category": "engineering",
+      "description": "Warstwa TIMDR dla robota wieloosiowego i podsystemów (chwytak, podstawa mobilna, kamera, zasilanie) — detekcja anomalii, flota robotów, mosty integracyjne ROS2/MQTT/OPC-UA",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Security-Module",
+      "url": "https://github.com/jbackk-lang/TIMDR-Security-Module",
+      "category": "engineering",
+      "description": "Detekcja anomalii w ruchu/zdarzeniach sieciowych na bazie sygnału stanu TIMDR",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Solar-PV",
+      "url": "https://github.com/jbackk-lang/TIMDR-Solar-PV",
+      "category": "engineering",
+      "description": "Detekcja degradacji/brudu/zacienienia/awarii PV — model fizyczny PVWatts (pvlib) i Performance Ratio jako sygnał stanu, plus rozszerzenie analizy zespolonej PV+bateria. Walidowane na danych syntetycznych fizycznie ugruntowanych, nie na realnych danych NREL PVDAQ",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Structural-Health",
+      "url": "https://github.com/jbackk-lang/TIMDR-Structural-Health",
+      "category": "engineering",
+      "description": "Monitorowanie konstrukcji (mosty, budynki, połączenia śrubowe): kotwica modalna, linie nieliniowości, reżim fala/cząsteczka + lokalny dashboard. Walidacja pre-rejestrowana: most KW51, rama LANL, śruba ORION-AE — potwierdzone; most Hell Bridge — negatywny. Jak widzi TIMDR →",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Sygnalizacja",
+      "url": "https://github.com/jbackk-lang/TIMDR-Sygnalizacja",
+      "category": "formalism",
+      "description": "Formalizm sygnałowy TIMDR (anomalia/defekt/rezonans/skręt) na trzech historycznych metodach sygnalizacji — kod Morse'a dźwiękowy, Morse świetlny (lampa Aldisa), semafor flagowy; dekodery + 4 detektory + kontrole pozytywne/negatywne z testem Manna-Whitneya, panel web z obsługą mikrofonu/kamery. Zwalidowane na sygnałach syntetycznych; funkcje na żywym sprzęcie niezweryfikowane w izolowanym środowisku budowy",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Time-Formalism",
+      "url": "https://github.com/jbackk-lang/TIMDR-Time-Formalism",
+      "category": "formalism",
+      "description": "Chronoproces i wspólny opis czasowy gałęzi TIMDR; implementacje oraz testy.",
+      "archived": false
+    },
+    {
+      "name": "TIMDR-Tornado-NEXRAD",
+      "url": "https://github.com/jbackk-lang/TIMDR-Tornado-NEXRAD",
+      "category": "engineering",
+      "description": "Detekcja tornad z realnych danych radaru Dopplera NEXRAD Level II — azymutalny shear rotacji (ugruntowana metoda NSSL) + niezależna sygnatura szczątków TDS (spadek ρhv); walidacja shear-only na potwierdzonych przez SPC przypadkach EF1+ dała istotną statystycznie różnicę (Mann-Whitney, duży rozmiar efektu) — sama TDS i połączony werdykt jeszcze nie sprawdzone na realnych danych",
+      "archived": false
+    },
+    {
+      "name": "TIMeDR-MUZ",
+      "url": "https://github.com/jbackk-lang/TIMeDR-MUZ",
+      "category": "engineering",
+      "description": "Wcześniejsza linia zarządcy budżetu TIMDR. Aktualna aplikacja rozwijana jest w TSI-MUZ.",
+      "archived": false
+    },
+    {
+      "name": "topologic",
+      "url": "https://github.com/jbackk-lang/topologic",
+      "category": "engineering",
+      "description": "Biblioteka operatorów sygnałowych: zero-crossing, z-score, korelacja kierunkowa",
+      "archived": false
+    },
+    {
+      "name": "TSI-math-validator-5",
+      "url": "https://github.com/jbackk-lang/TSI-math-validator-5",
+      "category": "tsi",
+      "description": "Walidator matematyczny: równania, wykresy, całki, geometria, zadania tekstowe i audyt kroków. Panel ucznia i nauczyciela, pomocnik TSI; publiczna dokumentacja i demo.",
+      "archived": false
+    },
+    {
+      "name": "TSI-MUZ",
+      "url": "https://github.com/jbackk-lang/TSI-MUZ",
+      "category": "tsi",
+      "description": "Lokalny zarządca budżetu i dokumentów: rachunki, koszty stałe, plany oszczędzania, terminy, przypomnienia i raporty. Publiczna dokumentacja projektu.",
+      "archived": false
+    },
+    {
+      "name": "universal-state-analyzer",
+      "url": "https://github.com/jbackk-lang/universal-state-analyzer",
+      "category": "engineering",
+      "description": "Źródłowa implementacja ringdown_resonance() oraz lokalny protokół testów Manna–Whitneya; zwalidowana na syntetycznym ground truth",
+      "archived": false
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+> **Katalog aktualny: 3 listopada 2026 — 69 publicznych repozytoriów.** [Wyszukiwarka i kategorie](https://jbackk-lang.github.io/kategorie.html) · [Spis w Markdown](KATEGORIE.md). Starsze zestawienia poniżej opisują wcześniejszy podział projektów.
+
 ﻿## <https://jbackk-lang.github.io/>
 
 # 🔷 Topologia Informacji — Mapa Skrętu
