@@ -1,5 +1,10 @@
 > **Katalog aktualny: 3 listopada 2026 — 69 publicznych repozytoriów.** [Wyszukiwarka i kategorie](https://jbackk-lang.github.io/kategorie.html) · [Spis w Markdown](KATEGORIE.md). Starsze zestawienia poniżej opisują wcześniejszy podział projektów.
 
+<!-- TIMDR HUB LINKS -->
+> **TIMDR — nawigacja:** [Knowledge Hub — dokumentacja i wyszukiwarka](https://jbackk-lang.github.io/TIMDR-AI-Knowledge-Base/) · [Panel badawczy i katalog repozytoriów](https://jbackk-lang.github.io/) · [GIA-TIMDR — źródła](https://github.com/jbackk-lang/GIA-TIMDR) · [Research AI — kod i uruchomienie lokalne](https://github.com/jbackk-lang/TIMDR-AI-Knowledge-Base). Publiczna wyszukiwarka Huba jest tekstowa; wyszukiwanie semantyczne działa lokalnie.
+<!-- /TIMDR HUB LINKS -->
+
+
 ﻿## <https://jbackk-lang.github.io/>
 
 # 🔷 Topologia Informacji — Mapa Skrętu
